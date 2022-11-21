@@ -20,13 +20,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%=l7gs^u=e6)x0rd4)#v!2-)e92748jtnr+klf6c-*3(p*cz^o'
+SECRET_KEY = 'django-insecure-%)ocztxhj1v55a9019lt(w%qtq59k9y_iod3z%jp=x@0k%**zd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Application definition
 
@@ -130,25 +135,26 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#ロギング設定
 LOGGING = {
-    'version': 1,  # 1固定
-    'disable_existing_loggers': False,
+    'version': 1, # 固定
+    'disable_exitsting_loggers': False, #既存ロガー設定 False：無効
 
-    # ロガーの設定
+    #ロガーの設定
     'loggers': {
-        # Djangoが利用するロガー
+        #Djangoが利用するロガー
         'django': {
             'handlers': ['console'],
-            'level': 'INFO',
+            'level': 'INFO', #正常処理の記録
         },
-        # diaryアプリケーションが利用するロガー
+        #diaryアプリケーションが利用するロガー
         'diary': {
             'handlers': ['console'],
-            'level': 'DEBUG',
+            'level': 'DEBUG' #デバッグ用
         },
     },
 
-    # ハンドラの設定
+    #ハンドラの設定
     'handlers': {
         'console': {
             'level': 'DEBUG',
@@ -157,7 +163,7 @@ LOGGING = {
         },
     },
 
-    # フォーマッタの設定
+    #フォーマッタの設定
     'formatters': {
         'dev': {
             'format': '\t'.join([
@@ -169,7 +175,3 @@ LOGGING = {
         },
     }
 }
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
