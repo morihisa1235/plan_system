@@ -33,8 +33,8 @@
                     {% if user.is_authenticated %}
                     <a class="btn btn-primary" href="#logout">ログアウト</a>
                     {% else %}
-                <a class="btn btn-primary" href="#signup">サインアップ</a>
-                <a class="btn btn-primary" href="#login">ログイン</a>
+                <a class="btn btn-primary" href="{% url 'account_signup' %}">サインアップ</a>
+                <a class="btn btn-primary" href="{% url 'account_login' %}">ログイン</a>
                     {% endif %}
                 </li>
                 </ul>
