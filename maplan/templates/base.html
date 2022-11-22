@@ -30,8 +30,12 @@
                 <li>
                 <a class="btn btn-primary" href="#mypage">マイページ</a>
                 <a class="btn btn-primary" href="#create">作成</a>
+                    {% if user.is_authenticated %}
+                    <a class="btn btn-primary" href="#logout">ログアウト</a>
+                    {% else %}
                 <a class="btn btn-primary" href="{% url 'account_signup' %}">サインアップ</a>
                 <a class="btn btn-primary" href="{% url 'account_login' %}">ログイン</a>
+                    {% endif %}
                 </li>
                 </ul>
             </div>
