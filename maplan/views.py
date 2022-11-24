@@ -21,3 +21,5 @@ class InquiryView(generic.FormView):
         messages.success(self.request, 'メッセージを送信しました。')
         logger.info('Inquiry sent by {}'.format(form.cleaned_data['name']))
         return super().form_valid(form)
+class SitemapView(generic.TemplateView):
+    template_name = "sitemap.html"

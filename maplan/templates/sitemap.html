@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}サイトマップ{% endblock %}
+
+{% block contents %}
+<h1>サイトマップ</h1>
+
+<h6>ログイン後のページ</h6>
+<a href = "{% url 'maplan:index' %}">・トップ</a>
+<a href = "">・検索画面</a>
+<a href = "{% url 'account_login' %}">・ログイン</a>
+<a href = "{% url 'account_signup' %}">・サインアップ</a>
+<a href = "{% url 'maplan:inquiry' %}">・お問い合わせ</a>
+<a href = "">・ポリシー</a>
+<a href = "">・マイページ</a>
+<a href = "">・プラン作成</a>
+<a href = "">・個人情報</a>
+{% endblock %}
