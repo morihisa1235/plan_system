@@ -24,7 +24,7 @@
                 <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="#top">地図+旅行プラン作成システム</a>
+                <a class="navbar-brand" href="{% url 'maplan:index' %}">地図+旅行プラン作成システム</a>
 
                 <ul style="list-style: none">
                 <li>
@@ -43,6 +43,21 @@
         <!-- Masthead-->
 
     {% block header %}{% endblock %}
+
+    {% if messages %}
+    <div class="container my-div-style">
+        <div class="row">
+            <ul class="messages" style="list-style: none;">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                    {{ message }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+
     {% block contents %}{% endblock %}
 
     </body>
