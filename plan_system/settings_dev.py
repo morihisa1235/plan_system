@@ -1,7 +1,7 @@
 from .settings_common import *
 
 
-SECRET_KEY = 'django-insecure-%=l7gs^u=e6)x0rd4)#v!2-)e92748jtnr+klf6c-*3(p*cz^o'
+SECRET_KEY = 'django-insecure-g@gyi518=(!99f99uix0ivmg88h&d+%)6g)s!#%(w_7bg!=q2$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -20,7 +20,7 @@ LOGGING = {
             'level': 'INFO',
         },
         # diaryアプリケーションが利用するロガー
-        'diary': {
+        'maplan': {
             'handlers': ['console'],
             'level': 'DEBUG',
         },
