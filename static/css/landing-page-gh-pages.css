@@ -11387,12 +11387,10 @@ footer.footer {
 }
 
 .sitemap {
-    flex-flow: column;
-    justify-content: space-between;
-    line-height: 2.0;
+    line-height: 3.0;
+    column-count: 2;
 }
 
 .sitemap-title {
     text-align: center;
-    line-height: 3.0;
 }
