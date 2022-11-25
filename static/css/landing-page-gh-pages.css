@@ -11387,5 +11387,10 @@ footer.footer {
 }
 
 .sitemap {
-    margin: 100rem
+    margin: 0 0 2rem 7rem;
+}
+
+.sitemap-title {
+    margin-left: auto;
+    margin-right: auto;
 }
