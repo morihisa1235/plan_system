@@ -8,4 +8,5 @@ urlpatterns = [
     path('inquiry/', views.InquiryView.as_view(),name="inquiry"),
     path('sitemap/', views.SitemapView.as_view(),name="sitemap"),
     path('policy/', views.PolicyView.as_view(),name="policy"),
+    path('mypage/', views.MypageView.as_view(), name="mypage"),
 ]
