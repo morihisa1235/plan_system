@@ -23,3 +23,6 @@ class InquiryView(generic.FormView):
         return super().form_valid(form)
 class SitemapView(generic.TemplateView):
     template_name = "sitemap.html"
+
+class PolicyView(generic.TemplateView):
+    template_name = "policy.html"
