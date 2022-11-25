@@ -9,4 +9,5 @@ urlpatterns = [
     path('sitemap/', views.SitemapView.as_view(),name="sitemap"),
     path('policy/', views.PolicyView.as_view(),name="policy"),
     path('mypage/', views.MypageView.as_view(), name="mypage"),
+    path('personal/', views.PersonalView.as_view(), name="personal"),
 ]

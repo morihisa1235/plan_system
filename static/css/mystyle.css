@@ -45,3 +45,7 @@ footer {
 #mypage_nav ul li  a:hover {
   background-color: #88b6fb;
 }
+
+.personal {
+    text-align: center;
+}
