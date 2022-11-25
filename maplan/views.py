@@ -4,8 +4,11 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views import generic
 
+#from django.contrib.auth.mixins import LoginRequiredMixin
+
 from .forms import InquiryForm
 
+#from .models import Plan
 logger = logging.getLogger(__name__)
 
 class IndexView(generic.TemplateView):
@@ -21,6 +24,10 @@ class InquiryView(generic.FormView):
         messages.success(self.request, 'メッセージを送信しました。')
         logger.info('Inquiry sent by {}'.format(form.cleaned_data['name']))
         return super().form_valid(form)
+
+class MypageView(generic.TemplateView):
+    template_name = "mypage.html"
+
 class SitemapView(generic.TemplateView):
     template_name = "sitemap.html"
 
