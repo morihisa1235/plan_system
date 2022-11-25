@@ -10,15 +10,15 @@
     <h6>ログイン後のページ</h6>
 </div>
 
-<div class = "sitemap">
-    <a href = "{% url 'maplan:index' %}">・トップ</a>
-    <a href = "">・検索画面</a>
-    <a href = "{% url 'account_login' %}">・ログイン</a>
-    <a href = "{% url 'account_signup' %}">・サインアップ</a>
-    <a href = "{% url 'maplan:inquiry' %}">・お問い合わせ</a>
-    <a href = "">・ポリシー</a>
-    <a href = "">・マイページ</a>
-    <a href = "">・プラン作成</a>
-    <a href = "">・個人情報</a>
-</div>
+<ul class = "sitemap">
+    <li><a href = "{% url 'maplan:index' %}">トップ</a></li>
+    <li><a href = "">検索画面</a></li>
+    <li><a href = "{% url 'account_login' %}">ログイン</a></li>
+    <li><a href = "{% url 'account_signup' %}">サインアップ</a></li>
+    <li><a href = "{% url 'maplan:inquiry' %}">お問い合わせ</a></li>
+    <li><a href = "">ポリシー</a></li>
+    <li><a href = "">マイページ</a></li>
+    <li><a href = "">プラン作成</a></li>
+    <li><a href = "">個人情報</a></li>
+</ul>
 {% endblock %}
