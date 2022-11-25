@@ -11385,3 +11385,20 @@ footer.footer {
     margin: 0 0 2rem 7rem;
     color: red
 }
+
+.sitemap {
+    line-height: 3.0;
+    column-count: 2;
+}
+
+.sitemap-title {
+    text-align: center;
+}
+
+.poli {
+    text-align: right;
+}
+
+.pass {
+    text-align: center;
+}

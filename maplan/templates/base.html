@@ -16,6 +16,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/landing-page-gh-pages.css' %}" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}"/>
         {% block head %}{% endblock %}
     </head>
 
@@ -28,13 +29,13 @@
 
                 <ul style="list-style: none">
                 <li>
-                <a class="btn btn-primary" href="#mypage">マイページ</a>
+                <a class="btn btn-primary" href="{% url 'maplan:mypage' %}">マイページ</a>
                 <a class="btn btn-primary" href="#create">作成</a>
                     {% if user.is_authenticated %}
-                    <a class="btn btn-primary" href="#logout">ログアウト</a>
+                    <a class="btn btn-primary" href="{% url 'account_logout' %}">ログアウト</a>
                     {% else %}
-                <a class="btn btn-primary" href="{% url 'account_signup' %}">サインアップ</a>
-                <a class="btn btn-primary" href="{% url 'account_login' %}">ログイン</a>
+                <a class="btn btn-primary {% block active_signup %}{% endblock %}" href="{% url 'account_signup' %}">サインアップ</a>
+                <a class="btn btn-primary {% block active_login %}{% endblock %}" href="{% url 'account_login' %}">ログイン</a>
                     {% endif %}
                 </li>
                 </ul>
@@ -65,14 +66,14 @@
      <footer class="footer bg-light">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
-                    <p class="text-muted small mb-4 mb-lg-0">&copy;2022 O-hara student TeamD</p>
+                <p class="text-muted small mb-4 mb-lg-0" style="text-align: center;">&copy;2022 O-hara student TeamD</p>
+                <div style="text-align: right">
                     <ul class="list-inline mb-2">
-                        <li class="list-inline-item"><a href="#!">サイトマップ</a></li>
+                        <li class="list-inline-item"><a href="{% url 'maplan:sitemap' %}">サイトマップ</a></li>
                         <li class="list-inline-item"></li>
-                        <li class="list-inline-item"><a href="#!">ポリシー</a></li>
+                        <li class="list-inline-item"><a href="{% url 'maplan:policy' %}">ポリシー</a></li>
                         <li class="list-inline-item"></li>
-                        <li class="list-inline-item"></li>
+                        <li class="list-inline-item"><a href="{% url 'maplan:personal' %}">こじん</a></li>
                         <li class="list-inline-item"><a href="{% url 'maplan:inquiry' %}">お問い合せ</a></li>
                     </ul>
                 </div>

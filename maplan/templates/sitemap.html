@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}サイトマップ{% endblock %}
+
+{% block contents %}
+
+<div class = "sitemap-title">
+    <h1>サイトマップ</h1>
+
+    <h6>ログイン後のページ</h6>
+</div>
+
+<ul class = "sitemap">
+    <li><a href = "{% url 'maplan:index' %}">トップ</a></li>
+    <li><a href = "">検索画面</a></li>
+    <li><a href = "{% url 'account_login' %}">ログイン</a></li>
+    <li><a href = "{% url 'account_signup' %}">サインアップ</a></li>
+    <li><a href = "{% url 'maplan:inquiry' %}">お問い合わせ</a></li>
+    <li><a href = "{% url 'maplan:policy' %}">ポリシー</a></li>
+    <li><a href = "">マイページ</a></li>
+    <li><a href = "">プラン作成</a></li>
+    <li><a href = "">個人情報</a></li>
+    <li style = "list-style:none">　</li>
+    <li style = "list-style:none">　</li>
+</ul>
+{% endblock %}
