@@ -31,8 +31,8 @@ class MypageView(generic.TemplateView):
 class SitemapView(generic.TemplateView):
     template_name = "sitemap.html"
 
-class PolicyView(generic.TemplateView):
-    template_name = "policy.html"
+class Change_passwordView(generic.TemplateView):
+    template_name = "change_password.html"
 
 class PersonalView(generic.TemplateView):
     template_name = "personal.html"
