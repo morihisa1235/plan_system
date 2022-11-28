@@ -4,28 +4,31 @@
 
 {% block contents %}
 
+
 <div class = "personal">
     <h1>個人情報確認・変更・退会</h1>
 
+    <div class = "a">
+    <label for="name">ユーザー名</label>
+    <input id="name" type="text" name="name" value="ユーザー名" readonly>
+    </div>
 
-    ユーザー名<input type = "text" name="name"><br>
+    <div class = "b">
+    <label for="mail">メールアドレス</label>
+    <input id="mail" type="text" name="mail" value="メールアドレス" readonly>
+    </div>
 
-    メールアドレス<input type = "email" name = "name"><br>
+    <div class = "c">
+    <label for="password">パスワード</label>
+    <input id="password" type="text" name="password" value="パスワード" readonly>
+    </div>
 
-    パスワード<input type = "password">
+</div>
 
+<div class = "taikai">
     <h1>退会</h1>
-<style>
-.example{
-    padding: 10px;
-    border: 1px solid #333;
-    background: #f2f2f2;
-}
-</style>
 
-<div class = "example">
-    <a class="btn btn-primary" href="{% url 'maplan:withdrawal' %}">退会</a>
+    地図+旅行プラン作成システム退会<a class="btn btn-primary" href="{% url 'maplan:withdrawal' %}">退会</a>
 </div>
 
-</div>
 {% endblock %}
