@@ -28,16 +28,18 @@
                 <a class="navbar-brand" href="{% url 'maplan:index' %}">地図+旅行プラン作成システム</a>
 
                 <ul style="list-style: none">
-                <li>
-                <a class="btn btn-primary" href="{% url 'maplan:mypage' %}">マイページ</a>
-                <a class="btn btn-primary" href="#create">作成</a>
-                    {% if user.is_authenticated %}
-                    <a class="btn btn-primary" href="{% url 'account_logout' %}">ログアウト</a>
-                    {% else %}
-                <a class="btn btn-primary {% block active_signup %}{% endblock %}" href="{% url 'account_signup' %}">サインアップ</a>
-                <a class="btn btn-primary {% block active_login %}{% endblock %}" href="{% url 'account_login' %}">ログイン</a>
-                    {% endif %}
-                </li>
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a class="btn btn-primary" href="{% url 'maplan:mypage' %}">マイページ</a>
+                        <a class="btn btn-primary" href="#create">作成</a>
+                        <a class="btn btn-primary" href="{% url 'account_logout' %}">ログアウト</a>
+                        {% else %}
+                        <a class="btn btn-primary" href="{% url 'maplan:mypage' %}">マイページ</a>
+                        <a class="btn btn-primary" href="#create">作成</a>
+                        <a class="btn btn-primary {% block active_signup %}{% endblock %}" href="{% url 'account_signup' %}">サインアップ</a>
+                        <a class="btn btn-primary {% block active_login %}{% endblock %}" href="{% url 'account_login' %}">ログイン</a>
+                        {% endif %}
+                    </li>
                 </ul>
             </div>
         </nav>
