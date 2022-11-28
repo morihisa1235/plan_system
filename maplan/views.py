@@ -39,3 +39,7 @@ class Change_passwordView(generic.TemplateView):
 
 class PersonalView(generic.TemplateView):
     template_name = "personal.html"
+
+class Change_passwordkannryouView(generic.TemplateView):
+    template_name = "change_passwordkannryou.html"
+
