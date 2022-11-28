@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}退会手続き{% endblock %}
+
+{% block contents %}
+
+<div class ="pass"><h1>退会手続き</h1><br>
+    <p><h5><font color = "red">退会するとあなたのアカウントはシステムから削除され、使用できなくなります。</font></h5><p/>
+    <p><h3>退会理由</h3><p/>
+
+  <tr>
+
+
+      <input type="text" maxlength="200" name="hi">
+  </tr>
+
+ <p><input type="button" value="キャンセル" id="button">&emsp;&emsp;<input type="button" value="退会" id="button">
+
+
+{% endblock %}
