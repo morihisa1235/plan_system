@@ -7,9 +7,25 @@
 <div class = "personal">
     <h1>個人情報確認・変更・退会</h1>
 
+
     ユーザー名<input type = "text" name="name"><br>
+
     メールアドレス<input type = "email" name = "name"><br>
+
     パスワード<input type = "password">
+
+    <h1>退会</h1>
+<style>
+.example{
+    padding: 10px;
+    border: 1px solid #333;
+    background: #f2f2f2;
+}
+</style>
+
+<div class = "example">
+    <a class="btn btn-primary" href="{% url 'maplan:withdrawal' %}">退会</a>
 </div>
 
+</div>
 {% endblock %}
