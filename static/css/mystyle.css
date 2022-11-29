@@ -117,3 +117,11 @@ footer {
      padding:30px;
      text-align: center;
 }
+
+.change_personal_button {
+     padding-top: 30px;
+}
+
+.change_personal_button a:first-of-type {
+    margin-right: 50px
+}
