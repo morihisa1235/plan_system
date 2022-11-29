@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}退会手続き{% endblock %}
+
+{% block contents %}
+
+<div class ="pass"><h1>退会手続き</h1><br>
+    <p><h5><font color = "red">退会するとあなたのアカウントはシステムから削除され、使用できなくなります。</font></h5><p/>
+    <p><h3>退会理由</h3><p/>
+
+
+
+
+
+    <textarea name="contact" placeholder="200字まで入力可能です。" maxlength="200" required></textarea><br><br>
+
+
+    <a class="btn btn-primary" href="{% url 'maplan:personal' %}">キャンセル</a>
+    <a class="btn btn-primary" href="{% url 'maplan:withdrawalk' %}">退会</a>
+</div>
+{% endblock %}

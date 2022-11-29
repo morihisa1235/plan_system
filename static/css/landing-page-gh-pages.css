@@ -11401,4 +11401,9 @@ footer.footer {
 
 .pass {
     text-align: center;
+    line-height: 3.0;
+}
+
+.pass a:first-of-type{
+    margin-right: 50px
 }

@@ -28,16 +28,18 @@
                 <a class="navbar-brand" href="{% url 'maplan:index' %}">地図+旅行プラン作成システム</a>
 
                 <ul style="list-style: none">
-                <li>
-                <a class="btn btn-primary" href="{% url 'maplan:mypage' %}">マイページ</a>
-                <a class="btn btn-primary" href="#create">作成</a>
-                    {% if user.is_authenticated %}
-                    <a class="btn btn-primary" href="{% url 'account_logout' %}">ログアウト</a>
-                    {% else %}
-                <a class="btn btn-primary {% block active_signup %}{% endblock %}" href="{% url 'account_signup' %}">サインアップ</a>
-                <a class="btn btn-primary {% block active_login %}{% endblock %}" href="{% url 'account_login' %}">ログイン</a>
-                    {% endif %}
-                </li>
+                    <li>
+                        {% if user.is_authenticated %}
+                        <a class="btn btn-primary" href="{% url 'maplan:mypage' %}">マイページ</a>
+                        <a class="btn btn-primary" href="#create">作成</a>
+                        <a class="btn btn-primary" href="{% url 'account_logout' %}">ログアウト</a>
+                        {% else %}
+                        <a class="btn btn-primary" href="{% url 'maplan:mypage' %}">マイページ</a>
+                        <a class="btn btn-primary" href="#create">作成</a>
+                        <a class="btn btn-primary {% block active_signup %}{% endblock %}" href="{% url 'account_signup' %}">サインアップ</a>
+                        <a class="btn btn-primary {% block active_login %}{% endblock %}" href="{% url 'account_login' %}">ログイン</a>
+                        {% endif %}
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -70,9 +72,9 @@
                 <div style="text-align: right">
                     <ul class="list-inline mb-2">
                         <li class="list-inline-item"><a href="{% url 'maplan:sitemap' %}">サイトマップ</a></li>
-                        <li class="list-inline-item"></li>
                         <li class="list-inline-item"><a href="{% url 'maplan:policy' %}">ポリシー</a></li>
-                        <li class="list-inline-item"><a href="{% url 'maplan:change_password' %}">リセット</a></li>
+                        <li class="list-inline-item"><a href="{% url 'maplan:change_password' %}">パスワード変更</a></li>
+                        <li class="list-inline-item"><a href="{% url 'maplan:withdrawal' %}">退会</a></li>
                         <li class="list-inline-item"><a href="{% url 'maplan:inquiry' %}">お問い合せ</a></li>
                     </ul>
                 </div>
