@@ -119,5 +119,9 @@ footer {
 }
 
 .change_personal_button {
+    padding:30px;
+}
 
+.change_personal_button a:first-of-type {
+    margin-right: 50px
 }
