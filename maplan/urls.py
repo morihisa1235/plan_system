@@ -13,5 +13,5 @@ urlpatterns = [
     path('personal/', views.PersonalView.as_view(), name="personal"),
     path('change_passwordkannryou/', views.Change_passwordkannryouView.as_view(),name="change_passwordkannryou"),
     path('withdrawal/', views.WithdrawalView.as_view(), name="withdrawal"),
-    path('withdrawalkannryou/', views.WithdrawalView.as_view(), name="withdrawalkannryou"),
+    path('withdrawalk/', views.WithdrawalkView.as_view(), name="withdrawalk"),
 ]
