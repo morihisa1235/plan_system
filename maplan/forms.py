@@ -43,3 +43,7 @@ class InquiryForm(forms.Form):
 
         message = EmailMessage(subject=subject, body=message, from_email=from_email, to=to_list, cc=cc_list)
         message.send()
+
+
+
+
