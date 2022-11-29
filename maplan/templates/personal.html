@@ -9,26 +9,33 @@
     <h1>個人情報確認・変更・退会</h1>
 
     <div class = "a">
-    <label for="name">ユーザー名</label>
+    <label for="name">ユーザー名</label>&emsp;&emsp;
     <input id="name" type="text" name="name" value="ユーザー名" readonly>
-    </div>
+    </div><p></p>
 
     <div class = "b">
     <label for="mail">メールアドレス</label>
     <input id="mail" type="text" name="mail" value="メールアドレス" readonly>
-    </div>
+    </div><p></p>
 
     <div class = "c">
-    <label for="password">パスワード</label>
+    <label for="password">パスワード</label>&emsp;&emsp;
     <input id="password" type="text" name="password" value="パスワード" readonly>
-    </div>
+    </div><br>
 
 </div>
 
 <div class = "taikai">
     <h1>退会</h1>
 
+    <div class = "d">
     地図+旅行プラン作成システム退会<a class="btn btn-primary" href="{% url 'maplan:withdrawal' %}">退会</a>
+    </div>
+
+<div class = "personal_button">
+    <a class="btn btn-primary" href="{% url 'maplan:mypage' %}">戻る</a>&emsp;&emsp;&emsp;<a class="btn btn-primary" href="#">修正</a>&emsp;&emsp;&emsp;<a class="btn btn-primary" href="{% url 'maplan:change_password' %}">パスワード変更</a>
+</div>
+
 </div>
 
 {% endblock %}
