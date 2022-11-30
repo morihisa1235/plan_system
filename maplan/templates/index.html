@@ -27,25 +27,10 @@
                                         <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="検索ワードを入力" data-sb-validations="required,email" />
                                         <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">検索ワードを入力してください</div>
                                     </div>
-                                    <div class="col-auto">
-                                        <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button></div>
+                                <div class="col-auto">
+                                    <a class = "btn btn-primary" href = "{% url 'maplan:searchbox' %}">検索</a>
                                 </div>
-                                <!-- Submit success message-->
-                                <!---->
-                                <!-- This is what your users will see when the form-->
-                                <!-- has successfully submitted-->
-                                <div class="d-none" id="submitSuccessMessage">
-                                    <div class="text-center mb-3">
-                                        <div class="fw-bolder">Form submission successful!</div>
-                                        <p>To activate this form, sign up at</p>
-                                        <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                    </div>
-                                </div>
-                                <!-- Submit error message-->
-                                <!---->
-                                <!-- This is what your users will see when there is-->
-                                <!-- an error submitting the form-->
-                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                            </div>
                             </form>
                         </div>
                     </div>

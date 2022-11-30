@@ -16,4 +16,5 @@ urlpatterns = [
     path('withdrawalk/', views.WithdrawalkView.as_view(), name="withdrawalk"),
     path('change_personal/', views.Change_personalView.as_view(), name="change_personal"),
     path('change_personalk/', views.Change_personalkView.as_view(), name="change_personalk"),
+    path('searchbox/', views.SearchboxView.as_view(), name="searchbox"),
 ]
