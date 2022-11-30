@@ -79,6 +79,13 @@ footer {
 .taikai {
     text-align: center;
 }
+.min{
+    margin:auto;
+    width: 400px;
+}
+.my-div-style{
+    text-align: auto;
+}
 
 .a {
     line-height: 3.0;
@@ -111,6 +118,9 @@ footer {
     margin-right: 50px
 }
 
+.container{
+    text-align: center
+}
 .personal_button {
     text-align: center;
 }
