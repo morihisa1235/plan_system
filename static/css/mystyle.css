@@ -91,6 +91,8 @@ footer {
 .a {
     line-height: 3.0;
     margin-left: 100px;
+    display: inline-block;
+    text-align: right;
 }
 
 .b {
@@ -136,4 +138,5 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
