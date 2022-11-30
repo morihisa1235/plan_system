@@ -115,7 +115,8 @@ footer {
 
 .dra {
      padding:30px;
-     text-align: center;
+     width: 10em;
+     margin: auto;
 }
 
 .change_personal_button {

@@ -131,10 +131,12 @@ SITE_ID = 1
 
 AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
+    #一般ユーザー用(メールアドレス認証)
     'django.contrib.auth.backends.ModelBackend',
+    #管理サイト用(ユーザー名認証)
 )
 
-ACCOUNT_AUTHENTION_METHOD = 'email'
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_USERNAME_REQUIRED = False
 
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
