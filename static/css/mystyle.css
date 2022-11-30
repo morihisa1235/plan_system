@@ -69,43 +69,34 @@ footer {
 
 .personal {
     text-align: center;
-    line-height: 3.0;
+}
+
+.personal1 {
+    display: flex;
+    justify-content: center;
 }
 
 .taikai {
     text-align: center;
 }
+.min{
+    margin:auto;
+    width: 400px;
+}
+.my-div-style{
+    text-align: auto;
+}
 
 .a {
-    margin: 0 auto;
-    width: 30%;
-    border: 1px solid #333;
-    background: #f2f2f2
+    line-height: 3.0;
+    margin-left: 100px;
 }
 
 .b {
-    margin: 0 auto;
     width: 30%;
     border: 1px solid #333;
     background: #f2f2f2
-}
-
-.c {
     margin: 0 auto;
-    width: 30%;
-    border: 1px solid #333;
-    background: #f2f2f2
-}
-
-.d {
-    margin: 0 auto;
-    width: 30%;
-    border: 1px solid #333;
-    background: #f2f2f2
-}
-
-.personal_button {
-    padding-top: 30px;
 }
 
 .with {
@@ -115,14 +106,21 @@ footer {
 
 .dra {
      padding:30px;
-     width: 10em;
-     margin: auto;
+     text-align: center;
 }
 
 .change_personal_button {
     padding:30px;
+    text-align: center;
 }
 
 .change_personal_button a:first-of-type {
     margin-right: 50px
+}
+
+.container{
+    text-align: center
+}
+.personal_button {
+    text-align: center;
 }
