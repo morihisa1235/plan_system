@@ -11407,3 +11407,23 @@ footer.footer {
 .pass a:first-of-type{
     margin-right: 50px
 }
+
+.box1{
+  background:red;
+}
+.box2{
+  background:blue;
+}
+
+.wrap{
+  display:flex;
+}
+.box{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100px;
+  height:100px;
+}
+
+
