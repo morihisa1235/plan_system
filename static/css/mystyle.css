@@ -77,8 +77,7 @@ footer {
 }
 .min{
     margin:auto;
-    width: 600px;
-    height: 400px;
+    width: 400px;
 }
 .my-div-style{
     text-align: auto;
@@ -136,9 +135,4 @@ footer {
 }
 .container{
     text-align: center;
-}
-.min{
-    margin:auto;
-    width:600px;
-    height:400px;
 }
