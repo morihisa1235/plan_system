@@ -75,14 +75,6 @@ footer {
 .taikai {
     text-align: center;
 }
-.min{
-    margin:auto;
-    width: 600px;
-    height: 400px;
-}
-.my-div-style{
-    text-align: auto;
-}
 
 .a {
     margin: 0 auto;
@@ -123,7 +115,8 @@ footer {
 
 .dra {
      padding:30px;
-     text-align: center;
+     width: 10em;
+     margin: auto;
 }
 
 .change_personal_button {
@@ -132,12 +125,4 @@ footer {
 
 .change_personal_button a:first-of-type {
     margin-right: 50px
-}
-.container{
-    text-align: center;
-}
-.min{
-    margin:auto;
-    width:600px;
-    height:400px;
 }
