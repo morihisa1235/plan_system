@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}個人情報変更{% endblock %}
+
+{% block contents %}
+
+
+<div class = "personal">
+    <h1>変更内容確認画面</h1><br>
+
+    <div class = "a">
+    <label for="name">ユーザー名</label>&emsp;&emsp;
+    <input id="name" type="text" name="name" value="ユーザー名" readonly>
+    </div><p></p>
+
+    <div class = "b">
+    <label for="mail">メールアドレス</label>
+    <input id="mail" type="text" name="mail" value="メールアドレス" readonly>
+    </div><p></p>
+
+<div class = "change_personal_button">
+    <a class="btn btn-primary" href="{% url 'maplan:change_personal' %}">戻る</a>
+    <a class="btn btn-primary" href="{% url 'maplan:personal' %}">登録</a>
+</div>
+
+</div>
+
+{% endblock %}

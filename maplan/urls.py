@@ -14,4 +14,6 @@ urlpatterns = [
     path('change_passwordkannryou/', views.Change_passwordkannryouView.as_view(),name="change_passwordkannryou"),
     path('withdrawal/', views.WithdrawalView.as_view(), name="withdrawal"),
     path('withdrawalk/', views.WithdrawalkView.as_view(), name="withdrawalk"),
+    path('change_personal/', views.Change_personalView.as_view(), name="change_personal"),
+    path('change_personalk/', views.Change_personalkView.as_view(), name="change_personalk"),
 ]

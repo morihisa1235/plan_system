@@ -52,4 +52,10 @@ class PolicyView(generic.TemplateView):
 class WithdrawalkView(generic.TemplateView):
     template_name = "withdrawalk.html"
 
+class Change_personalView(generic.TemplateView):
+    template_name = "change_personal.html"
+
+class Change_personalkView(generic.TemplateView):
+    template_name = "change_personalk.html"
+
 
