@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" type="text/css" href="../../static/css/mystyle.css"/>
+        <!--<link rel="stylesheet" type="text/css" href="../../static/css/landing-page-gh-pages.css">-->
+    </head>
     <body>
         <div class="row">
             <div class="col">
@@ -14,65 +16,59 @@
                 <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button>
             </div>
             <div>
-                <p>絞り込み</p>
-                <div>
-                    <p>季節</p>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                </div>
-                <div>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                </div>
+                <div class="side-space div-border left-side">絞り込み</div>
+                <div class="div-border right-side" style="display: flex;">並び替え</div>
             </div>
-            <div>
-                <div>
-                    <p>ジャンル</p>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                </div>
-                <div>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                </div>
-                <div>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                    <input type="checkbox"/>
-                </div>
-            </div>
-            <p>並び替え</p>
-            <div>
-                <input type="radio" name="sort1" required checked/>
-                <input type="radio" name="sort1"/>
-            </div>
-            <div>
-                <div>
-                    <input type="radio" name="sort2" required checked/>
-                    <input type="radio" name="sort2"/>
-                </div>
-                <div>
-                    <input type="radio" name="sort2"/>
-                    <input type="radio" name="sort2"/>
-                </div>
-            </div>
+            <table class="table div-border">
+                <tr>
+                    <td>
+                        <div>季節<br>
+                            <input type="checkbox">春
+                            <input type="checkbox">夏
+                        </div>
+                        <div>
+                            <input type="checkbox">秋
+                            <input type="checkbox">冬
+                            <input type="checkbox"> All
+                        </div>
+                    </td>
+                    <td>
+                        <div>ジャンル
+                            <input type="checkbox">建造物
+                            <input type="checkbox">神社・寺
+                            <input type="checkbox">博物館・美術館
+                        </div>
+                        <div>
+                            <input type="checkbox">公園
+                            <input type="checkbox">植物
+                            <input type="checkbox">海岸・岬
+                            <input type="checkbox">イベント
+                            <input type="checkbox">景観
+                        </div>
+                        <div>
+                            <input type="checkbox">食
+                            <input type="checkbox">テーマパーク
+                            <input type="checkbox">集落・街
+                            <input type="checkbox">城・宮殿
+                            <input type="checkbox">その他
+                        </div>
+                        </td>
+                    <td>
+                        <div style="border-bottom: 2px;">
+                            <input type="radio" name="sort1">昇順
+                            <input type="radio" name="sort1" required checked>降順
+                        </div>
+                        <div>
+                            <input type="radio" name="sort2">都道府県順
+                            <input type="radio" name="sort2">評価順(★基準)
+                        </div>
+                        <div>
+                            <input type="radio" name="sort2" required checked>お気に入り順
+                            <input type="radio" name="sort2">コメント数順
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
     </body>
 </html>

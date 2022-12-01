@@ -1,4 +1,3 @@
-[15:42] 吉田　樹 (ゲスト)
 body, #wrapper {
     display: flex;
     flex-direction: column;
@@ -124,12 +123,37 @@ footer {
 }
 
 .container{
-    text-align: center
+    text-align: center;
 }
+
+.top-space{
+    margin-top: 75px;
+}
+
 .personal_button {
     text-align: center;
 }
 
+.side-space{
+  float: left;
+  display: flex;
+}
+
+.left-side{
+  margin-right: 488px;
+}
+
+.right-side{
+  margin-right: 830px;
+}
+
+.table tr td{
+  border: 2px #0a02ff solid;
+}
+
+.div-border{
+  border: #000000 solid 2px;
+}
 .c {
     width: 30%;
     border: 1px solid #333;
