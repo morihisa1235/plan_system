@@ -32,7 +32,7 @@ class InquiryForm(forms.Form):
         message = self.cleaned_data['message']
 
         subject = 'お問い合わせ {}'.format(title)
-        message = '送信者名: {0}\nメールアドレス: {1}\nメッセージ:\n{2}'.format(name, email, message)
+        message = '送信者名: {0}\nメールアドレス: {1}\nタイトル: {2}\nメッセージ:\n{3}'.format(name, email, title, message)
         from_email = os.environ.get('FROM_EMAIL')
         to_list = [
             os.environ.get('FROM_EMAIL')
