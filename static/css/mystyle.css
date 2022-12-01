@@ -96,7 +96,7 @@ footer {
     margin-right: 100px;
     width: 30%;
     border: 1px solid #333;
-    background: #f2f2f2
+    background: #f2f2f2;
     margin-left: 100px;
 }
 
@@ -119,8 +119,34 @@ footer {
 }
 
 .container{
-    text-align: center
+    text-align: center;
 }
+
+.top-space{
+    margin-top: 75px;
+}
+
 .personal_button {
     text-align: center;
+}
+
+.side-space{
+  float: left;
+  display: flex;
+}
+
+.left-side{
+  margin-right: 488px;
+}
+
+.right-side{
+  margin-right: 830px;
+}
+
+.table tr td{
+  border: 2px #0a02ff solid;
+}
+
+.div-border{
+  border: #000000 solid 2px;
 }
