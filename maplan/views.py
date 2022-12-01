@@ -58,4 +58,5 @@ class Change_personalView(generic.TemplateView):
 class Change_personalkView(generic.TemplateView):
     template_name = "change_personalk.html"
 
-
+class SearchboxView(generic.TemplateView):
+    template_name = "searchbox.html"

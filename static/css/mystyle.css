@@ -90,14 +90,17 @@ footer {
 .a {
     line-height: 3.0;
     margin-left: 100px;
+    display: inline-block;
+    text-align: right;
 }
 
 .b {
-    margin-right: 100px;
     width: 30%;
     border: 1px solid #333;
-    background: #f2f2f2;
-    margin-left: 100px;
+    background: #f2f2f2
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
 }
 
 .with {
@@ -112,6 +115,7 @@ footer {
 
 .change_personal_button {
     padding:30px;
+    text-align: center;
 }
 
 .change_personal_button a:first-of-type {
@@ -149,4 +153,14 @@ footer {
 
 .div-border{
   border: #000000 solid 2px;
+}
+.c {
+    width: 30%;
+    border: 1px solid #333;
+    background: #f2f2f2
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
