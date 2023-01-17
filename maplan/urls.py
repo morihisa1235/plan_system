@@ -23,4 +23,5 @@ urlpatterns = [
     path('created2/', views.CreatedTwoView.as_view(), name="created_two"),
     path('error/', views.ErrorView.as_view(), name="error"),
     path('plan/', views.PlanView.as_view(), name="plan"),
+    path('plan_detail/', views.PlandetailView.as_view(), name="plan_detail"),
 ]
