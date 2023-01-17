@@ -31,11 +31,11 @@
                     <li>
                         {% if user.is_authenticated %}
                         <a class="btn btn-primary" href="{% url 'maplan:mypage' %}">マイページ</a>
-                        <a class="btn btn-primary" href="#create">作成</a>
+                        <a class="btn btn-primary" href="{% url 'maplan:created_one' %}">作成</a>
                         <a class="btn btn-primary" href="{% url 'account_logout' %}">ログアウト</a>
                         {% else %}
                         <a class="btn btn-primary" href="{% url 'maplan:mypage' %}">マイページ</a>
-                        <a class="btn btn-primary" href="#create">作成</a>
+                        <a class="btn btn-primary" href="{% url 'maplan:created_one' %}">作成</a>
                         <a class="btn btn-primary {% block active_signup %}{% endblock %}" href="{% url 'account_signup' %}">サインアップ</a>
                         <a class="btn btn-primary {% block active_login %}{% endblock %}" href="{% url 'account_login' %}">ログイン</a>
                         {% endif %}
@@ -74,6 +74,8 @@
                         <li class="list-inline-item"><a href="{% url 'maplan:sitemap' %}">サイトマップ</a></li>
                         <li class="list-inline-item"><a href="{% url 'maplan:policy' %}">ポリシー</a></li>
                         <li class="list-inline-item"><a href="{% url 'maplan:inquiry' %}">お問い合せ</a></li>
+                        <li class="list-inline-item"><a href="{% url 'maplan:error' %}">エラー</a></li>
+                        <li class="list-inline-item"><a href="{% url 'maplan:plan' %}">プラン詳細</a></li>
                     </ul>
                 </div>
             </div>

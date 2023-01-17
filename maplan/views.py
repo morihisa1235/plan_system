@@ -4,11 +4,12 @@ from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views import generic
 
-#from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .forms import InquiryForm
 
-#from .models import Plan
+from .models import Plan
+
 logger = logging.getLogger(__name__)
 
 class IndexView(generic.TemplateView):
@@ -60,3 +61,31 @@ class Change_personalkView(generic.TemplateView):
 
 class SearchboxView(generic.TemplateView):
     template_name = "searchbox.html"
+
+class HistoryView(LoginRequiredMixin, generic.ListView):
+    model = Plan
+    template_name ='mypage_history.html'
+
+    def get_queryset(self):
+        plans = Plan.objects.filter(user=self.request.user).order_by('-created_at')
+        return plans
+
+class FavoriteView(LoginRequiredMixin, generic.ListView):
+    model = Plan
+    template_name ='mypage_favorite.html'
+
+    def get_queryset(self):
+        plans = Plan.objects.filter(user=self.request.user).order_by('-created_at')
+        return plans
+
+class CreatedOneView(generic.TemplateView):
+    template_name = 'plan_create1.html'
+
+class CreatedTwoView(generic.TemplateView):
+    template_name = 'plan_create2.html'
+
+class ErrorView(generic.TemplateView):
+    template_name = "error.html"
+
+class PlanView(generic.TemplateView):
+    template_name = "plan.html"

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}地図+旅行プラン作成システム{% endblock %}
+
+{% block contents %}
+<div>
+    <div>
+        <input type="text" name="search_box">
+    </div>
+    <div class="scroll">
+        <span>
+        サンプルテキスト<br>サンプルテキスト<br>サンプルテキスト<br>サンプルテキスト<br>サンプルテキスト<br>サンプルテキスト<br>サンプルテキスト<br>サンプルテキスト
+        </span>
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+</div>
+<div class="btn_margin">
+    <a class="btn btn-primary" href="{% url 'maplan:created_two' %}">作成</a>
+</div>
+{% endblock %}

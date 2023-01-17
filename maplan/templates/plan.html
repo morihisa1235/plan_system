@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}プラン詳細{% endblock %}
+
+{% block contents %}
+
+<div class = "return_button">
+    <a class="btn btn-primary" href="{% url 'maplan:error' %}">戻る</a>
+</div>
+
+<div class = "plan">
+    <h1>コメント内容を編集または削除</h1><br>
+
+    <div class="rate-form">
+  <input id="star5" type="radio" name="rate" value="5">
+  <label for="star5">★</label>
+  <input id="star4" type="radio" name="rate" value="4">
+  <label for="star4">★</label>
+  <input id="star3" type="radio" name="rate" value="3">
+  <label for="star3">★</label>
+  <input id="star2" type="radio" name="rate" value="2">
+  <label for="star2">★</label>
+  <input id="star1" type="radio" name="rate" value="1">
+  <label for="star1">★</label>
+    </div>
+
+	<textarea name="comment" placeholder="自分のコメント" cols="40" rows="8"></textarea>
+</div>
+
+<br><br>
+
+<div class = "plan_button">
+    <a class="btn btn-primary" href="{% url 'maplan:mypage' %}">削除</a>&emsp;&emsp;&emsp;<a class="btn btn-primary" href="{% url 'maplan:change_personal' %}">編集</a>
+</div>
+
+{% endblock %}

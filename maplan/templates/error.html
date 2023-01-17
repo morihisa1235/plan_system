@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}エラー{% endblock %}
+
+{% block contents %}
+
+<div class = "with">
+    <h1>通信エラーが発生しました。</h1><br>
+</div>
+
+<div class = "dra">
+    <input type="button" value="再読み込み" onclick="window.location.reload();" />
+</div>
+
+{% endblock %}

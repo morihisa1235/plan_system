@@ -147,6 +147,10 @@ footer {
   margin-right: 830px;
 }
 
+.table {
+    margin: auto;
+}
+
 .table tr td{
   border: 2px #0a02ff solid;
 }
@@ -162,5 +166,54 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+.plan {
+    text-align: center;
+}
+
+.plan_button {
+    text-align: center;
+}
+
+.rate-form {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.rate-form input[type=radio] {
+  display: none;
+}
+
+.rate-form label {
+  position: relative;
+  padding: 0 5px;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 35px;
+}
+
+.rate-form label:hover {
+  color: #ffcc00;
+}
+
+.rate-form label:hover ~ label {
+  color: #ffcc00;
+}
+
+.rate-form input[type=radio]:checked ~ label {
+  color: #ffcc00;
+}
+
+.btn_margin{
+    margin:auto 0 0 auto;
+}
+
+.scroll{
+  margin-right:81.5%;
+  height: 75%;
+  overflow: auto;
+  border: solid;
 }
