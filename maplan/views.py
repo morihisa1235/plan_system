@@ -89,3 +89,6 @@ class ErrorView(generic.TemplateView):
 
 class PlanView(generic.TemplateView):
     template_name = "plan.html"
+
+class PlandetailView(generic.TemplateView):
+    template_name = "plan_detail.html"
