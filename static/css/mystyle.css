@@ -256,3 +256,8 @@ footer {
   overflow: auto;
   border: solid;
 }
+
+.side {
+  margin-left:10%;
+  margin-right:10%;
+}
