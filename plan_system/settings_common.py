@@ -151,4 +151,4 @@ ACCOUNT_EMAIL_SUBJECT_PREFIX = ''
 
 DEFAULT_FROM_EMAIL = os.environ.get('FROM_EMAIL')
 
-#MECIA_URL ='/media/'
+MEDIA_URL ='/media/'

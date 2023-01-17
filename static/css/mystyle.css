@@ -147,6 +147,10 @@ footer {
   margin-right: 830px;
 }
 
+.table {
+    margin: auto;
+}
+
 .table tr td{
   border: 2px #0a02ff solid;
 }
@@ -201,4 +205,15 @@ footer {
 
 .rate-form input[type=radio]:checked ~ label {
   color: #ffcc00;
+}
+
+.btn_margin{
+    margin:auto 0 0 auto;
+}
+
+.scroll{
+  margin-right:81.5%;
+  height: 75%;
+  overflow: auto;
+  border: solid;
 }
