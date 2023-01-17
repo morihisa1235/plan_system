@@ -17,4 +17,6 @@ urlpatterns = [
     path('change_personal/', views.Change_personalView.as_view(), name="change_personal"),
     path('change_personalk/', views.Change_personalkView.as_view(), name="change_personalk"),
     path('searchbox/', views.SearchboxView.as_view(), name="searchbox"),
+    path('error/', views.ErrorView.as_view(), name="error"),
+    path('plan/', views.PlanView.as_view(), name="plan"),
 ]
