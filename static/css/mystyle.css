@@ -408,3 +408,50 @@ input[type="checkbox"]:checked + #popup {
   display:block;
 }
 
+
+.abc {
+    margin: 0 0 2rem 7rem;
+    color: red
+}
+
+.sitemap {
+    line-height: 3.0;
+    column-count: 2;
+}
+
+.sitemap-title {
+    text-align: center;
+}
+
+.poli {
+    text-align: right;
+}
+
+.pass {
+    text-align: center;
+    line-height: 3.0;
+}
+
+.pass a:first-of-type{
+    margin-right: 50px
+}
+
+.box1{
+  background:red;
+}
+.box2{
+  background:blue;
+}
+
+.wrap{
+  display:flex;
+}
+.box{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100px;
+  height:100px;
+}
+
+

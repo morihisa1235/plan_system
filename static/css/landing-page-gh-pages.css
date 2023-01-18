@@ -3032,7 +3032,6 @@ textarea.form-control-lg {
   color: #fff;
   background-color: #0d6efd;
   border-color: #0d6efd;
-  text-align: right;
 }
 .btn-primary:hover {
   color: #fff;
@@ -4544,6 +4543,8 @@ textarea.form-control-lg {
 
 .card-body {
   flex: 1 1 auto;
+  padding: 1rem 1rem;
+}
 
 .card-title {
   margin-bottom: 0.5rem;
@@ -11377,49 +11378,4 @@ header.masthead h1, header.masthead .h1 {
 footer.footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
-}
-
-.abc {
-    margin: 0 0 2rem 7rem;
-    color: red
-}
-
-.sitemap {
-    line-height: 3.0;
-    column-count: 2;
-}
-
-.sitemap-title {
-    text-align: center;
-}
-
-.poli {
-    text-align: right;
-}
-
-.pass {
-    text-align: center;
-    line-height: 3.0;
-}
-
-.pass a:first-of-type{
-    margin-right: 50px
-}
-
-.box1{
-  background:red;
-}
-.box2{
-  background:blue;
-}
-
-.wrap{
-  display:flex;
-}
-.box{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width:100px;
-  height:100px;
 }
