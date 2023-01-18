@@ -173,7 +173,9 @@ footer {
 }
 
 .plan_button {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    justify-content:space-around;
 }
 
 .rate-form {
@@ -261,3 +263,132 @@ footer {
   margin-left:10%;
   margin-right:10%;
 }
+
+.open1 {
+	cursor:pointer;
+}
+#pop-up {
+	display: none;
+}
+.overlay1 {
+	display: none;
+}
+#pop-up1:checked1 + .overlay1 {
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	background: rgba(0, 0, 0, 0.6);
+}
+.window1 {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 100vw;
+	max-width: 55%;
+    padding: 20px;
+	height: 85%;
+	background-color: #fff;
+	border-radius: 4px;
+	align-items: center;
+	transform: translate(-50%, -50%);
+}
+.close1 {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	cursor:pointer;
+}
+
+.btn_margin1 {
+    margin:auto 0 0 auto;
+}
+
+.scroll1 {
+  margin-right:81.5%;
+  height: 75%;
+  overflow: auto;
+  border: solid;
+}
+
+.side1 {
+  margin-left:10%;
+  margin-right:10%;
+}
+label span{
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+
+
+#popup{
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 100vw;
+	max-width: 100%;
+    padding: 20px;
+	height: 100%;
+	background-color: #fff;
+	border-radius: 4px;
+	align-items: center;
+	transform: translate(-50%, -50%);
+}
+
+label{
+  display:block;
+}
+
+label span:hover{
+  cursor:pointer;
+}
+input[type="checkbox"]{
+  display:none;
+}
+/*checkboxがチェックの状態になったらpopupを表示させる*/
+input[type="checkbox"]:checked + #popup{
+  display:block;
+}
+
+
+#popup1{
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 100vw;
+	max-width: 100%;
+    padding: 20px;
+	height: 100%;
+	background-color: #fff;
+	border-radius: 4px;
+	align-items: center;
+	transform: translate(-50%, -50%);
+}
+
+label{
+  display:block;
+}
+
+label span:hover{
+  cursor:pointer;
+}
+input[type="checkbox"]{
+  display:none;
+}
+/*checkboxがチェックの状態になったらpopupを表示させる*/
+input[type="checkbox"]:checked + #popup {
+  display:block;
+}
+
