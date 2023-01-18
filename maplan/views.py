@@ -9,6 +9,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import InquiryForm
 
 from .models import Plan
+from .models import Prefecture
 
 logger = logging.getLogger(__name__)
 
@@ -78,8 +79,13 @@ class FavoriteView(LoginRequiredMixin, generic.ListView):
         plans = Plan.objects.filter(user=self.request.user).order_by('-created_at')
         return plans
 
-class CreatedOneView(generic.TemplateView):
+class CreatedOneView(generic.ListView):
+    model = Prefecture
     template_name = 'plan_create1.html'
+
+    def get_queryset(self):
+        prefectures = Prefecture.objects.filter().order_by('prefecture_code')
+        return prefectures
 
 class CreatedTwoView(generic.TemplateView):
     template_name = 'plan_create2.html'

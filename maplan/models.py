@@ -19,3 +19,29 @@ class Plan(models.Model):
 
     def __str__(self):
         return self.title
+
+class Prefecture(models.Model):
+    """都道府県モデル"""
+    prefecture_code = models.CharField(verbose_name='都道府県コード', max_length=4, primary_key=True)
+    prefecture_name = models.CharField(verbose_name='都道府県名', max_length=4, null=False)
+
+    class Meta:
+        verbose_name_plural = 'Prefecture'
+
+    def __str__(self):
+        return self.prefecture_name
+
+class Tourism(models.Model):
+    """観光名所モデル"""
+    tourism_code = models.CharField(verbose_name='観光名所コード', max_length=8, primary_key=True)
+    tourism_name = models.TextField(verbose_name="観光名所名", null=False)
+    tourism_category = models.TextField(verbose_name="カテゴリー名", null=True)
+    address = models.TextField(verbose_name="住所", null=False)
+    category_code = models.IntegerField(verbose_name="カテゴリーコード", max_length=2, null=False)
+    prefecture_code = models.CharField(verbose_name="都道府県コード", max_length=5, null=False)
+
+    class Meta:
+        verbose_name_plural = 'Tourism'
+
+    def __str__(self):
+        return self.tourism_name

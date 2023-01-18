@@ -228,6 +228,18 @@ footer {
 	z-index: 9999;
 	background: rgba(0, 0, 0, 0.6);
 }
+
+#pop-up2:checked + .overlay {
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	background: rgba(0, 0, 0, 0.6);
+}
+
 .window {
 	position: fixed;
 	top: 50%;
@@ -253,7 +265,7 @@ footer {
 }
 
 .scroll{
-  margin-right:81.5%;
+  margin-right:-155%;
   height: 75%;
   overflow: auto;
   border: solid;
@@ -262,6 +274,10 @@ footer {
 .side {
   margin-left:10%;
   margin-right:10%;
+}
+
+.result {
+    border: solid;
 }
 
 .open1 {

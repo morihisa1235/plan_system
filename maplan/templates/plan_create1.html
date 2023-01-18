@@ -5,19 +5,53 @@
 {% block title %}地図+旅行プラン作成システム{% endblock %}
 
 {% block contents %}
-<div class="side">
+<div class="side side-space">
     <div>
+        <span class="result">検索結果</span>
+        <div class="scroll">
+            {% for tourism in tourism_tbl %}
+            <span>{{ tourism.tourism_name }}</span>
+            {% empty %}
+            <span>検索結果がありませんでした。<br>もう一度検索してください</span>
+            {% endfor %}
+        </div>
+    </div>
+    <div style="margin:0 0 0 auto;">
         <label for="site-search"></label>
         <input type="search" id="site-search" name="q">
         <button>Search</button>
-        <div class="scroll">
-            <span>
-            サンプルテキスト<br>サンプルテキスト<br>サンプルテキスト<br>サンプルテキスト<br>サンプルテキスト<br>サンプルテキスト<br>サンプルテキスト<br>サンプルテキスト
-            </span>
-        </div>
-    </div>
-    <div>
-
+        <select name="prefecture" required>
+            <option>---</option>
+            {% for jp in prefecture_list %}
+            <option>{{ jp.prefecture_name }}</option>
+            {% empty %}
+            <option>Not Found</option>
+            {% endfor %}
+        </select>
+        <table class="result">
+            <td>
+                <div><span class="result">ジャンル</span>
+                    <input type="checkbox">建造物
+                    <input type="checkbox">神社・寺
+                    <input type="checkbox">博物館・美術館
+                </div>
+                <div>
+                    <input type="checkbox">公園
+                    <input type="checkbox">植物
+                    <input type="checkbox">海岸・岬
+                    <input type="checkbox">イベント
+                    <input type="checkbox">景観
+                </div>
+                <div>
+                    <input type="checkbox">食
+                    <input type="checkbox">テーマパーク
+                    <input type="checkbox">集落・街
+                    <input type="checkbox">城・宮殿
+                    <input type="checkbox">その他
+                </div>
+                </td>
+            <td>
+        </table>
     </div>
     <div>
 
