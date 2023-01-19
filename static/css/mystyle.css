@@ -276,6 +276,8 @@ footer {
   margin-right:10%;
 }
 
+
+
 .result {
     border: solid;
 }
@@ -453,5 +455,41 @@ input[type="checkbox"]:checked + #popup {
   width:100px;
   height:100px;
 }
+
+.open2 {
+	cursor:pointer;
+}
+#pop-up {
+	display: none;
+}
+.overlay2 {
+	display: none;
+}
+#pop-up:checked + .overlay2 {
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	background: rgba(0, 0, 0, 0.6);
+}
+.window2 {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 100vw;
+	max-width: 55%;
+    padding: 20px;
+	height: 85%;
+	background-color: #fff;
+	border-radius: 4px;
+	align-items: center;
+	transform: translate(-50%, -50%);
+}
+
+
+
 
 

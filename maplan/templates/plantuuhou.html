@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}地図+旅行プラン作成システム{% endblock %}
+
+{% block contents %}
+<label class="open" for="pop-up"><h1>通報</h1></label>
+<input type="checkbox" id="pop-up">
+<div class="overlay">
+	<div class="window">
+
+
+<div class = "plan">
+    <h4>通報内容を下記にご記入ください</h4><br>
+    <p>
+
+<div>
+	<textarea name="comment" placeholder="10文字未満であり連続した文字は送信不可" cols="40" rows="8"></textarea>
+</div>
+<br><br>
+<div class = "plan_button">
+    <a class="btn btn-primary" href="{% url 'maplan:mypage' %}">戻る</a>&emsp;&emsp;&emsp;<a class="btn btn-primary" href="{% url 'maplan:change_personal' %}">通報</a>
+</div>
+
+	</div>
+</div>
+</div>
+
+{% endblock %}
