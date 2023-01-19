@@ -12,7 +12,7 @@
 
 
 <div class = "plan">
-    <h4>通報内容を下記にご記入ください</h4><br>
+    <h4>通報内容を下記にご記入ください</h4><br><br>
     <p>
 
 <div>
@@ -20,11 +20,21 @@
 </div>
 <br><br>
 <div class = "plan_button">
-    <a class="btn btn-primary" href="{% url 'maplan:mypage' %}">戻る</a>&emsp;&emsp;&emsp;<a class="btn btn-primary" href="{% url 'maplan:change_personal' %}">通報</a>
+            <a class="btn btn-primary" href="{% url 'maplan:plantuuhou' %}">戻る</a>
+    <label>
+    <a class="btn btn-primary">通報</a>
+    <input type="checkbox" name="checkbox">
+   <div id="popup">
+          <br><br>
+              <h4>ご協力いただきありがとうございました。</h4><br><br><br><br><br>
+              <a class="btn btn-primary" href="{% url 'maplan:plan_detail' %}">戻る</a>
+          </div>
+</label>
 </div>
 
 	</div>
 </div>
 </div>
+
 
 {% endblock %}
