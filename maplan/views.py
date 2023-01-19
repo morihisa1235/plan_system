@@ -98,3 +98,6 @@ class PlanView(generic.TemplateView):
 
 class PlandetailView(generic.TemplateView):
     template_name = "plan_detail.html"
+
+class PlantuuhouView(generic.TemplateView):
+     template_name = "plantuuhou.html"
