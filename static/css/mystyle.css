@@ -209,6 +209,67 @@ footer {
   color: #ffcc00;
 }
 
+
+.rate-form1 {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.rate-form1 input[type=radio] {
+  display: none;
+}
+
+.rate-form1 label {
+  position: relative;
+  padding: 0 2px;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.rate-form1 label:hover {
+  color: #ffcc00;
+}
+
+.rate-form1 label:hover ~ label {
+  color: #ffcc00;
+}
+
+.rate-form1 input[type=radio]:checked ~ label {
+  color: #ffcc00;
+}
+
+.rate-form2 {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.rate-form2 input[type=radio] {
+  display: none;
+}
+
+.rate-form2 label {
+  position: relative;
+  padding: 0 2px;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.rate-form2 label:hover {
+  color: #ffcc00;
+}
+
+.rate-form2 label:hover ~ label {
+  color: #ffcc00;
+}
+
+.rate-form2 input[type=radio]:checked ~ label {
+  color: #ffcc00;
+}
+
 .open {
 	cursor:pointer;
 }
@@ -454,4 +515,17 @@ input[type="checkbox"]:checked + #popup {
   height:100px;
 }
 
+.change {
+    margin-left: 130px
+}
 
+.plan_detail_comment_boder {
+    border: #000000 solid 3px;
+    width: 345px;
+    margin-left: 50px
+}
+
+.rate_form_boder{
+    border: #000000 solid 2px;
+    width: 125px
+}
