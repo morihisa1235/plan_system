@@ -101,3 +101,7 @@ class PlandetailView(generic.TemplateView):
 
 class PlantuuhouView(generic.TemplateView):
      template_name = "plantuuhou.html"
+
+
+class SaitokannryouView(generic.TemplateView):
+    template_name = "saitokannryou.html"
