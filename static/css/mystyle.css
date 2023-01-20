@@ -533,12 +533,6 @@ input[type="checkbox"]:checked + #popup {
     width:170px;
 }
 
-.plan_detail_comment_boder {
-    border: #000000 solid 3px;
-    width: 345px;
-    margin-left: 100px
-}
-
 .rate_form_boder{
     margin-top: 1px;
     width: 125px
@@ -653,4 +647,34 @@ input[type="checkbox"]:checked + #popup {
 	border-radius: 4px;
 	align-items: center;
 	transform: translate(-50%, -50%);
+}
+
+.plan_create2 {
+    border: #000000 solid 1px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 80%;
+    height: 140%;
+}
+
+.plan_detail_comment_boder {
+    border: #000000 solid 3px;
+	margin-top: 500px;
+	margin-left: 30px;
+    width: 500px;
+	height:500px;
+}
+
+.pull_down{
+    margin-top:20px;
+    margin-left:1275px;
+}
+
+.plan_create2_button a:first-of-type{
+    margin-right: 50px;
+}
+
+.plan_create2_button{
+    margin-left:1120px;
 }
