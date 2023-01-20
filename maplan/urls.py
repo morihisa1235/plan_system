@@ -25,4 +25,5 @@ urlpatterns = [
     path('plan/', views.PlanView.as_view(), name="plan"),
     path('plan_detail/', views.PlandetailView.as_view(), name="plan_detail"),
     path('plan_create2/', views.Plan_create2View.as_view(), name="plan_create2"),
+    path('plan_create_complete/', views.plan_create_completeView.as_view(), name="plan_create_complete"),
 ]

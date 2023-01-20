@@ -101,3 +101,6 @@ class PlandetailView(generic.TemplateView):
 
 class Plan_create2View(generic.TemplateView):
      template_name = "plan_create2.html"
+
+class plan_create_completeView(generic.TemplateView):
+    template_name = "plan_create_complete.html"
