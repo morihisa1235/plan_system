@@ -5,15 +5,29 @@
 {% block title %}地図+旅行プラン作成システム{% endblock %}
 
 {% block contents %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/dragging.css' %}"/>
+
 <div class="side side-space">
-    <div>
+    <div class="grid">
         <span class="result">検索結果</span>
-        <div class="scroll">
-            {% for tourism in tourism_tbl %}
-            <span>{{ tourism.tourism_name }}</span>
-            {% empty %}
-            <span>検索結果がありませんでした。<br>もう一度検索してください</span>
-            {% endfor %}
+        <div class="scroll box1">
+            <ul class="ul_tags">
+                {% for tourism in tourism_tbl %}
+                <li class="li_tags">
+                    <div class="item"  draggable="true" >{{ tourism.tourism_name }}</div>
+                </li>
+                {% empty %}
+                <li class="li_tags">
+                    <div class="item" draggable="true"  id="item1">検索結果がありませんでした。</div>
+                </li>
+                <li class="li_tags">
+                    <div class="item" draggable="true"  id="item1">もう一度検索してください</div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="result drop_box box2">
         </div>
     </div>
     <div style="margin:0 0 0 auto;">
@@ -30,34 +44,35 @@
         </select>
         <table class="result">
             <td>
-                <div><span class="result">ジャンル</span>
-                    <input type="checkbox">建造物
-                    <input type="checkbox">神社・寺
-                    <input type="checkbox">博物館・美術館
+                <div>
+                    <span class="result">ジャンル</span>
+                    <input type="checkbox"/>建造物
+                    <input type="checkbox"/>神社・寺
+                    <input type="checkbox"/>博物館・美術館
                 </div>
                 <div>
-                    <input type="checkbox">公園
-                    <input type="checkbox">植物
-                    <input type="checkbox">海岸・岬
-                    <input type="checkbox">イベント
-                    <input type="checkbox">景観
+                    <input type="checkbox"/>公園
+                    <input type="checkbox"/>植物
+                    <input type="checkbox"/>海岸・岬
+                    <input type="checkbox"/>イベント
+                    <input type="checkbox"/>景観
                 </div>
                 <div>
-                    <input type="checkbox">食
-                    <input type="checkbox">テーマパーク
-                    <input type="checkbox">集落・街
-                    <input type="checkbox">城・宮殿
-                    <input type="checkbox">その他
+                    <input type="checkbox"/>食
+                    <input type="checkbox"/>テーマパーク
+                    <input type="checkbox"/>集落・街
+                    <input type="checkbox"/>城・宮殿
+                    <input type="checkbox"/>その他
                 </div>
                 </td>
             <td>
         </table>
-    </div>
-    <div>
-
-    </div>
-    <div>
-
+        <div class="side side-space">
+            <div>
+            <!--地図-->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6539.159531536372!2d135.772672!3d34.96714!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7b1aca1c753ae2e9!2z5LyP6KaL56iy6I235aSn56S-!5e0!3m2!1sja!2sjp!4v1674112256254!5m2!1sja!2sjp" width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
     </div>
 </div>
 <div class="btn_margin">

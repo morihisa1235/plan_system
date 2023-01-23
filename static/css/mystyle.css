@@ -6,6 +6,9 @@ body, #wrapper {
 
 footer {
     margin-top: auto;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .center {
@@ -422,64 +425,6 @@ label span{
 
 
 
-#popup{
-	display: none;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	width: 100vw;
-	max-width: 100%;
-    padding: 20px;
-	height: 100%;
-	background-color: #fff;
-	border-radius: 4px;
-	align-items: center;
-	transform: translate(-50%, -50%);
-}
-
-label span:hover{
-  cursor:pointer;
-}
-input[type="checkbox"]{
-  display:none;
-}
-/*checkboxがチェックの状態になったらpopupを表示させる*/
-input[type="checkbox"]:checked + #popup{
-  display:block;
-}
-
-
-#popup1{
-	display: none;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	width: 100vw;
-	max-width: 100%;
-    padding: 20px;
-	height: 100%;
-	background-color: #fff;
-	border-radius: 4px;
-	align-items: center;
-	transform: translate(-50%, -50%);
-}
-
-
-label{
-  display:block;
-}
-
-label span:hover{
-  cursor:pointer;
-}
-input[type="checkbox"]{
-  display:none;
-}
-/*checkboxがチェックの状態になったらpopupを表示させる*/
-input[type="checkbox"]:checked + #popup {
-  display:block;
-}
-
 
 .abc {
     margin: 0 0 2rem 7rem;
@@ -506,13 +451,6 @@ input[type="checkbox"]:checked + #popup {
 
 .pass a:first-of-type{
     margin-right: 50px
-}
-
-.box1{
-  background:red;
-}
-.box2{
-  background:blue;
 }
 
 .wrap{
@@ -647,6 +585,32 @@ input[type="checkbox"]:checked + #popup {
 	border-radius: 4px;
 	align-items: center;
 	transform: translate(-50%, -50%);
+}
+
+.ul_tags{
+    padding-left: 0;
+}
+
+.li_tags {
+    list_style: none;
+}
+
+.drop_box {
+    height: 75%;
+    width: 75%;
+}
+
+.regulation {
+  width: 100%;
+  position: relative;
+  height: auto !important;
+  height: 100%;
+  min-height: 100%;
+  padding-bottom: 50%;
+}
+
+.box2 {
+  margin-top: 10%;
 }
 
 .plan_create2 {
