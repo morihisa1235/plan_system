@@ -5,7 +5,8 @@
 {% block title %}地図+旅行プラン作成システム{% endblock %}
 
 {% block contents %}
-
+<link rel="stylesheet" type="text/css" href="{% static 'css/popup.css' %}"/>
+<div>
 <div class = "pull_down">
     <select name="option">
         <option value = "Release">公開</option>
@@ -372,5 +373,5 @@
     <a class="btn btn-primary" href="{% url 'maplan:plan_detail' %}">キャンセル</a>
     <a class="btn btn-primary" href="{% url 'maplan:plan_create_complete' %}">作成</a>
 </div>
-
+</div>
 {% endblock %}
