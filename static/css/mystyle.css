@@ -718,3 +718,20 @@ label span{
     margin-top:10%;
 }
 
+.form-control1 {
+    margin-left:11.1%;
+    width: 88%;
+}
+
+.col1 {
+  margin-top:1%;
+  margin-bottom:1%;
+  flex: 1 0 0%;
+}
+
+.col-auto1 {
+  margin-top:1%;
+  margin-right:9.2%;
+  flex: 0 0 auto;
+  width: auto;
+}
