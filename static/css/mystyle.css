@@ -160,6 +160,19 @@ footer {
 
 .div-border{
   border: #000000 solid 2px;
+  margin-left:9.3%;
+}
+
+.div{
+  border: #000000 solid 2px;
+  margin-left:66.4%;
+  width:5.1%;
+}
+
+.line{
+    border: #0a02ff solid 1px;
+    margin-left:-2.4%;
+    width:105%;
 }
 .c {
     width: 30%;

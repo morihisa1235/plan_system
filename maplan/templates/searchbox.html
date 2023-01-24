@@ -11,50 +11,52 @@
         <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button>
     </div>
     <div>
-        <div class="side-space div-border left-side">絞り込み</div>
-        <div class="div-border right-side" style="display: flex;">並び替え</div>
+        <div class="div-border" style="float:left">絞り込み</div>
+        <div class="div">並び替え</div>
     </div>
     <table class="table div-border side1">
         <tr>
             <td>
-                <div>季節<br>
-                    <input type="checkbox">春
+                <div>季節<br><br>
+                    <input type="checkbox">春　
                     <input type="checkbox">夏
                 </div>
                 <div>
-                    <input type="checkbox">秋
-                    <input type="checkbox">冬
+                    <input type="checkbox">秋　
+                    <input type="checkbox">冬　
                     <input type="checkbox"> All
                 </div>
             </td>
             <td>
-                <div>ジャンル
-                    <input type="checkbox">建造物
-                    <input type="checkbox">神社・寺
-                    <input type="checkbox">博物館・美術館
-                </div>
-                <div>
-                    <input type="checkbox">公園
-                    <input type="checkbox">植物
-                    <input type="checkbox">海岸・岬
+                <div>ジャンル <br>
+                    <input type="checkbox">景観　
+                    <input type="checkbox">寺・神社　
+                    <input type="checkbox">博物館・美術館　
                     <input type="checkbox">イベント
-                    <input type="checkbox">景観
                 </div>
                 <div>
-                    <input type="checkbox">食
-                    <input type="checkbox">テーマパーク
-                    <input type="checkbox">集落・街
-                    <input type="checkbox">城・宮殿
+                    <input type="checkbox">公園　
+                    <input type="checkbox">城・宮殿　
+                    <input type="checkbox">テーマパーク　　
+                    <input type="checkbox">海岸・岬　
+                </div>
+                <div>
+                    <input type="checkbox">植物　
+                    <input type="checkbox">街・集落　
+                    <input type="checkbox">建造物　
+                    <input type="checkbox">食　　
                     <input type="checkbox">その他
                 </div>
                 </td>
             <td>
                 <div style="border-bottom: 2px;">
-                    <input type="radio" name="sort1">昇順
-                    <input type="radio" name="sort1" required checked>降順
-                </div>
+                        <input type="radio" name="sort1">昇順　 　
+                        <input type="radio" name="sort1" required checked>降順
+                    <div class="line">
+                    </div>
+                </div><br>
                 <div>
-                    <input type="radio" name="sort2">都道府県順
+                    <input type="radio" name="sort2">都道府県順　
                     <input type="radio" name="sort2">評価順(★基準)
                 </div>
                 <div>
@@ -91,6 +93,6 @@
             {% include 'pagination.html' %}
         {% endif %}
     </div>
-</div>
+
 
 {% endblock %}
