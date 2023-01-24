@@ -331,9 +331,10 @@ footer {
 }
 
 .scroll{
-  margin-right:-155%;
-  height: 75%;
-  overflow: auto;
+  height: 460px;
+  width: 500px;
+  overflow-x: scroll;
+  overflow-y: scroll;
   border: solid;
 }
 
@@ -422,9 +423,6 @@ label span{
 	z-index: 9999;
 	background: rgba(0, 0, 0, 0.6);
 }
-
-
-
 
 .abc {
     margin: 0 0 2rem 7rem;

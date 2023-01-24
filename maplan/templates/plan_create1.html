@@ -9,64 +9,60 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/dragging.css' %}"/>
 
 <div class="side side-space">
-    <div class="grid">
+    <div>
         <span class="result">検索結果</span>
         <div class="scroll box1">
-            <ul class="ul_tags">
-                {% for tourism in tourism_tbl %}
-                <li class="li_tags">
-                    <div class="item"  draggable="true" >{{ tourism.tourism_name }}</div>
-                </li>
-                {% empty %}
-                <li class="li_tags">
-                    <div class="item" draggable="true"  id="item1">検索結果がありませんでした。</div>
-                </li>
-                <li class="li_tags">
-                    <div class="item" draggable="true"  id="item1">もう一度検索してください</div>
-                </li>
-                {% endfor %}
-            </ul>
+            {% for tour in tourism_list %}
+            <div class="item" draggable="true">{{ tour.tourism_name }}</div>
+            {% empty %}
+            <div class="item" draggable="true" id="item1">検索結果がありませんでした。</div>
+            <div class="item" draggable="true" id="item1">もう一度検索してください</div>
+            {% endfor %}
         </div>
         <div class="result drop_box box2">
+
         </div>
     </div>
     <div style="margin:0 0 0 auto;">
         <label for="site-search"></label>
-        <input type="search" id="site-search" name="q">
-        <button>Search</button>
-        <select name="prefecture" required>
-            <option>---</option>
-            {% for jp in prefecture_list %}
-            <option><!--{{ jp.prefecture_name }}--></option>
-            {% empty %}
-            <option>Not Found</option>
-            {% endfor %}
-        </select>
-        <table class="result">
-            <td>
-                <div>
-                    <span class="result">ジャンル</span>
-                    <input type="checkbox"/>建造物
-                    <input type="checkbox"/>神社・寺
-                    <input type="checkbox"/>博物館・美術館
-                </div>
-                <div>
-                    <input type="checkbox"/>公園
-                    <input type="checkbox"/>植物
-                    <input type="checkbox"/>海岸・岬
-                    <input type="checkbox"/>イベント
-                    <input type="checkbox"/>景観
-                </div>
-                <div>
-                    <input type="checkbox"/>食
-                    <input type="checkbox"/>テーマパーク
-                    <input type="checkbox"/>集落・街
-                    <input type="checkbox"/>城・宮殿
-                    <input type="checkbox"/>その他
-                </div>
-                </td>
-            <td>
-        </table>
+        <form>
+            <input type="search" id="site-search" name="q">
+            <button>Search</button>
+            <select name="prefecture" required>
+                <option>---</option>
+                {% for jp in prefecture_list %}
+                <option>{{ jp.prefecture_name }}</option>
+                {% empty %}
+                <option>Not Found</option>
+                {% endfor %}
+            </select>
+            <table class="result">
+                <td>
+                    <div>
+                        <span class="result">ジャンル</span>
+                        <input type="checkbox"/>建造物
+                        <input type="checkbox"/>神社・寺
+                        <input type="checkbox"/>博物館・美術館
+                    </div>
+                    <div>
+                        <input type="checkbox"/>公園
+                        <input type="checkbox"/>植物
+                        <input type="checkbox"/>海岸・岬
+                        <input type="checkbox"/>イベント
+                        <input type="checkbox"/>景観
+                    </div>
+                    <div>
+                        <input type="checkbox"/>食
+                        <input type="checkbox"/>テーマパーク
+                        <input type="checkbox"/>集落・街
+                        <input type="checkbox"/>城・宮殿
+                        <input type="checkbox"/>その他
+                    </div>
+                    </td>
+                <td>
+            </table>
+        </form>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12655606.084254637!2d140.4790958863645!3d37.14594589120638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1674458027975!5m2!1sja!2sjp" width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <div class="side side-space">
             <div>
             <!--地図-->
