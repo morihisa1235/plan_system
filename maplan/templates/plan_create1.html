@@ -37,7 +37,7 @@
         <select name="prefecture" required>
             <option>---</option>
             {% for jp in prefecture_list %}
-            <option>{{ jp.prefecture_name }}</option>
+            <option><!--{{ jp.prefecture_name }}--></option>
             {% empty %}
             <option>Not Found</option>
             {% endfor %}

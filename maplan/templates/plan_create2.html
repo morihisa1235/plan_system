@@ -7,6 +7,7 @@
 {% block contents %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/popup.css' %}"/>
 <div>
+
 <div class = "pull_down">
     <select name="option">
         <option value = "Release">公開</option>
@@ -16,7 +17,21 @@
 
 <div class = "plan_create2">
 
-<div class = "plan_detail_comment_boder">
+<div class = "plan_name" style = "float:left">
+    <h1>プラン名</h1>
+</div>
+
+<div class = "favorite_form_border_create">
+
+    <div class = "favorite_form">
+        <input id="favorite" type="checkbox" name="rate">
+        <label for="favorite">♥</label>
+    </div>
+
+</div>
+
+
+<div class = "plan_create_comment_boder">
 
 <!--送信-->
 
@@ -373,5 +388,6 @@
     <a class="btn btn-primary" href="{% url 'maplan:plan_detail' %}">キャンセル</a>
     <a class="btn btn-primary" href="{% url 'maplan:plan_create_complete' %}">作成</a>
 </div>
+
 </div>
 {% endblock %}
