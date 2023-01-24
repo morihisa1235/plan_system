@@ -67,6 +67,7 @@
         </tr>
     </table>
 </div>
+<div class = "serchbox_text">
     <h1>検索結果</h1>
     <section class="post-list">
         {% if object_list|length == 0 %}
@@ -92,6 +93,7 @@
         {% if is_paginated %}
             {% include 'pagination.html' %}
         {% endif %}
+    </div>
     </div>
 
 
