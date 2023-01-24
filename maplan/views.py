@@ -107,7 +107,7 @@ class ErrorView(generic.TemplateView):
 class PlanView(generic.TemplateView):
     template_name = "plan.html"
 
-class PlandetailView(generic.TemplateView):
+class PlandetailView(generic.ListView):
     template_name = "plan_detail.html"
     models = Plan
     context_object_data = "plan_list"
