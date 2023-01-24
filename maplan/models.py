@@ -35,7 +35,6 @@ class Tourism(models.Model):
     """観光名所モデル"""
     tourism_code = models.CharField(verbose_name='観光名所コード', max_length=8, primary_key=True)
     tourism_name = models.TextField(verbose_name="観光名所名", null=False)
-    tourism_category = models.TextField(verbose_name="カテゴリー名", null=True)
     address = models.TextField(verbose_name="住所", null=False)
     category_code = models.IntegerField(verbose_name="カテゴリーコード", null=False)
     prefecture_code = models.CharField(verbose_name="都道府県コード", max_length=5, null=False)
@@ -45,3 +44,21 @@ class Tourism(models.Model):
 
     def __str__(self):
         return self.tourism_name
+
+class Category(models.Model):
+    category_code = models.IntegerField(verbose_name="カテゴリーコード", primary_key=True)
+    category_name = models.CharField(verbose_name="カテゴリー名",max_length=11, null=False)
+
+    class Meta:
+        verbose_name_plural = 'Category'
+
+    def __str__(self):
+        return self.category_name
+
+class Route(models.Model):
+    plan_code = models.ForeignKey(Plan, verbose_name="プラン名", null=False, on_delete=models.PROTECT)
+    tourism_code = models.ForeignKey(Tourism, verbose_name="観光名所名", null=False, on_delete=models.PROTECT)
+    time = time = models.TimeField(verbose_name="滞在時間", null=True)
+
+    class Meta:
+        verbose_name_plural = 'Route'

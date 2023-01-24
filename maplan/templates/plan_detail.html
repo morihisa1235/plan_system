@@ -8,9 +8,15 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/popup.css' %}"/>
 
 <div>
+    {% for plan in plan_list %}
 <div class = "plan_name" style = "float:left">
-    <h1>プラン名</h1>
+    <h1>{{ plan.plan_name }}</h1>
 </div>
+    {% empty %}
+<div class = "plan_name" style = "float:left">
+    <h1>ERROR</h1>
+</div>
+    {% endfor %}
 
 <div class = "favorite_form_border_detail">
 

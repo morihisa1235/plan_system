@@ -8,9 +8,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .forms import InquiryForm
 
-from .models import Plan
-from .models import Prefecture
-from .models import Tourism
+from .models import Plan, Route
+from .models import Prefecture, Tourism, Category
 
 logger = logging.getLogger(__name__)
 
@@ -91,6 +90,7 @@ class CreatedOneView(generic.ListView):
         context = super(CreatedOneView, self).get_context_data(**kwargs)
         context.update({
             'tourism_list': Tourism.objects.filter().order_by('tourism_code'),
+            'category_list': Category.objects.filter().order_by('category_code'),
         })
         return context
 
@@ -109,6 +109,20 @@ class PlanView(generic.TemplateView):
 
 class PlandetailView(generic.TemplateView):
     template_name = "plan_detail.html"
+    models = Plan
+    context_object_data = "plan_list"
+
+    def get_context_data(self, **kwargs):
+        context = super(PlandetailView, self).get_context_data(**kwargs)
+        context.update({
+            'route_list': Route.objects.filter().order_by('id'),
+        })
+        return context
+
+    def get_queryset(self):
+        plans = Plan.objects.filter().order_by('id')
+        return plans
+
 
 class Plan_create2View(generic.TemplateView):
      template_name = "plan_create2.html"
