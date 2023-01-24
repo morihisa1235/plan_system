@@ -684,6 +684,8 @@ progress {
 }
 
 .col {
+  margin-top:1%;
+  margin-bottom:1%;
   flex: 1 0 0%;
 }
 
@@ -723,12 +725,13 @@ progress {
 }
 
 .col-auto {
+    margin-top:1%;
   margin-right:9%;
   flex: 0 0 auto;
   width: auto;
 }
 
-.col-1 {
+-1 {
   flex: 0 0 auto;
   width: 8.33333333%;
 }
