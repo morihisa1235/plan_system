@@ -634,14 +634,6 @@ label span{
     height: 110%;
 }
 
-.plan_detail_comment_boder {
-    border: #000000 solid 2px;
-	margin-top: 39%;
-	margin-left: 3%;
-    max-width: 100%;
-    width: 33%;
-}
-
 .plan_create_comment_boder {
     border: #000000 solid 3px;
 	margin-top: 39%;
@@ -742,3 +734,49 @@ label span{
   flex: 0 0 auto;
   width: auto;
 }
+
+.map_boader {
+    border: #000000 solid 2px;
+    margin-top: 5%;
+	margin-left: 17%;
+    max-width: 100%;
+    width: 30%;
+    height: 50%;
+}
+
+.route_boader {
+    border: #000000 solid 2px;
+    margin-top: 5%;
+	margin-left: 49%;
+    max-width: 100%;
+    width: 32%;
+    height: 50%;
+}
+
+.text_boader {
+    border: #000000 solid 2px;
+    margin-top: 3%;
+	margin-left: 51%;
+    max-width: 100%;
+    width: 30%;
+    height: 40%;
+}
+
+.picture_boader {
+    border: #000000 solid 2px;
+    margin-top: 1.5%;
+	margin-left: 51%;
+    max-width: 100%;
+    width: 30%;
+    height: 36.3%;
+}
+
+.plan_detail_comment_boder {
+    border: #000000 solid 2px;
+	margin-top: 3%;
+	margin-left: 17%;
+    max-width: 100%;
+    width: 33%;
+    height: 80%;
+}
+
