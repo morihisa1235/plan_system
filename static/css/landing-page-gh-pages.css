@@ -723,6 +723,7 @@ progress {
 }
 
 .col-auto {
+  margin-right:9%;
   flex: 0 0 auto;
   width: auto;
 }
@@ -2186,8 +2187,9 @@ progress {
 }
 
 .form-control {
+  margin-left:11.4%;
   display: block;
-  width: 100%;
+  width: 90%;
   padding: 0.75rem 1rem;
   font-size: 1rem;
   font-weight: 400;
