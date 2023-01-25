@@ -780,3 +780,29 @@ label span{
     height: 80%;
 }
 
+.plan_detail_textarea {
+    margin-top: 3%;
+    margin-left: 1%;
+    max-width: 100%;
+    width: 30%;
+    height: 40%;
+    font-size: 10pt;
+    line-height: 31px;
+    padding-right: 15px;
+    padding-left: 15px;
+    box-shadow: 0.2em 0.2em 0.5em black;
+    resize:none;
+    background-image: -webkit-linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+    background-image: -moz-linear-gradient(left, white 10px, transparent 10px), -moz-linear-gradient(right, white 10px, transparent 10px), -moz-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+    background-image: -ms-linear-gradient(left, white 10px, transparent 10px), -ms-linear-gradient(right, white 10px, transparent 10px), -ms-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+    background-image: -o-linear-gradient(left, white 10px, transparent 10px), -o-linear-gradient(right, white 10px, transparent 10px), -o-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+    background-image: linear-gradient(left, white 10px, transparent 10px), linear-gradient(right, white 10px, transparent 10px), linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+    background-size: 100% 100%, 100% 100%, 100% 31px;
+}
+
+.test_picture {
+    width: 100%;
+    height: 100%;
+}
+
+
