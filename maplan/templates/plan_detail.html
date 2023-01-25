@@ -25,7 +25,6 @@
         <label for="favorite">♥</label>
     </div>
 
-
 </div>
 
 <div class = "map_boader" style = "float:left">
@@ -35,8 +34,6 @@
 <div class = "route_boader">
     <h1>route</h1>
 </div>
-
-
 
 <div class = "plan_detail_comment_boder" style = "float:left">
 
@@ -391,13 +388,17 @@
 <!---->
 </div>
 
+<!--文章-->
 <div>
-    <textarea class = "plan_detail_textarea" name="text" placeholder = "プランに関する文章"></textarea>
+    <textarea class = "plan_detail_textarea" name="text" placeholder = "プラン作成の際に入力したプランに関する文章" readonly></textarea>
 </div>
+<!---->
 
+<!--写真-->
 <div class = "picture_boader">
     <img class = "test_picture" src="{% static 'assets/img/bg-masthead.jpg' %}">
 </div>
+<!---->
 
 </div>
 {% endblock %}
