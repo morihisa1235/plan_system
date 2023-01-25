@@ -391,8 +391,8 @@
 <!--文章-->
 <div>
     <textarea class = "plan_detail_textarea" name="text" placeholder = "プラン作成の際に入力したプランに関する文章" readonly>
-        {% for plan in plan %}
-        {{ plan }}
+        {% for plan in plan_list %}
+        {{ plan.content }}
         {% endfor %}
     </textarea>
 </div>

@@ -104,7 +104,7 @@ class CreatedTwoView(generic.TemplateView):
 class ErrorView(generic.TemplateView):
     template_name = "error.html"
 
-class PlanView(generic.TemplateView):
+class PlanView(generic.ListView):
     template_name = "plan.html"
     models = Plan
     context_object_data = "plan_list"
@@ -128,12 +128,12 @@ class PlandetailView(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super(PlandetailView, self).get_context_data(**kwargs)
         context.update({
-            'route_list': Route.objects.filter().order_by('id'),
+            'route_list' : Route.objects.filter().order_by('id'),
         })
         return context
 
     def get_queryset(self):
-        plans = Plan.objects.get(id=1)
+        plans = Plan.objects.filter().order_by('id')
         return plans
 
 
