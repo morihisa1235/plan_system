@@ -390,7 +390,11 @@
 
 <!--文章-->
 <div>
-    <textarea class = "plan_detail_textarea" name="text" placeholder = "プラン作成の際に入力したプランに関する文章" readonly></textarea>
+    <textarea class = "plan_detail_textarea" name="text" placeholder = "プラン作成の際に入力したプランに関する文章" readonly>
+        {% for plan in plan %}
+        {{ plan }}
+        {% endfor %}
+    </textarea>
 </div>
 <!---->
 

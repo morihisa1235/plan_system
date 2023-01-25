@@ -5,21 +5,21 @@
 {% block title %}地図+旅行プラン作成システム{% endblock %}
 
 {% block contents %}
-
+<script src="{% static 'js/scripts.js' %}"></script>
 <link rel="stylesheet" type="text/css" href="{% static 'css/dragging.css' %}"/>
 
 <div class="side side-space">
     <div>
         <span class="result">検索結果</span>
-        <div class="scroll box1">
+        <div class="scroll box1" id="tour_list" ondragover="f_dragover(event)">
             {% for tour in tourism_list %}
-            <div class="item" draggable="true">{{ tour.tourism_name }}</div>
+            <div class="item" draggable="true" id="item" ondragstart="f_dragstart(event)">{{ tour.tourism_name }}</div>
             {% empty %}
-            <div class="item" draggable="true" id="item1">検索結果がありませんでした。</div>
-            <div class="item" draggable="true" id="item1">もう一度検索してください</div>
+            <div class="item" draggable="true" id="item">検索結果がありませんでした。</div>
+            <div class="item" draggable="true" id="item">もう一度検索してください</div>
             {% endfor %}
         </div>
-        <div class="result drop_box box2">
+        <div class="result drop_box box2" id="dropbox" ondragover="f_dragover(event)" ondrag="f_drop(event)">
 
         </div>
     </div>

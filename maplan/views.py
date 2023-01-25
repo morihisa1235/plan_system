@@ -106,6 +106,19 @@ class ErrorView(generic.TemplateView):
 
 class PlanView(generic.TemplateView):
     template_name = "plan.html"
+    models = Plan
+    context_object_data = "plan_list"
+
+    def get_context_data(self, **kwargs):
+        context = super(PlanView, self).get_context_data(**kwargs)
+        context.update({
+            'route_list': Route.objects.filter().order_by('id'),
+        })
+        return context
+
+    def get_queryset(self):
+        plans = Plan.objects.get(id=1)
+        return plans
 
 class PlandetailView(generic.ListView):
     template_name = "plan_detail.html"
@@ -120,7 +133,7 @@ class PlandetailView(generic.ListView):
         return context
 
     def get_queryset(self):
-        plans = Plan.objects.filter().order_by('id')
+        plans = Plan.objects.get(id=1)
         return plans
 
 
