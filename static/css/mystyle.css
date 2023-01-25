@@ -700,7 +700,7 @@ label span{
 
 .favorite_form_border_create{
     border: #000000 solid 1px;
-    margin-top:4%;
+    margin-top:1%;
     margin-left:90%;
     width:5%;
 }
@@ -733,6 +733,13 @@ label span{
   margin-right:9.2%;
   flex: 0 0 auto;
   width: auto;
+}
+
+.div5 {
+    border: #000000 solid 2px;
+    margin-left:2%;
+    margin-right:55%;
+    padding:10%;
 }
 
 .map_boader {
@@ -780,3 +787,21 @@ label span{
     height: 80%;
 }
 
+.map_boader11 {
+    border: #000000 solid 2px;
+    margin-top: 2%;
+	margin-left: 2%;
+    max-width: 150%;
+    width: 45%;
+    height: 20%;
+}
+
+.map_boader12 {
+    border: #000000 solid 2px;
+    margin-top: 2%;
+	margin-right: 3%;
+	margin-left: 2%;
+    max-width: 150%;
+    width: 45%;
+    height: 20%;
+}
