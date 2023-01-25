@@ -36,12 +36,52 @@
 <div class = "map_boader11" style = "float:left">
     <h1>map</h1>
 </div>
-
-<div class = "map_boader12" style = "float:left">
+<div class = "route_boader11" >
     <h1>ルート</h1>
 </div>
+    <div>
+        <div class="div-border" style="float:left">絞り込み</div>
+        <div class="div">並び替え</div>
+    </div>
+    <table class="table div-border side1">
+        <tr>
+            <td>
+                <div>季節<br><br>
+                    <input type="checkbox">春　
+                    <input type="checkbox">夏
+                </div>
+                <div>
+                    <input type="checkbox">秋　
+                    <input type="checkbox">冬　
+                    <input type="checkbox"> All
+                </div>
+            </td>
+            <td>
+                <div>ジャンル <br>
+                    <input type="checkbox">景観　
+                    <input type="checkbox">寺・神社　
+                    <input type="checkbox">博物館・美術館　
+                    <input type="checkbox">イベント
+                </div>
+                <div>
+                    <input type="checkbox">公園　
+                    <input type="checkbox">城・宮殿　
+                    <input type="checkbox">テーマパーク　　
+                    <input type="checkbox">海岸・岬　
+                </div>
+                <div>
+                    <input type="checkbox">植物　
+                    <input type="checkbox">街・集落　
+                    <input type="checkbox">建造物　
+                    <input type="checkbox">食　　
+                    <input type="checkbox">その他
+                </div>
+                </td>
 
-<div class = "plan_create_comment_boder">
+        </tr>
+    </table>
+
+<div class = "plan_create_comment_boder" style="float:left" >
 
 <!--送信-->
 
@@ -392,6 +432,18 @@
 
 <!---->
 </div>
+
+<div class = "bun_boader11" >
+    <h1>文章</h1>
+</div>
+
+<div class = "picture_boader11" >
+    <h1>写真</h1>
+</div>
+
+
+
+
 </div>
 
 <div class = "plan_create2_button">
@@ -400,4 +452,5 @@
 </div>
 
 </div>
+
 {% endblock %}
