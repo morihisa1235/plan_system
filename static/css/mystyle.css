@@ -163,9 +163,20 @@ footer {
   margin-left:9.3%;
 }
 
+.div-border11{
+  border: #000000 solid 2px;
+  margin-left:13.3%;
+}
+
 .div{
   border: #000000 solid 2px;
-  margin-left:65.7%;
+  margin-left:25.5%;
+  width:5.1%;
+}
+
+.div11{
+  border: #000000 solid 2px;
+  margin-left:29.8%;
   width:5.1%;
 }
 
@@ -414,6 +425,12 @@ footer {
   margin-left:10%;
   margin-right:10%;
 }
+
+.side11 {
+  margin-left:14%;
+  margin-right:41%;
+}
+
 label span{
 	display: block;
 	position: fixed;
@@ -635,12 +652,13 @@ label span{
 }
 
 .plan_create_comment_boder {
-    border: #000000 solid 3px;
-	margin-top: 15%;
+    border: #000000 solid 2px;
+    margin-top:-7%;
 	margin-left: 13%;
     max-width: 100%;
     width: 37%;
-	height: 46%;
+	height: 41.3%;
+	background: #52deff;
 }
 
 .pull_down{
@@ -653,7 +671,8 @@ label span{
 }
 
 .plan_create2_button{
-    margin-left: 80%;
+    margin-left: 77%;
+    margin-top:2%;
 }
 
 .plan_name {
@@ -790,10 +809,10 @@ label span{
 .map_boader11 {
     border: #000000 solid 2px;
     margin-top: 2%;
-	margin-left: 16%;
+	margin-left: 15%;
     max-width: 150%;
-    width: 33%;
-    height: 15%;
+    width: 35%;
+    height: 19%;
 }
 
 .route_boader11 {
@@ -802,16 +821,14 @@ label span{
 	margin-right: 3%;
 	margin-left: 51%;
     max-width: 150%;
-    width: 33%;
-    height: 15%;
+    width: 35%;
+    height: 19%;
 }
 
 .bun_boader11 {
     border: #000000 solid 2px;
-    margin-top: 15%;
-	margin-right: 3%;
 	margin-left: 51%;
-    width: 32%;
+    width: 35%;
     height: 18%;
 }
 
@@ -820,7 +837,7 @@ label span{
     margin-top: 3%;
 	margin-right: 3%;
 	margin-left: 51%;
-    width: 32%;
+    width: 35%;
     height: 20%;
 }
 .plan_detail_textarea {
@@ -848,4 +865,12 @@ label span{
     height: 100%;
 }
 
+.ma111 {
+    margin-top:-7%;
+}
+
+.pu111 {
+    margin-top:35%;
+    margin-left:8%;
+}
 
