@@ -9,13 +9,21 @@
 
 <div class = "personal1">
     <div class = "a">  ユーザー名　　　</div>
-    <div class = "card b">ユーザー名</div>
+    {% for user in customuser_list %}
+    {% if user.id == 1 %}
+    <div class = "card b">{{ user.username}}</div>
+    {% endif %}
+    {% endfor %}
 </div>
 <p></p>
 
 <div class = "personal1">
     <div class = "a">メールアドレス　</div>
-    <div class = "card b">メールアドレス</div>
+    {% for user in customuser_list %}
+    {% if user.id == 1 %}
+    <div class = "card b">{{ user.mailadres}}</div>
+    {% endif %}
+    {% endfor %}
 </div>
 <p></p>
 

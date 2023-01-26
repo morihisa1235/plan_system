@@ -10,6 +10,8 @@ from .forms import InquiryForm
 
 from .models import Plan, Route
 from .models import Prefecture, Tourism, Category
+from accounts.models import CustomUser
+
 
 logger = logging.getLogger(__name__)
 
@@ -39,8 +41,12 @@ class PolicyView(generic.TemplateView):
 class Change_passwordView(generic.TemplateView):
     template_name = "change_password.html"
 
-class PersonalView(generic.TemplateView):
+class PersonalView(generic.ListView):
     template_name = "personal.html"
+    model = CustomUser
+    def get_queryset(self):
+        user = CustomUser.objects.filter().order_by('id')
+        return user
 
 class Change_passwordkannryouView(generic.TemplateView):
     template_name = "change_passwordkannryou.html"
