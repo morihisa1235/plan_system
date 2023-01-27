@@ -6,12 +6,15 @@
 
 {% block contents %}
 <div class="masthead">
+    <div class="top_picture">
+        <img src="{% static 'assets/img/bg-masthead.jpg' %}">
+        <h1 class="picture_text">てすと</h1>
+    </div>
     <div class="container position-relative">
         <div class="row justify-content-center">
             <div class="col-xl-6">
                 <div class="text-center text-white">
                     <!-- Page heading-->
-                    <h1 class="mb-5">ABC</h1>
                     <!-- Signup form-->
                     <!-- * * * * * * * * * * * * * * *-->
                     <!-- * * SB Forms Contact Form * *-->
@@ -24,11 +27,15 @@
                         <!-- Email address input-->
                         <div class="row">
                             <div class="col">
-                                <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="検索ワードを入力" data-sb-validations="required,email" />
-                                <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">検索ワードを入力してください</div>
+                                <div class="top_search">
+                                    <input class="form-control form-control-lg" id="search" type="search" placeholder="検索ワードを入力" data-sb-validations="required,email" />
+                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">検索ワードを入力してください</div>
+                                </div>
                             </div>
                         <div class="col-auto">
-                            <a class = "btn btn-primary" href = "{% url 'maplan:searchbox' %}">検索</a>
+                            <div class="top_searchbutton">
+                                <a class = "btn btn-primary" href = "{% url 'maplan:searchbox' %}">検索</a>
+                            </div>
                         </div>
                     </div>
                     </form>
