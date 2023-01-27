@@ -155,4 +155,6 @@ class Plan_create2View(generic.TemplateView):
 class plan_create_completeView(generic.TemplateView):
     template_name = "plan_create_complete.html"
 
+class mypage_favoriteView(generic.TemplateView):
+    template_name = "mypage_favorite.html"
 

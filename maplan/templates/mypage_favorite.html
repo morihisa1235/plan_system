@@ -1,14 +1,35 @@
-{% extends 'mypage.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
-{% block title %}履歴{% endblock %}
-
+{% block title %}お気に入り{% endblock %}
+<div>
+    <div class="favo">
+        <h1>お気に入り</h1>
+    <div/>
 {% block active_plan_list %}active{% endblock %}
+    <div class="center">
+        <h1>マイページ</h1>
+    </div>
+<nav id="info_nav">
+        <ul>
+            <li>
+                <a href="{% url 'maplan:personal' %}"><img src="{% static 'assets/img/setting.png' %}" alt="個人情報" width="75px" height="90px"/>
+                    <p>個人情報ページ</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <nav id="mypage_nav">
+        <ul>
+            <li><a href="{% url 'maplan:history' %}">履歴</a></li>
+            <li><a href="{% url 'maplan:mypage_favorite' %}">お気に入り</a></li>
+        </ul>
+    </nav>
 
 <!--{% block head %}
 <link href="{% static 'css/AAA.css' &}" rel="stylesheet">
 
 {% endblock %} -->
 {% block contents %}
-
+</div>
 {% endblock %}
