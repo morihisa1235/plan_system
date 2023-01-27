@@ -6,57 +6,46 @@
 
 {% block contents %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/popup.css' %}"/>
-
 <div>
     {% for plan in plan_list %}
+    {% if plan.id == 1 %}
 <div class = "plan_name" style = "float:left">
     <h1>{{ plan.plan_name }}</h1>
 </div>
+    {% endif %}
     {% empty %}
 <div class = "plan_name" style = "float:left">
     <h1>ERROR</h1>
 </div>
     {% endfor %}
-
 <div class = "favorite_form_border_detail">
-
     <div class = "favorite_form">
         <input id="favorite" type="checkbox" name="rate">
         <label for="favorite">♥</label>
     </div>
-
 </div>
-
 <div class = "map_boader" style = "float:left">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12655606.084254637!2d140.4790958863645!3d37.14594589120638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1674458027975!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h1>        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12655606.084254637!2d140.4790958863645!3d37.14594589120638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1674458027975!5m2!1sja!2sjp" width=100% height=100% style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></h1>
 </div>
-
 <div class = "route_boader">
     {% for route in route_list %}
-        {{ route.tourism_code }}<br>
-        <div>↓</div>
+    {% if route.plan_id == 1 %}
+    {{ route.tourism_code }}
+    {% endif %}
     {% endfor %}
 </div>
-
 <div class = "plan_detail_comment_boder" style = "float:left">
-
-
 <!--送信-->
-
     <div class = "rate_form_boder1" style="float:left">
 <div class="rate-form1">
         <input id="star5" type="radio" name="rate" value="5">
         <label for="star5">★</label>
-
         <input id="star4" type="radio" name="rate" value="4">
         <label for="star4">★</label>
-
         <input id="star3" type="radio" name="rate" value="3">
         <label for="star3">★</label>
-
         <input id="star2" type="radio" name="rate" value="2">
         <label for="star2">★</label>
-
         <input id="star1" type="radio" name="rate" value="1">
         <label for="star1">★</label>
     </div>
@@ -65,17 +54,13 @@
         <input type="checkbox" id="pop-up4">
         <div class="overlay4">
     <div class="window4">
-
 <div class = "send_headline">
     <h4>以下の内容で送信してよろしいですか？</h4><br>
     <p>
-
 <div>
 	<textarea name="comment" placeholder="自分のコメント" cols="40" rows="8"></textarea>
 </div>
-
 <br><br>
-
 <div class = "plan_button">
     <a class="btn btn-primary" href="{% url 'maplan:plan_detail' %}">戻る</a>
     <label>
@@ -92,26 +77,18 @@
     </div>
         </div>
 <div><input type="text" name="namae" size="59" maxlength="50" placeholder="テキスト"></div>
-
 <!---->
-
-
 <!--編集-->
-
     <div class="rate_form_boder" style="float:left">
 <div class="rate-form1">
         <input id="star5-1" type="radio" name="rate" value="5">
         <label for="star5-1">★</label>
-
         <input id="star4-1" type="radio" name="rate" value="4">
         <label for="star4-1">★</label>
-
         <input id="star3-1" type="radio" name="rate" value="3">
         <label for="star3-1">★</label>
-
         <input id="star2-1" type="radio" name="rate" value="2">
         <label for="star2-1">★</label>
-
         <input id="star1-1" type="radio" name="rate" value="1">
         <label for="star1-1">★</label>
 </div>
@@ -121,23 +98,18 @@
         <div class="overlay">
 	<div class="window">
 		<a class="btn btn-primary" href="{% url 'maplan:plan_detail' %}">戻る</a>
-
 <div class = "plan">
     <h4>コメント内容を編集または削除</h4><br>
     <p>
     <div class="rate-form">
         <input id="star5-5" type="radio" name="rate" value="5">
         <label for="star5-5">★</label>
-
         <input id="star4-5" type="radio" name="rate" value="4">
         <label for="star4-5">★</label>
-
         <input id="star3-5" type="radio" name="rate" value="3">
         <label for="star3-5">★</label>
-
         <input id="star2-5" type="radio" name="rate" value="2">
         <label for="star2-5">★</label>
-
         <input id="star1-5" type="radio" name="rate" value="1">
         <label for="star1-5">★</label>
     </div>
@@ -145,9 +117,7 @@
 	<textarea name="comment" placeholder="自分のコメント" cols="40" rows="8"></textarea>
 </div>
 <br><br>
-
 <div class = "plan_button">
-
 <!--削除-->
     <label>
         <a class="btn btn-primary">削除</a>
@@ -176,8 +146,6 @@
     </div>
     </label>
 <!---->
-
-
 <!--編集-->
     <label>
         <a class="btn btn-primary">編集</a>
@@ -189,16 +157,12 @@
         <div class="rate-form">
             <input id="star5" type="radio" name="rate" value="5">
             <label for="star5">★</label>
-
             <input id="star4" type="radio" name="rate" value="4">
             <label for="star4">★</label>
-
             <input id="star3" type="radio" name="rate" value="3">
             <label for="star3">★</label>
-
             <input id="star2" type="radio" name="rate" value="2">
             <label for="star2">★</label>
-
             <input id="star1" type="radio" name="rate" value="1">
             <label for="star1">★</label>
         </div>
@@ -218,32 +182,23 @@
         </div>
     </div>
     </label>
-
 </div>
 	</div>
 </div>
 </div>
 <div><input type="text" readonly name="namae" size="59" maxlength="50" placeholder="自分のコメント"></div>
-
 <!---->
-
-
 <!--通報-->
-
     <div class = "rate_form_boder" style="float:left">
 <div class="rate-form1">
         <input id="star5-2" type="radio" name="rate" value="5">
         <label for="star5-2">★</label>
-
         <input id="star4-2" type="radio" name="rate" value="4">
         <label for="star4-2">★</label>
-
         <input id="star3-2" type="radio" name="rate" value="3">
         <label for="star3-2">★</label>
-
         <input id="star2-2" type="radio" name="rate" value="2">
         <label for="star2-2">★</label>
-
         <input id="star1-2" type="radio" name="rate" value="1">
         <label for="star1-2">★</label>
 </div>
@@ -252,24 +207,18 @@
         <input type="checkbox" id="pop-up3">
         <div class="overlay3">
 	<div class="window3">
-
 <div class = "report_text">
     <h4>通報内容を下記にご記入ください</h4><br>
     <p>
     <div>
 	    <textarea name="comment" placeholder="10文字未満であり連続した文字は送信不可" cols="40" rows="8"></textarea>
     </div>
-
-
 <br><br>
-
 <div class = "plan_button">
     <a class="btn btn-primary" href="{% url 'maplan:plan_detail' %}">戻る</a>
-
     <label>
     <a class="btn btn-primary">通報</a>
     <input type="checkbox" name="checkbox">
-
     <div id="popup">
        <br><br>
        <h4>ご協力いただきありがとうございました。</h4><br><br><br><br><br>
@@ -281,22 +230,16 @@
         </div>
         </div>
 <div><input type="text" readonly name="namae" size="59" maxlength="50" placeholder="他人のコメント"></div>
-
-
     <div class = "rate_form_boder" style="float:left">
 <div class="rate-form1">
         <input id="star5-3" type="radio" name="rate" value="5">
         <label for="star5-3">★</label>
-
         <input id="star4-3" type="radio" name="rate" value="4">
         <label for="star4-3">★</label>
-
         <input id="star3-3" type="radio" name="rate" value="3">
         <label for="star3-3">★</label>
-
         <input id="star2-3" type="radio" name="rate" value="2">
         <label for="star2-3">★</label>
-
         <input id="star1-3" type="radio" name="rate" value="1">
         <label for="star1-3">★</label>
 </div>
@@ -305,24 +248,18 @@
         <input type="checkbox" id="pop-up3">
         <div class="overlay3">
 	<div class="window3">
-
 <div class = "report_text">
     <h4>通報内容を下記にご記入ください</h4><br>
     <p>
     <div>
 	    <textarea name="comment" placeholder="10文字未満であり連続した文字は送信不可" cols="40" rows="8"></textarea>
     </div>
-
-
 <br><br>
-
 <div class = "plan_button">
     <a class="btn btn-primary" href="{% url 'maplan:plan_detail' %}">戻る</a>
-
     <label>
     <a class="btn btn-primary">通報</a>
     <input type="checkbox" name="checkbox">
-
     <div id="popup">
        <br><br>
        <h4>ご協力いただきありがとうございました。</h4><br><br><br><br><br>
@@ -334,22 +271,16 @@
         </div>
         </div>
 <div><input type="text" readonly name="namae" size="59" maxlength="50" placeholder="他人のコメント"></div>
-
-
     <div class = "rate_form_boder" style="float:left">
 <div class="rate-form1">
         <input id="star5-4" type="radio" name="rate" value="5">
         <label for="star5-4">★</label>
-
         <input id="star4-4" type="radio" name="rate" value="4">
         <label for="star4-4">★</label>
-
         <input id="star3-4" type="radio" name="rate" value="3">
         <label for="star3-4">★</label>
-
         <input id="star2-4" type="radio" name="rate" value="2">
         <label for="star2-4">★</label>
-
         <input id="star1-4" type="radio" name="rate" value="1">
         <label for="star1-4">★</label>
 </div>
@@ -358,24 +289,18 @@
         <input type="checkbox" id="pop-up3">
         <div class="overlay3">
 	<div class="window3">
-
 <div class = "report_text">
     <h4>通報内容を下記にご記入ください</h4><br>
     <p>
     <div>
 	    <textarea name="comment" placeholder="10文字未満であり連続した文字は送信不可" cols="40" rows="8"></textarea>
     </div>
-
-
 <br><br>
-
 <div class = "plan_button">
     <a class="btn btn-primary" href="{% url 'maplan:plan_detail' %}">戻る</a>
-
     <label>
     <a class="btn btn-primary">通報</a>
     <input type="checkbox" name="checkbox">
-
     <div id="popup">
        <br><br>
        <h4>ご協力いただきありがとうございました。</h4><br><br><br><br><br>
@@ -387,21 +312,17 @@
         </div>
         </div>
 <div><input type="text" readonly name="namae" size="59" maxlength="50" placeholder="他人のコメント"></div>
-
 <!---->
 </div>
-
 <!--文章-->
 <div>
-    <textarea class = "plan_detail_textarea" name="text" placeholder = "プラン作成の際に入力したプランに関する文章" readonly>{% for plan in plan_list %}{{ plan.content }}{% endfor %}</textarea>
+    <textarea class = "plan_detail_textarea" name="text" placeholder = "プラン作成の際に入力したプランに関する文章" readonly>{% for plan in plan_list %}{% if plan.id == 1 %}{{ plan.content }}{% endif %}{% endfor %}</textarea>
 </div>
 <!---->
-
 <!--写真-->
 <div class = "picture_boader">
     <img class = "test_picture" src="{% static 'assets/img/bg-masthead.jpg' %}">
 </div>
 <!---->
-
 </div>
 {% endblock %}

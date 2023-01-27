@@ -29,10 +29,9 @@
             </td>
             <td>
                 <div>ジャンル <br>
-                    <input type="checkbox">景観　
-                    <input type="checkbox">寺・神社　
-                    <input type="checkbox">博物館・美術館　
-                    <input type="checkbox">イベント
+                    {% for check in content_list %}
+                    <input type="checkbox">{{ check.content_name }}
+                    {% endfor %}
                 </div>
                 <div>
                     <input type="checkbox">公園　
