@@ -207,6 +207,7 @@ blockquote {
 b,
 strong {
   font-weight: bolder;
+  margin-right:5600;
 }
 
 small, .small {
