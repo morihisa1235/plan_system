@@ -11,13 +11,13 @@
 
 <div class = "personal1">
     <div class = "a">ユーザー名　　　</div>
-    <div class = "card b">ユーザー名</div>
+    <input type="email" name="login" placeholder="ユーザー名" autocomplete="email" class="form-control11" required id="id_login">
 </div>
 <p></p>
 
 <div class = "personal1">
     <div class = "a">メールアドレス　</div>
-    <div class = "card b">メールアドレス</div>
+    <input type="email" name="login" placeholder="メールアドレス" autocomplete="email" class="form-control11" required id="id_login">
 </div>
 <p></p>
 
@@ -27,6 +27,7 @@
     <a class="btn btn-primary" href="{% url 'maplan:change_personalk' %}">確認画面</a>
 </div>
 
-</div>
+
+
 
 {% endblock %}

@@ -48,6 +48,12 @@ class PersonalView(generic.ListView):
         user = CustomUser.objects.filter().order_by('id')
         return user
 
+class Change_personalView(generic.ListView):
+    template_name = "change_personal.html"
+    model = CustomUser
+    def get_queryset(self):
+        user = CustomUser.objects.filter().order_by('id')
+        return user
 class Change_passwordkannryouView(generic.TemplateView):
     template_name = "change_passwordkannryou.html"
 
