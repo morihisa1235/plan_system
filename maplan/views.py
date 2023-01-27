@@ -72,10 +72,21 @@ class Change_personalView(generic.TemplateView):
 class Change_personalkView(generic.TemplateView):
     template_name = "change_personalk.html"
 
-class SearchboxView(generic.TemplateView):
+class SearchboxView(generic.ListView):
     template_name = "searchbox.html"
-    paginate_by = 5
+    model = Plan
+    context_object_data = 'category_list'
 
+    def get_context_data(self, **kwargs):
+        context = super(SearchboxView, self).get_context_data(**kwargs)
+        context.update({
+            'category_list': Category.objects.filter().order_by('category_code'),
+        })
+        return context
+
+    def get_queryset(self):
+        plans = Plan.objects.filter().order_by('id')
+        return plans
 
 class HistoryView(LoginRequiredMixin, generic.ListView):
     model = Plan
