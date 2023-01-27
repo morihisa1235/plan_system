@@ -8,7 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .forms import InquiryForm
 
-from .models import Plan, Route
+from .models import Plan, Route, Comment
 from .models import Prefecture, Tourism, Category
 from accounts.models import CustomUser
 
@@ -141,6 +141,7 @@ class PlandetailView(generic.ListView):
         context = super(PlandetailView, self).get_context_data(**kwargs)
         context.update({
             'route_list' : Route.objects.filter().order_by('id'),
+            'comment_list' : Comment.objects.filter().order_by('id')
         })
         return context
 
@@ -148,9 +149,10 @@ class PlandetailView(generic.ListView):
         plans = Plan.objects.filter().order_by('id')
         return plans
 
-
 class Plan_create2View(generic.TemplateView):
      template_name = "plan_create2.html"
 
 class plan_create_completeView(generic.TemplateView):
     template_name = "plan_create_complete.html"
+
+
