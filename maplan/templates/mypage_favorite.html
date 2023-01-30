@@ -1,15 +1,13 @@
 {% extends 'base.html' %}
+
 {% load static %}
 
 {% block title %}お気に入り{% endblock %}
-<div>
-    <div class="favo">
-        <h1>お気に入り</h1>
-    <div/>
-{% block active_plan_list %}active{% endblock %}
-    <div class="center">
+{% block contents %}
+
+ <div class="center">
         <h1>マイページ</h1>
-    </div>
+ </div>
 <nav id="info_nav">
         <ul>
             <li>
@@ -19,17 +17,43 @@
             </li>
         </ul>
     </nav>
-    <nav id="mypage_nav">
+<nav id="mypage_nav">
         <ul>
             <li><a href="{% url 'maplan:history' %}">履歴</a></li>
             <li><a href="{% url 'maplan:mypage_favorite' %}">お気に入り</a></li>
         </ul>
     </nav>
+    <div>
+        <span style="color: red;">※非公開に変更又は削除されたプランは自動的に削除されます</span>
+    </div>
+    {% block header %}{% endblock %}
 
-<!--{% block head %}
-<link href="{% static 'css/AAA.css' &}" rel="stylesheet">
+    {% if messages %}
+    <div class="container my-div-style">
+        <div class="row">
+            <ul class="messages" style="list-style: none;">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                    {{ message }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
 
-{% endblock %} -->
-{% block contents %}
+
+<div class="favo">
+    お気に入り<br>　〇件
 </div>
+
+<div class="favo1" >
+    画像
+</div>
+
+<div class="favo2" style="float:left">
+    タイトル名、プラン名
+</div>
+
+
 {% endblock %}
