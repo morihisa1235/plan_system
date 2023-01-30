@@ -887,16 +887,67 @@ label span{
     border: 3px solid #000000;
     width:13%;
     border-radius: 15px;
-    padding: 4%;
+    padding: 5%;
+    margin-top: 3%;
 }
 
 .favo2 {
     border: 3px solid #000000;
-    width:50%;
+    width:72%;
     border-radius: 15px;
-
+    margin-left: 23%;
+    margin-top: -11.8%;
+    padding: 5%;
 }
 
+.favo3 {
+    margin-top: 2%;
+}
+
+.favo4 {
+    margin-top: 2%;
+}
+
+.favo5 {
+    margin-top: 2%;
+}
+
+.favo6 {
+    margin-top: 2%;
+}
+
+.favo7 {
+    margin-top: 2%;
+}
+
+.favo8 {
+    margin-top: 2%;
+}
+
+.favo9 {
+    margin-top: 2%;
+}
+
+.favo10 {
+    margin-top: 2%;
+}
+
+.favo11 {
+    margin-top: 2%;
+}
+
+.fafa {
+  border-radius: 5px;
+  background-color: red;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.fafa1{
+    margin-left: 95%;
+    margin-top: -2%;
+}
 .circle{
     width: 200px;
     height: 100px;
