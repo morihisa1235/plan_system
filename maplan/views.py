@@ -158,3 +158,12 @@ class plan_create_completeView(generic.TemplateView):
 class mypage_favoriteView(generic.TemplateView):
     template_name = "mypage_favorite.html"
 
+class mypage_historyView(generic.TemplateView):
+    template_name = "mypage_history.html"
+
+class mypage_eturanView(generic.TemplateView):
+    template_name = "mypage_eturan.html"
+
+class mypage_sakuseiView(generic.TemplateView):
+    template_name = "mypage_sakusei.html"
+

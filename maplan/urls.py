@@ -27,4 +27,7 @@ urlpatterns = [
     path('plan_create2/', views.Plan_create2View.as_view(), name="plan_create2"),
     path('plan_create_complete/', views.plan_create_completeView.as_view(), name="plan_create_complete"),
     path('mypage_favorite/', views.mypage_favoriteView.as_view(), name="mypage_favorite"),
+    path('mypage_history/', views.mypage_historyView.as_view(), name="mypage_history"),
+    path('mypage_eturan/', views.mypage_eturanView.as_view(), name="mypage_eturan"),
+    path('mypage_sakusei/', views.mypage_sakuseiView.as_view(), name="mypage_sakusei"),
 ]
