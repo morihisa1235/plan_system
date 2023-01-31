@@ -6,42 +6,41 @@
 {% block contents %}
 
  <div class="center">
-        <h1>マイページ</h1>
+    <h1>マイページ</h1>
  </div>
 <nav id="info_nav">
-        <ul>
-            <li>
-                <a href="{% url 'maplan:personal' %}"><img src="{% static 'assets/img/setting.png' %}" alt="個人情報" width="75px" height="90px"/>
-                    <p>個人情報ページ</p>
-                </a>
-            </li>
-        </ul>
-    </nav>
+    <ul>
+        <li>
+            <a href="{% url 'maplan:personal' %}"><img src="{% static 'assets/img/setting.png' %}" alt="個人情報" width="75px" height="90px"/>
+                <p>個人情報ページ</p>
+            </a>
+        </li>
+    </ul>
+</nav>
 <nav id="mypage_nav">
-        <ul>
-            <li><a href="{% url 'maplan:mypage_history' %}">履歴</a></li>
-            <li><a href="{% url 'maplan:mypage_favorite' %}">お気に入り</a></li>
-        </ul>
-    </nav>
-    <div>
-        <span style="color: red;">※非公開に変更又は削除されたプランは自動的に削除されます</span>
-    </div>
-    {% block header %}{% endblock %}
+    <ul>
+        <li><a href="{% url 'maplan:mypage_history' %}">履歴</a></li>
+        <li><a href="{% url 'maplan:mypage_favorite' %}">お気に入り</a></li>
+    </ul>
+</nav>
+<div>
+    <span style="color: red;">※非公開に変更又は削除されたプランは自動的に削除されます</span>
+</div>
+{% block header %}{% endblock %}
 
-    {% if messages %}
-    <div class="container my-div-style">
-        <div class="row">
-            <ul class="messages" style="list-style: none;">
+{% if messages %}
+<div class="container my-div-style">
+    <div class="row">
+        <ul class="messages" style="list-style: none;">
                 {% for message in messages %}
                 <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
                     {{ message }}
                 </li>
                 {% endfor %}
-            </ul>
-        </div>
+        </ul>
     </div>
-    {% endif %}
-
+</div>
+{% endif %}
 <button class="rounded-corner4"><a href="{% url 'maplan:mypage_history' %}">全部</a></button>
 <button class="rounded-corner1"><a href="{% url 'maplan:mypage_eturan' %}">閲覧した</a></button>
 <button class="rounded-corner5">作成した</button>
@@ -51,34 +50,59 @@
 </div>
 <div class="favo2">
     タイトル名、プラン名
-    <div class="fafa1">
-        <a href="sample.html" class="fafa">削除</a>
-    </div>
+        <div class="fafa1">
+            <a href="sample.html" class="fafa">削除</a>
+        </div>
+        <div class="favo12">
+            <div class="toggle_button">
+                <input id="toggle" class="toggle_input" type='checkbox' />
+                <label for="toggle" class="toggle_label"/>
+            </div>
+        </div>
+        <div class="favo13">
+            <h0.8>公開</h0.8>
+        </div>
 </div>
 
 <div class="favo3">
-    <div class="favo1" >
-        画像
-    </div>
-    <div class="favo2">
-        タイトル名、プラン名
-            <div class="fafa1">
-        <a href="sample.html" class="fafa">削除</a>
-    </div>
-
+<div class="favo1" >
+    画像
+</div>
+<div class="favo2">
+    タイトル名、プラン名
+        <div class="fafa1">
+            <a href="sample.html" class="fafa">削除</a>
+        </div>
+        <div class="favo12">
+            <div class="toggle_button">
+                <input id="toggle" class="toggle_input" type='checkbox' />
+                <label for="toggle" class="toggle_label"/>
+            </div>
+        </div>
+        <div class="favo13">
+            <h0.8>公開</h0.8>
+        </div>
     </div>
 </div>
 
 <div class="favo4">
-    <div class="favo1" >
-        画像
-    </div>
-    <div class="favo2">
-        タイトル名、プラン名
-            <div class="fafa1">
+<div class="favo1" >
+    画像
+</div>
+<div class="favo2">
+    タイトル名、プラン名
+        <div class="fafa1">
         <a href="sample.html" class="fafa">削除</a>
-    </div>
-
+        </div>
+        <div class="favo12">
+            <div class="toggle_button">
+                <input id="toggle" class="toggle_input" type='checkbox' />
+                <label for="toggle" class="toggle_label"/>
+            </div>
+        </div>
+        <div class="favo13">
+            <h0.8>公開</h0.8>
+        </div>
     </div>
 </div>
 
@@ -91,7 +115,15 @@
             <div class="fafa1">
         <a href="sample.html" class="fafa">削除</a>
     </div>
-
+    <div class="favo12">
+        <div class="toggle_button">
+            <input id="toggle" class="toggle_input" type='checkbox' />
+            <label for="toggle" class="toggle_label"/>
+        </div>
+    </div>
+    <div class="favo13">
+        <h0.8>公開</h0.8>
+    </div>
     </div>
 </div>
 
@@ -104,7 +136,15 @@
             <div class="fafa1">
         <a href="sample.html" class="fafa">削除</a>
     </div>
-
+    <div class="favo12">
+        <div class="toggle_button">
+            <input id="toggle" class="toggle_input" type='checkbox' />
+            <label for="toggle" class="toggle_label"/>
+        </div>
+    </div>
+    <div class="favo13">
+        <h0.8>公開</h0.8>
+    </div>
     </div>
 </div>
 
@@ -117,7 +157,15 @@
             <div class="fafa1">
         <a href="sample.html" class="fafa">削除</a>
     </div>
-
+    <div class="favo12">
+        <div class="toggle_button">
+            <input id="toggle" class="toggle_input" type='checkbox' />
+            <label for="toggle" class="toggle_label"/>
+        </div>
+    </div>
+    <div class="favo13">
+        <h0.8>公開</h0.8>
+    </div>
     </div>
 </div>
 
@@ -130,7 +178,15 @@
             <div class="fafa1">
         <a href="sample.html" class="fafa">削除</a>
     </div>
-
+    <div class="favo12">
+        <div class="toggle_button">
+            <input id="toggle" class="toggle_input" type='checkbox' />
+            <label for="toggle" class="toggle_label"/>
+        </div>
+    </div>
+            <div class="favo13">
+        <h0.8>公開</h0.8>
+    </div>
     </div>
 </div>
 
@@ -143,7 +199,15 @@
                     <div class="fafa1">
         <a href="sample.html" class="fafa">削除</a>
     </div>
-
+    <div class="favo12">
+        <div class="toggle_button">
+            <input id="toggle" class="toggle_input" type='checkbox' />
+            <label for="toggle" class="toggle_label"/>
+        </div>
+    </div>
+    <div class="favo13">
+        <h0.8>公開</h0.8>
+    </div>
     </div>
 </div>
 
@@ -156,7 +220,15 @@
                     <div class="fafa1">
         <a href="sample.html" class="fafa">削除</a>
     </div>
-
+    <div class="favo12">
+        <div class="toggle_button">
+            <input id="toggle" class="toggle_input" type='checkbox' />
+            <label for="toggle" class="toggle_label"/>
+        </div>
+    </div>
+    <div class="favo13">
+        <h0.8>公開</h0.8>
+    </div>
     </div>
 </div>
 
@@ -169,7 +241,15 @@
                     <div class="fafa1">
         <a href="sample.html" class="fafa">削除</a>
     </div>
-
+    <div class="favo12">
+        <div class="toggle_button">
+            <input id="toggle" class="toggle_input" type='checkbox' />
+            <label for="toggle" class="toggle_label"/>
+        </div>
+    </div>
+    <div class="favo13">
+        <h0.8>公開</h0.8>
+    </div>
     </div>
 </div>
 
