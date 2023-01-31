@@ -8,7 +8,7 @@
 <div class="masthead">
     <div class="top_picture">
         <img src="{% static 'assets/img/bg-masthead.jpg' %}">
-        <h1 class="picture_text">てすと</h1>
+        <h1 class="picture_text">Maplan</h1>
     </div>
     <div class="container position-relative">
         <div class="row justify-content-center">
@@ -42,6 +42,27 @@
                 </div>
             </div>
         </div>
+        <div>
+        <div class = "index_pull_down">
+            <select name="option">
+                <option value = "popular">人気別</option>
+                <option value = "price">料金別</option>
+                <option value = "season">季節別</option>
+            </select>
+        </div>
+        <div class="index_plan_picture_border" style="float:left">
+            <img class = "test_picture" src="{% static 'assets/img/bg-masthead.jpg' %}">
+        </div>
+        {% for plan in plan_list %}
+        {% if forloop.counter == 1 %}
+            <a class="index_click" href = "{% url 'maplan:plan_detail' %}"><div class="index_plan_border">
+            <h4 class="index_plan_name">{{ plan.plan_name }}/作成者</h4>
+            <h5 class="index_plan_content">{{ plan.content }}</h5>
+            </div></a>
+        {% endif %}
+        {% endfor %}
+        </div>
     </div>
 </div>
+
 {% endblock %}

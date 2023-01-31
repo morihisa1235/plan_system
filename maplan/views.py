@@ -17,6 +17,19 @@ logger = logging.getLogger(__name__)
 
 class IndexView(generic.TemplateView):
     template_name = "index.html"
+    models = Plan
+    context_object_data = "plan_list"
+
+    def get_context_data(self, **kwargs):
+        context = super(IndexView, self).get_context_data(**kwargs)
+        context.update({
+            'plan_list' : Plan.objects.filter().order_by('?'),
+        })
+        return context
+
+    def get_queryset(self):
+        plans = Plan.objects.filter().order_by('?')
+        return plans
 
 class InquiryView(generic.FormView):
     template_name = "inquiry.html"
@@ -157,4 +170,5 @@ class plan_create_completeView(generic.TemplateView):
 
 class mypage_favoriteView(generic.TemplateView):
     template_name = "mypage_favorite.html"
+
 

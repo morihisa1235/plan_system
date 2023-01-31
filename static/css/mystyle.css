@@ -761,7 +761,7 @@ label span{
     padding:10%;
 }
 
-.map_boader {
+.map_border {
     border: #000000 solid 2px;
     margin-top: 5%;
 	margin-left: 17%;
@@ -770,7 +770,7 @@ label span{
     height: 50%;
 }
 
-.route_boader {
+.route_border {
     border: #000000 solid 2px;
     margin-top: 5%;
 	margin-left: 49%;
@@ -779,7 +779,7 @@ label span{
     height: 50%;
 }
 
-.text_boader {
+.text_border {
     border: #000000 solid 2px;
     margin-top: 3%;
 	margin-left: 51%;
@@ -788,7 +788,7 @@ label span{
     height: 40%;
 }
 
-.picture_boader {
+.picture_border {
     border: #000000 solid 2px;
     margin-top: 1.5%;
 	margin-left: 51%;
@@ -806,7 +806,7 @@ label span{
     height: 80%;
 }
 
-.map_boader11 {
+.map_border11 {
     border: #000000 solid 2px;
     margin-top: 2%;
 	margin-left: 15%;
@@ -815,7 +815,7 @@ label span{
     height: 19%;
 }
 
-.route_boader11 {
+.route_border11 {
     border: #000000 solid 2px;
     margin-top: 2%;
 	margin-right: 3%;
@@ -825,14 +825,14 @@ label span{
     height: 19%;
 }
 
-.bun_boader11 {
+.bun_border11 {
     border: #000000 solid 2px;
 	margin-left: 51%;
     width: 35%;
     height: 18%;
 }
 
-.picture_boader11 {
+.picture_border11 {
     border: #000000 solid 2px;
     margin-top: 3%;
 	margin-right: 3%;
@@ -879,7 +879,13 @@ label span{
 }
 
 .top_searchbutton{
-    margin-top: 5%;
+    margin-top: 8%;
+    margin-right: -600%;
+}
+
+.top_search {
+  margin-left: -30%;
+  margin-right: -38%;
 }
 
 .top_picture {
@@ -903,4 +909,42 @@ label span{
 
 .favo {
     margin-top:50%;
+}
+
+.index_plan_border{
+    margin: auto;
+    border: #000000 solid 2px;
+    margin-top: %;
+    height: 20%;
+    width: 80%;
+}
+
+.index_plan_picture_border {
+    margin-top: %;
+    margin-left: 10%;
+    border: #000000 solid 2px;
+    height: 20%;
+    width: 25%;
+}
+
+.index_plan_name {
+    margin-top: 5%;
+}
+
+.index_plan_content {
+    margin-top: 5%;
+}
+
+.index_pull_down {
+    margin-top: 15%;
+    margin-right: 74.3%;
+}
+
+.index_click{
+    color: #000000;
+    text-decoration: none;
+}
+
+.index_click:hover{
+    color: #000000;
 }

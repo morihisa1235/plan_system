@@ -30,3 +30,4 @@ function f_drop(event){
   //エラー回避のため、ドロップ処理の最後にdropイベントをキャンセルしておく
   event.preventDefault();
 }
+
