@@ -83,11 +83,10 @@
         <div>
             <input class="comment-width" type="text" name="namae" maxlength="50" placeholder="コメントを入力してください">
         </div>
-        {% for comment in comment_list %}
-        {% if comment.plan_id_id == 1 and comment.user_id_id == 1 %}
         <!---->
         <!--編集-->
         <div class="rate_form_boder" style="float:left">
+            {% for comment in comment_list %}
             {% if comment.plan_id_id == 1 and comment.user_id_id == 1 %}
             <div class="eva-form1">
                 {% if comment.evalution >= 1 %}
@@ -112,6 +111,7 @@
                 {% endif %}
             </div>
             {% endif %}
+            {% endfor %}
         </div>
         <div class = "change">
             <label class="open" for="pop-up"><h5>編集</h5></label>
