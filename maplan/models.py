@@ -58,14 +58,14 @@ class Route(models.Model):
     plan_code = models.ForeignKey(Plan, verbose_name="プラン名", null=False, on_delete=models.PROTECT)
     tourism_code = models.ForeignKey(Tourism, verbose_name="観光名所名", null=False, on_delete=models.PROTECT)
     time = time = models.TimeField(verbose_name="滞在時間", null=True)
-    start_time= models.TimeField(verbose_name='滞在開始時間', blank=True, null=True)
-    end_time= models.TimeField(verbose_name='滞在終了時間', blank=True, null=True)
+    start_time = models.TimeField(verbose_name='滞在開始時間', blank=True, null=True)
+    end_time = models.TimeField(verbose_name='滞在終了時間', blank=True, null=True)
 
     class Meta:
         verbose_name_plural = 'Route'
 
     def __str__(self):
-        return self.id
+        return self.tourism_code
 
 class Comment(models.Model):
     comment = models.TextField(verbose_name="コメント", null=False)
