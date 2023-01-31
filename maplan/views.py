@@ -134,8 +134,13 @@ class CreatedOneView(generic.ListView):
         prefectures = Prefecture.objects.filter().order_by('prefecture_code')
         return prefectures
 
-class CreatedTwoView(generic.TemplateView):
+class CreatedTwoView(generic.ListView):
+    model = Category
     template_name = 'plan_create2.html'
+
+    def get_queryset(self):
+        categories = Category.objects.filter().order_by('category_code')
+        return categories
 
 class ErrorView(generic.TemplateView):
     template_name = "error.html"
@@ -173,7 +178,7 @@ class PlandetailView(generic.ListView):
         plans = Plan.objects.filter().order_by('id')
         return plans
 
-class Plan_create2View(generic.TemplateView):
+class Plan_create2View(generic.ListView):
      template_name = "plan_create2.html"
 
 class plan_create_completeView(generic.TemplateView):

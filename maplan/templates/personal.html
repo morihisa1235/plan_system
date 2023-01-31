@@ -33,19 +33,11 @@
 </div>
 <p></p>
 
-<div class = "taikai">
-    <h1>退会</h1>
-</div><br>
-
-<div class = "personal1">
-   <div class = "a">地図+旅行プラン作成<br>システム退会</div>
-<div class = "c">
-    <a class = "btn btn-primary" href = "{% url 'maplan:withdrawal' %}">退会</a>
-</div>&emsp;&emsp;&emsp;
-</div><br><br>
-
 <div class = "personal_button">
-    <a class="btn btn-primary" href="{% url 'maplan:mypage' %}">戻る</a>&emsp;&emsp;&emsp;<a class="btn btn-primary" href="{% url 'maplan:change_personal' %}">修正</a>&emsp;&emsp;&emsp;<a class="btn btn-primary" href="{% url 'maplan:change_password' %}">パスワード変更</a>
+    <a class="btn btn-primary" href="{% url 'maplan:mypage' %}">戻る</a>&emsp;&emsp;&emsp;
+    <a class="btn btn-primary" href="{% url 'maplan:change_personal' %}">修正</a>&emsp;&emsp;&emsp;
+    <a class="btn btn-primary" href="{% url 'maplan:change_password' %}">パスワード変更</a>&emsp;&emsp;&emsp;
+    <a class = "btn btn-primary" href = "{% url 'maplan:withdrawal' %}">退会</a>
 </div>
 
 {% endblock %}

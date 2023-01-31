@@ -5,6 +5,7 @@
 {% block title %}地図+旅行プラン作成システム{% endblock %}
 
 {% block contents %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/regulation.css' %}"/>
 
 <div>
 
@@ -45,41 +46,34 @@
         <div class="div-border11" style="float:left">絞り込み</div>
         <div class="div">並び替え</div>
     </div>
-    <table class="table div-border side11">
+    <table class="table div-border side1">
         <tr>
             <td>
-                <div>季節<br><br>
-                    <input type="checkbox">春　
-                    <input type="checkbox">夏
-                </div>
-                <div>
-                    <input type="checkbox">秋　
-                    <input type="checkbox">冬　
-                    <input type="checkbox"> All
+                <div><span class="result">季節</span><br><br>
+                    {% for season in category_list %}
+                    {% if season.category_code >= 25 and season.category_code != 26 %}
+                    <input type="checkbox">{{ season.category_name }}
+                    {% elif season.category_code == 26 %}
+                    <input type="checkbox">{{ season.category_name }}
+                    </div>
+                    <div>
+                    {% endif %}
+                    {% endfor %}
                 </div>
             </td>
             <td>
-                <div>ジャンル <br>
-                    <input type="checkbox">景観　
-                    <input type="checkbox">寺・神社　
-                    <input type="checkbox">博物館・美術館　
-                    <input type="checkbox">イベント
+                <div><span class="result">ジャンル</span> <br>
+                    {% for check in category_list %}
+                    {% if check.category_code == -1 or check.category_code >= 25 %}
+                    {% elif check.category_code == 11 or check.category_code == 21 %}
+                    <br>
+                    <input type="checkbox">{{ check.category_name }} &nbsp
+                    {% else %}
+                    <input type="checkbox">{{ check.category_name }} &nbsp
+                    {% endif %}
+                    {% endfor %}
                 </div>
-                <div>
-                    <input type="checkbox">公園　
-                    <input type="checkbox">城・宮殿　
-                    <input type="checkbox">テーマパーク　　
-                    <input type="checkbox">海岸・岬　
-                </div>
-                <div>
-                    <input type="checkbox">植物　
-                    <input type="checkbox">街・集落　
-                    <input type="checkbox">建造物　
-                    <input type="checkbox">食　　
-                    <input type="checkbox">その他
-                </div>
-                </td>
-
+            </td>
         </tr>
     </table>
 </div>
@@ -92,12 +86,16 @@
     </div>
 </div>
 <div class="ma111">
-    <div class= "bun_border11" >
-    <h1>文章</h1>
+    <div class= "bun_boader11">
+    <textarea class="plan_create2_textarea" style="width: 100%; height: 100%;" placeholder="文章入力欄"></textarea>
 </div>
-
-    <div class = "picture_border11" >
-    <h1>写真</h1>
+    <div class="picture_boader11" style="text-align: center;">
+        <label>
+            <div class="filelabel" title="写真を選択">
+                <img src="{% static 'assets/img/upload.png' %}">
+            </div>
+            <input id="filesend" type="file" accept="image/png" alt="filesend">
+        </label>
     </div>
 </div>
 <div class = "plan_create2_button">

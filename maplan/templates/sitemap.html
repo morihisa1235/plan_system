@@ -6,21 +6,28 @@
 
 <div class = "sitemap-title">
     <h1>サイトマップ</h1>
-
-    <h6>ログイン後のページ</h6>
 </div>
-
-<ul class = "sitemap">
-    <li><a href = "{% url 'maplan:index' %}">トップ</a></li>
-    <li><a href = "{% url 'maplan:searchbox' %}">検索画面</a></li>
-    <li><a href = "{% url 'account_login' %}">ログイン</a></li>
-    <li><a href = "{% url 'account_signup' %}">サインアップ</a></li>
-    <li><a href = "{% url 'maplan:inquiry' %}">お問い合わせ</a></li>
-    <li><a href = "{% url 'maplan:policy' %}">ポリシー</a></li>
-    <li><a href = "{% url 'maplan:mypage' %}">マイページ</a></li>
-    <li><a href = "">プラン作成</a></li>
-    <li><a href = "{% url 'maplan:personal' %}">個人情報</a></li>
-    <li style = "list-style:none">　</li>
-    <li style = "list-style:none">　</li>
-</ul>
+<div class="sitemap-title side" style="display: flex;">
+    <div style="margin-left: 2.5%;">
+        <h6>ログインしないで使用できるページ</h6>
+    </div>
+    <div style="margin-left: 25%;">
+        <h6>ログイン後のページ</h6>
+    </div>
+</div>
+<div class="side">
+    <ul class = "sitemap">
+        <li><a href = "{% url 'maplan:index' %}">トップ</a></li>
+        <li><a href = "{% url 'maplan:searchbox' %}">検索画面</a></li>
+        <li><a href = "{% url 'account_login' %}">ログイン</a></li>
+        <li><a href = "{% url 'account_signup' %}">サインアップ</a></li>
+        <li><a href = "{% url 'maplan:inquiry' %}">お問い合わせ</a></li>
+        <li><a href = "{% url 'maplan:policy' %}">ポリシー</a></li>
+        <li><a href = "{% url 'maplan:mypage' %}">マイページ</a></li>
+        <li><a href = "">プラン作成</a></li>
+        <li><a href = "{% url 'maplan:personal' %}">個人情報</a></li>
+        <li style = "list-style:none">　</li>
+        <li style = "list-style:none">　</li>
+    </ul>
+</div>
 {% endblock %}

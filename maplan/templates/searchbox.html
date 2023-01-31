@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block contents %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/regulation.css' %}"/>
 
 <div class="row">
     <div class="col1">
@@ -17,34 +20,29 @@
     <table class="table div-border side1">
         <tr>
             <td>
-                <div>季節<br><br>
-                    <input type="checkbox">春　
-                    <input type="checkbox">夏
-                </div>
-                <div>
-                    <input type="checkbox">秋　
-                    <input type="checkbox">冬　
-                    <input type="checkbox"> All
+                <div><span class="result">季節</span><br><br>
+                    {% for season in category_list %}
+                    {% if season.category_code >= 25 and season.category_code != 26 %}
+                    <input type="checkbox">{{ season.category_name }}
+                    {% elif season.category_code == 26 %}
+                    <input type="checkbox">{{ season.category_name }}
+                    </div>
+                    <div>
+                    {% endif %}
+                    {% endfor %}
                 </div>
             </td>
             <td>
-                <div>ジャンル <br>
+                <div><span class="result">ジャンル</span> <br>
                     {% for check in category_list %}
-                    <input type="checkbox">{{ check.category_name }}
+                    {% if check.category_code == -1 or check.category_code >= 25 %}
+                    {% elif check.category_code == 11 or check.category_code == 21 %}
+                    <br>
+                    <input type="checkbox">{{ check.category_name }} &nbsp
+                    {% else %}
+                    <input type="checkbox">{{ check.category_name }} &nbsp
+                    {% endif %}
                     {% endfor %}
-                </div>
-                <div>
-                    <input type="checkbox">公園　
-                    <input type="checkbox">城・宮殿　
-                    <input type="checkbox">テーマパーク　　
-                    <input type="checkbox">海岸・岬　
-                </div>
-                <div>
-                    <input type="checkbox">植物　
-                    <input type="checkbox">街・集落　
-                    <input type="checkbox">建造物　
-                    <input type="checkbox">食　　
-                    <input type="checkbox">その他
                 </div>
                 </td>
             <td>
@@ -66,34 +64,25 @@
         </tr>
     </table>
 </div>
-<div class = "serchbox_text">
+<div class="serchbox_text">
     <h1>検索結果</h1>
-    <section class="post-list">
+    <section class="post-list side">
         {% if object_list|length == 0 %}
             <p>検索結果が存在しません。</p>
         {% else %}
-            <table class="table table-hover table-bordered">
-                <tr>
-                    <th>タイトル</th>
-                    <th>内容</th>
-                </tr>
+            <table class="table">
                 <tbody>
-                {% for post in object_list %}
+                {% for plan in plan_list %}
                     <tr>
-                        <td width="35%">{{ post.title }}</td>
-                        <td width="65%">{{ post.text }}</td>
+                        <td>{{ plan.photo }}</td>
+                        <td>{{ plan.plan_name }}</td>
                     </tr>
                 {% endfor %}
                 </tbody>
             </table>
         {% endif %}
     </section>
-    <div class="col-6 offset-3 justify-content-center">
-        {% if is_paginated %}
-            {% include 'pagination.html' %}
-        {% endif %}
-    </div>
-    </div>
+</div>
 
 
 {% endblock %}

@@ -5,7 +5,10 @@
 
 {% block active_signup %}active{% endblock %}
 
+{% load static %}
+
 {% block contents %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/small_regulation.css' %}"/>
 <div class="container top-space">
     <form method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
