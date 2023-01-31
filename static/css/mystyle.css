@@ -877,3 +877,140 @@ label span{
 .mb-5 {
     margin-left: 35%;
 }
+
+.favo {
+    margin-left:73%;
+}
+
+.favo1 {
+    margin-left: 10%;
+    border: 3px solid #000000;
+    width:13%;
+    border-radius: 10px;
+    padding: 5%;
+    margin-top: 3%;
+}
+
+.favo2 {
+    border: 3px solid #000000;
+    width:72%;
+    height: 13%;
+    border-radius: 10px;
+    margin-left: 23%;
+    margin-top: -11.8%;
+    padding: 5.7%;
+}
+
+.favo3 {
+    margin-top:0%;
+}
+
+.favo4 {
+    margin-top: -5%;
+}
+
+.favo5 {
+    margin-top: -5%;
+}
+
+.favo6 {
+    margin-top: -5%;
+}
+
+.favo7 {
+    margin-top: -5%;
+}
+
+.favo8 {
+    margin-top: -5%;
+}
+
+.favo9 {
+    margin-top: -5%;
+}
+
+.favo10 {
+    margin-top: -5%;
+}
+
+.favo11 {
+    margin-top: -5%;
+}
+
+.fafa {
+  border-radius: 5px;
+  background-color: red;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  margin-left: 30%;
+}
+
+.fafa1{
+    margin-left: 92%;
+    margin-top: 3.6%;
+}
+
+.fafa2 {
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 42%;
+}
+.circle{
+    width: 200px;
+    height: 100px;
+    border-radius: 50%;
+    background: #a5e3ff;
+    border: 5px solid #ea9000;
+    box-sizing: border-box;
+}
+
+.tabs {
+  width: 500px;
+  margin: auto;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.tab_class {
+  width: calc(100%/5);
+  height: 50px;
+  background-color: #eee;
+  line-height: 50px;
+  font-size: 15px;
+  text-align: center;
+  display: block;
+  float: left;
+  order: -1;
+}
+
+input[name="tab_name"] {
+  display: none;
+}
+
+input:checked + .tab_class {
+  background-color: cadetblue;
+  color: aliceblue;
+}
+
+.content_class {
+  display: none;
+  width: 100%;
+  border-bottom: 3px solid #eee;
+  border-right: 3px solid #eee;
+  border-left: 3px solid #eee;
+  padding: 30px 10px;
+}
+
+input:checked + .tab_class + .content_class {
+  display: block;
+}
+
+.fafa3 {
+    margin-right: 50%;
+}
+
+.fafa4 {
+    margin-left: 79%;
+    margin-top: -6%;
+}
