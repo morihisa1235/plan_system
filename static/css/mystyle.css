@@ -1160,6 +1160,27 @@ label span{
   border-radius: 50%; // ①
 }
 
+.rounded-corner6 {
+  margin-top: -5.8%;
+  margin-left: 48%;
+  background-color: whiteblue;
+  width: 200px;
+  height: 100px;
+  color: #FFFFFF;
+  font-size: 24px;
+  border-radius: 50%; // ①
+}
+
+.rounded-corner7 {
+  margin-top: -5.8%;
+  margin-left: 48%;
+  background-color: blue;
+  width: 200px;
+  height: 100px;
+  color: #FFFFFF;
+  font-size: 24px;
+  border-radius: 50%; // ①
+}
 
 
 .tabs {
