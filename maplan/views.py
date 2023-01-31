@@ -196,3 +196,5 @@ class mypage_eturanView(generic.TemplateView):
 class mypage_sakuseiView(generic.TemplateView):
     template_name = "mypage_sakusei.html"
 
+class mypage_komenntoView(generic.TemplateView):
+    template_name = "mypage_komennto.html"
