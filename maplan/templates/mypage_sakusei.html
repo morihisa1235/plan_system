@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %}お気に入り{% endblock %}
+{% block title %}作成したプラン{% endblock %}
 {% block contents %}
 
  <div class="center">
@@ -42,10 +42,9 @@
     </div>
     {% endif %}
 
-
-<div class="favo">
-    お気に入り<br>　〇件
-</div>
+<button class="rounded-corner4"><a href="{% url 'maplan:mypage_history' %}">全部</a></button>
+<button class="rounded-corner1"><a href="{% url 'maplan:mypage_eturan' %}">閲覧した</a></button>
+<button class="rounded-corner5">作成した</button>
 
 <div class="favo1" >
     画像
