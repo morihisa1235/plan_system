@@ -57,10 +57,10 @@
         </div>
         {% for plan in plan_list %}
         {% if forloop.counter == 1 %}
-            <a class="index_click" href = "{% url 'maplan:plan_detail' %}"><div class="index_plan_border">
+            <div class="index_plan_border"><a class="index_click" href = "{% url 'maplan:plan_detail' %}">
             <h4 class="index_plan_name">{{ plan.plan_name }}/作成者</h4>
             <h5 class="index_plan_content">{{ plan.content }}</h5>
-            </div></a>
+            </a></div>
         {% endif %}
         {% endfor %}
         </div>

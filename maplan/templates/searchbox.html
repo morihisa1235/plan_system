@@ -66,23 +66,20 @@
 </div>
 <div class="serchbox_text">
     <h1>検索結果</h1>
-    <section class="post-list side">
-        {% if object_list|length == 0 %}
-            <p>検索結果が存在しません。</p>
-        {% else %}
-            <table class="table">
-                <tbody>
-                {% for plan in plan_list %}
-                    <tr>
-                        <td>{{ plan.photo }}</td>
-                        <td>{{ plan.plan_name }}</td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        {% endif %}
-    </section>
 </div>
 
+<div>
+<div class="searchbox_picture_border" style="float:left">
+    <img class = "test_picture" src="{% static 'assets/img/bg-masthead.jpg' %}">
+</div>
+{% for plan in plan_list %}
+{% if forloop.counter == 1 %}
+<div class="searchbox_plan_border"><a class="searchbox_click" href = "{% url 'maplan:plan_detail' %}">
+    <h4 class="searchbox_plan_name">{{ plan.plan_name }}/作成者</h4>
+    <h5 class="searchbox_plan_content">{{ plan.content }}</h5>
+</a></div>
+</div>
+{% endif %}
+{% endfor %}
 
 {% endblock %}

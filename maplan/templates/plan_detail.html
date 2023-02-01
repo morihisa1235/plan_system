@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/regulation.css' %}"/>
 <div>
     {% for plan in plan_list %}
-    {% if plan.id == 1 %}
+    {% if forloop.counter == 1 %}
     <div class = "plan_name" style = "float:left">
         <h1>{{ plan.plan_name }}</h1>
     </div>
@@ -61,7 +61,7 @@
                     <h4>以下の内容で送信してよろしいですか？</h4><br>
                     <p>
                     <div>
-                        <textarea name="comment" placeholder="自分のコメント" cols="40" rows="8"></textarea>
+                        <textarea name="comment" placeholder="自分のコメント" cols="40" rows="8" style="resize:none;"></textarea>
                     </div>
                     <br><br>
                     <div class = "plan_button">

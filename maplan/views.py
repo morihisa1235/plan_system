@@ -98,7 +98,7 @@ class SearchboxView(generic.ListView):
         return context
 
     def get_queryset(self):
-        plans = Plan.objects.filter().order_by('id')
+        plans = Plan.objects.filter().order_by('?')
         return plans
 
 class HistoryView(LoginRequiredMixin, generic.ListView):
@@ -175,7 +175,7 @@ class PlandetailView(generic.ListView):
         return context
 
     def get_queryset(self):
-        plans = Plan.objects.filter().order_by('id')
+        plans = Plan.objects.filter().order_by('?')
         return plans
 
 class Plan_create2View(generic.ListView):
