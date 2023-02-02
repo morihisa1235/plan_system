@@ -89,6 +89,7 @@ class SearchboxView(generic.ListView):
     template_name = "searchbox.html"
     model = Plan
     context_object_data = 'category_list'
+    paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super(SearchboxView, self).get_context_data(**kwargs)
@@ -145,20 +146,12 @@ class CreatedTwoView(generic.ListView):
 class ErrorView(generic.TemplateView):
     template_name = "error.html"
 
-class PlanView(generic.ListView):
+class PlanView(generic.TemplateView):
     template_name = "plan.html"
-    models = Plan
-    context_object_data = "plan_list"
-
-    def get_context_data(self, **kwargs):
-        context = super(PlanView, self).get_context_data(**kwargs)
-        context.update({
-            'route_list': Route.objects.filter().order_by('id'),
-        })
-        return context
+    models = Tourism
 
     def get_queryset(self):
-        plans = Plan.objects.get(id=1)
+        plans = Tourism.objects.filter().order_by('?')
         return plans
 
 class PlandetailView(generic.ListView):
@@ -198,3 +191,10 @@ class mypage_sakuseiView(generic.TemplateView):
 
 class mypage_komenntoView(generic.TemplateView):
     template_name = "mypage_komennto.html"
+
+class planView(generic.TemplateView):
+    template_name = "plan.html"
+
+class plan_testView(generic.TemplateView):
+    template_name = "plan_test.html"
+

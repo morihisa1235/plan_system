@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
 {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/small_regulation.css' %}"/>
 
 {% block contents %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/regulation.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/small_regulation.css' %}"/>
 
 <div class="row">
     <div class="col1">
@@ -64,22 +65,56 @@
         </tr>
     </table>
 </div>
-<div class="serchbox_text">
+<div class="searchbox_text">
     <h1>検索結果</h1>
 </div>
-
-<div>
-<div class="searchbox_picture_border" style="float:left">
-    <img class = "test_picture" src="{% static 'assets/img/bg-masthead.jpg' %}">
-</div>
 {% for plan in plan_list %}
-{% if forloop.counter == 1 %}
+
+<div class="searchbox_space">
+<div class="searchbox_picture_border" style="float:left">
+    <img class = "searchbox_picture" src="{% static 'assets/img/bg-masthead.jpg' %}">
+</div>
+
 <div class="searchbox_plan_border"><a class="searchbox_click" href = "{% url 'maplan:plan_detail' %}">
     <h4 class="searchbox_plan_name">{{ plan.plan_name }}/作成者</h4>
     <h5 class="searchbox_plan_content">{{ plan.content }}</h5>
 </a></div>
 </div>
-{% endif %}
+
+{% empty %}
+<div class="searchbox_noplan">
+    <h1>プランが見つかりませんでした</h1>
+    <h1>再検索してください</h1>
+</div>
+
 {% endfor %}
+
+{% if is_paginated %}
+<ul class="pagination">
+    {% if page_obj.has_previous %}
+    <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+            <span aria-hidden="true">前へ</span>
+        </a>
+    </li>
+    {% endif %}
+
+    {% for page_num in page_obj.paginator.page_range %}
+    {% if page_obj.number == page_num %}
+    <li class="page-item active"><a class="page-link" href="#">{{ page_num }}</a></li>
+    {% else %}
+    <li class="page-item"><a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a></li>
+    {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+    <li class="page-item">
+        <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+            <span aria-hidden="true">次へ</span>
+        </a>
+    </li>
+    {% endif %}
+</ul>
+{% endif %}
 
 {% endblock %}

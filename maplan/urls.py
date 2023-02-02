@@ -31,4 +31,5 @@ urlpatterns = [
     path('mypage_eturan/', views.mypage_eturanView.as_view(), name="mypage_eturan"),
     path('mypage_sakusei/', views.mypage_sakuseiView.as_view(), name="mypage_sakusei"),
     path('mypage_komennto/', views.mypage_komenntoView.as_view(), name="mypage_komennto"),
+    path('plan_test/', views.plan_testView.as_view(), name="plan_test"),
 ]

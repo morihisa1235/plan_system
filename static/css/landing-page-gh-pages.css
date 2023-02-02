@@ -667,7 +667,6 @@ progress {
   }
 }
 .row {
-  --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
@@ -2216,7 +2215,7 @@ progress {
 
 .form-control {
   display: block;
-  width: 100%;
+  width: 95%;
   padding: 0.75rem 1rem;
   font-size: 1rem;
   font-weight: 400;
