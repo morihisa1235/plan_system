@@ -1376,6 +1376,8 @@ input:checked + .tab_class + .content_class {
     height: 100%;
     width: 80%;
     border-radius: 20px;
+}
+
 .toggle-button-001 {
     display: inline-block;
     position: relative;
