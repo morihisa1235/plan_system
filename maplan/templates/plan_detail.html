@@ -8,8 +8,6 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/popup.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/regulation.css' %}"/>
 <div>
-    {% for plan in plan_list %}
-    {% if plan.id == 1 %}
     <div class = "plan_name" style = "float:left">
         <h1>{{ plan.plan_name }}</h1>
     </div>

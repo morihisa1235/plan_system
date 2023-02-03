@@ -651,7 +651,6 @@ label span{
 
 .plan_create_comment_boder {
     border: #000000 solid 2px;
-    margin-top:-7%;
 	margin-left: 13%;
     max-width: 100%;
     width: 37%;
@@ -865,7 +864,7 @@ label span{
 }
 
 .ma111 {
-    margin-top:-7%;
+    margin-top:5%;
 }
 
 .pu111 {
@@ -1460,4 +1459,8 @@ input:checked + .tab_class + .content_class {
 .test_textbox {
     margin-bottom: 5%;
     width: 100%;
+}
+
+.tag_box{
+    margin: 5% 20% 0 5%;
 }
