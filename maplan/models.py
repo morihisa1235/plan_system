@@ -12,6 +12,7 @@ class Category(models.Model):
     def __str__(self):
         return self.category_name
 
+
 class Plan(models.Model):
     """プランモデル"""
     #データベースに登録するプランのデータ
@@ -19,7 +20,6 @@ class Plan(models.Model):
     plan_name = models.CharField(verbose_name='タイトル', max_length=40)
     content = models.TextField(verbose_name='本文', blank=True, null=True)
     photo = models.ImageField(verbose_name='写真', blank=True, null=True)
-    category_code = models.ForeignKey(Category, verbose_name='カテゴリーコード', on_delete=models.PROTECT)
     created_at = models.DateTimeField(verbose_name='作成日時', blank=True, null=True)
     open = models.IntegerField(verbose_name='公開設定', null=False)
 
@@ -27,7 +27,17 @@ class Plan(models.Model):
         verbose_name_plural = 'Plan'
 
     def __str__(self):
-        return self.title
+        return self.plan_name
+
+class Plan_category(models.Model):
+    plan_id = models.ForeignKey(Plan, verbose_name="プランID", on_delete=models.PROTECT)
+    category_code = models.ForeignKey(Category, verbose_name="カテゴリーコード", on_delete=models.PROTECT)
+
+    class Meta:
+        verbose_name_plural = 'Plan_category'
+
+    def __str__(self):
+        return self.id
 
 class Prefecture(models.Model):
     """都道府県モデル"""
@@ -78,3 +88,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.comment
+

@@ -15,17 +15,10 @@ from accounts.models import CustomUser
 
 logger = logging.getLogger(__name__)
 
-class IndexView(generic.TemplateView):
+class IndexView(generic.ListView):
     template_name = "index.html"
     models = Plan
     context_object_data = "plan_list"
-
-    def get_context_data(self, **kwargs):
-        context = super(IndexView, self).get_context_data(**kwargs)
-        context.update({
-            'plan_list' : Plan.objects.filter().order_by('?'),
-        })
-        return context
 
     def get_queryset(self):
         plans = Plan.objects.filter().order_by('?')
@@ -42,7 +35,7 @@ class InquiryView(generic.FormView):
         logger.info('Inquiry sent by {}'.format(form.cleaned_data['name']))
         return super().form_valid(form)
 
-class MypageView(generic.TemplateView):
+class MypageView(LoginRequiredMixin, generic.TemplateView):
     template_name = "mypage.html"
 
 class SitemapView(generic.TemplateView):
@@ -51,23 +44,24 @@ class SitemapView(generic.TemplateView):
 class PolicyView(generic.TemplateView):
     template_name = "policy.html"
 
-class Change_passwordView(generic.TemplateView):
+class Change_passwordView(LoginRequiredMixin,generic.TemplateView):
     template_name = "change_password.html"
 
-class PersonalView(generic.ListView):
+class PersonalView(LoginRequiredMixin,generic.ListView):
     template_name = "personal.html"
     model = CustomUser
     def get_queryset(self):
         user = CustomUser.objects.filter().order_by('id')
         return user
 
-class Change_personalView(generic.ListView):
+class Change_personalView(LoginRequiredMixin,generic.ListView):
     template_name = "change_personal.html"
     model = CustomUser
     def get_queryset(self):
         user = CustomUser.objects.filter().order_by('id')
         return user
-class Change_passwordkannryouView(generic.TemplateView):
+
+class Change_passwordkannryouView(LoginRequiredMixin, generic.TemplateView):
     template_name = "change_passwordkannryou.html"
 
 class WithdrawalView(generic.TemplateView):
@@ -145,23 +139,11 @@ class CreatedTwoView(generic.ListView):
 class ErrorView(generic.TemplateView):
     template_name = "error.html"
 
-class PlanView(generic.ListView):
-    template_name = "plan.html"
-    models = Plan
-    context_object_data = "plan_list"
-
-    def get_context_data(self, **kwargs):
-        context = super(PlanView, self).get_context_data(**kwargs)
-        context.update({
-            'route_list': Route.objects.filter().order_by('id'),
-        })
-        return context
-
     def get_queryset(self):
         plans = Plan.objects.get(id=1)
         return plans
 
-class PlandetailView(generic.ListView):
+class PlandetailView(generic.DetailView):
     template_name = "plan_detail.html"
     models = Plan
     context_object_data = "plan_list"
@@ -177,9 +159,6 @@ class PlandetailView(generic.ListView):
     def get_queryset(self):
         plans = Plan.objects.filter().order_by('id')
         return plans
-
-class Plan_create2View(generic.ListView):
-     template_name = "plan_create2.html"
 
 class plan_create_completeView(generic.TemplateView):
     template_name = "plan_create_complete.html"
@@ -198,3 +177,19 @@ class mypage_sakuseiView(generic.TemplateView):
 
 class mypage_komenntoView(generic.TemplateView):
     template_name = "mypage_komennto.html"
+
+class DetailTestView(generic.ListView):
+    template_name = "detail_test.html"
+    models = Plan
+
+    def get_queryset(self):
+        Plans = Plan.objects.filter().order_by('?')
+        return Plans
+
+class DetailResultView(generic.DetailView):
+    template_name = "detail_result.html"
+    models = Plan
+
+    def get_queryset(self):
+        Plans = Plan.objects.filter().order_by('?')
+        return Plans

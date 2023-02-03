@@ -36,11 +36,11 @@
                 <div><span class="result">ジャンル</span> <br>
                     {% for check in category_list %}
                     {% if check.category_code == -1 or check.category_code >= 25 %}
-                    {% elif check.category_code == 11 or check.category_code == 21 %}
+                    {% elif check.category_code == 10 or check.category_code == 19 %}
                     <br>
-                    <input type="checkbox">{{ check.category_name }} &nbsp
+                    <input type="checkbox">{{ check.category_name }}
                     {% else %}
-                    <input type="checkbox">{{ check.category_name }} &nbsp
+                    <input type="checkbox">{{ check.category_name }}
                     {% endif %}
                     {% endfor %}
                 </div>

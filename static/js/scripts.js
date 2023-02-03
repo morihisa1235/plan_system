@@ -6,7 +6,13 @@
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
 
-//ドラッグアンドドロップ/***** ドラッグ開始時の処理 *****/
+//ログインアラート
+function Login_alert() {
+  alert("ログインしてください。")
+}
+
+//ドラッグアンドドロップ
+/***** ドラッグ開始時の処理 *****/
 function f_dragstart(event){
   //ドラッグするデータのid名をDataTransferオブジェクトにセット
   event.dataTransfer.setData("Text", event.target.id);

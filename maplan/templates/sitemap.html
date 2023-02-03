@@ -17,17 +17,23 @@
 </div>
 <div class="side">
     <ul class = "sitemap">
-        <li><a href = "{% url 'maplan:index' %}">トップ</a></li>
-        <li><a href = "{% url 'maplan:searchbox' %}">検索画面</a></li>
-        <li><a href = "{% url 'account_login' %}">ログイン</a></li>
-        <li><a href = "{% url 'account_signup' %}">サインアップ</a></li>
-        <li><a href = "{% url 'maplan:inquiry' %}">お問い合わせ</a></li>
-        <li><a href = "{% url 'maplan:policy' %}">ポリシー</a></li>
-        <li><a href = "{% url 'maplan:mypage' %}">マイページ</a></li>
-        <li><a href = "">プラン作成</a></li>
-        <li><a href = "{% url 'maplan:personal' %}">個人情報</a></li>
-        <li style = "list-style:none">　</li>
-        <li style = "list-style:none">　</li>
+        <li><a href="{% url 'maplan:index' %}">トップ</a></li>
+        <li><a href="{% url 'maplan:searchbox' %}">検索画面</a></li>
+        <li><a href="{% url 'account_login' %}">ログイン</a></li>
+        <li><a href="{% url 'account_signup' %}">サインアップ</a></li>
+        <li><a href="{% url 'maplan:inquiry' %}">お問い合わせ</a></li>
+        <li><a href="{% url 'maplan:policy' %}">ポリシー</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'maplan:created_one' %}">作成</a></li>
+        <li><a href="{% url 'account_logout' %}">ログアウト</a></li>
+        <li><a href="{% url 'maplan:personal' %}">個人情報</a></li>
+        {% else %}
+        <li><a href="javascript:void(0)" onClick="Login_alert()">マイページ</a></li>
+        <li><a href="javascript:void(0)" onClick="Login_alert()">プラン作成</a></li>
+        <li><a href="javascript:void(0)" onClick="Login_alert()">個人情報</a></li>
+        {% endif %}
+        <li style="list-style:none">　</li>
+        <li style="list-style:none">　</li>
     </ul>
 </div>
 {% endblock %}

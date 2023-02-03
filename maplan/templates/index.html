@@ -53,14 +53,16 @@
             </select>
         </div>
         <div class="index_plan_picture_border" style="float:left">
-            <img class = "test_picture" src="{% static 'assets/img/bg-masthead.jpg' %}">
+            <img class="test_picture" src="{% static 'assets/img/bg-masthead.jpg' %}">
         </div>
         {% for plan in plan_list %}
         {% if forloop.counter == 1 %}
-            <a class="index_click" href = "{% url 'maplan:plan_detail' %}"><div class="index_plan_border">
-            <h4 class="index_plan_name">{{ plan.plan_name }}/作成者</h4>
-            <h5 class="index_plan_content">{{ plan.content }}</h5>
-            </div></a>
+            <a class="index_click" href="{% url 'maplan:plan_detail' plan.pk %}">
+                <div class="index_plan_border">
+                <h4 class="index_plan_name">{{ plan.plan_name }}/作成者名</h4>
+                <h5 class="index_plan_content">{{ plan.content|truncatechars:20 }}</h5>
+                </div>
+            </a>
         {% endif %}
         {% endfor %}
         </div>

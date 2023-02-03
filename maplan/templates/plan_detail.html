@@ -8,17 +8,9 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/popup.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/regulation.css' %}"/>
 <div>
-    {% for plan in plan_list %}
-    {% if plan.id == 1 %}
     <div class = "plan_name" style = "float:left">
         <h1>{{ plan.plan_name }}</h1>
     </div>
-    {% endif %}
-    {% empty %}
-    <div class = "plan_name" style = "float:left">
-        <h1>ERROR</h1>
-    </div>
-    {% endfor %}
     <div class = "favorite_form_border_detail">
         <div class = "favorite_form">
             <input id="favorite" type="checkbox" name="rate">
@@ -30,12 +22,13 @@
     </div>
     <div class = "route_border">
         {% for route in route_list %}
-        {% if route.plan_code_id == 1 %}
-        {{ route.tourism_code_id }}<br>
+        {% if route.plan_code_id == object.id %}
+        {{ route.tourism_code }}<br>
         {% endif %}
         {% endfor %}
     </div>
     <div class = "plan_detail_comment_boder" style = "float:left">
+        {% if user.is_authenticated %}
         <!--送信-->
         <div class = "rate_form_boder1" style="float:left">
             <div class="rate-form1">
@@ -65,7 +58,7 @@
                     </div>
                     <br><br>
                     <div class = "plan_button">
-                        <a class="btn btn-primary" href="{% url 'maplan:plan_detail' %}">戻る</a>
+                        <a class="btn btn-primary" href="{% url 'maplan:plan_detail' plan.pk %}">戻る</a>
                         <label>
                             <a class="btn btn-primary">送信</a>
                             <input type="checkbox" name="checkbox">
@@ -73,7 +66,7 @@
                                 <br><br>
                                 <h4>コメントの送信が完了しました。</h4>
                                 <br><br><br><br><br>
-                                <a class="btn btn-primary" href="{% url 'maplan:plan_detail' %}">OK</a>
+                                <a class="btn btn-primary" href="{% url 'maplan:plan_detail' plan.pk %}">OK</a>
                             </div>
                         </label>
                     </div>
@@ -85,9 +78,10 @@
         </div>
         <!---->
         <!--編集-->
+        {% if comment.comment != "" and comment.plan_id_id == plan.id %}
         <div class="rate_form_boder" style="float:left">
             {% for comment in comment_list %}
-            {% if comment.plan_id_id == 1 and comment.user_id_id == 1 %}
+            {% if comment.plan_id_id == plan.id and comment.user_id_id == plan.user_id_id %}
             <div class="eva-form1">
                 {% if comment.evalution >= 1 %}
                 <input id="star5" type="radio" name="eva" value="5">
@@ -119,7 +113,7 @@
         <input type="checkbox" id="pop-up">
         <div class="overlay">
             <div class="window">
-                <a class="btn btn-primary" href="{% url 'maplan:plan_detail' %}">戻る</a>
+                <a class="btn btn-primary" href="{% url 'maplan:plan_detail' plan.pk %}">戻る</a>
                 <div class = "plan">
                     <h4>コメント内容を編集または削除</h4><br>
                     <p>
@@ -136,7 +130,7 @@
                         <label for="star1-5">★</label>
                     </div>
                     <div>
-                        <textarea name="comment" placeholder="{% for comment in comment_list %}{% if comment.id == 1 %}{{ comment.comment }}{% endif %}{% endfor %}" cols="40" rows="8" style="resize:none;"></textarea>
+                        <textarea name="comment" placeholder="{{ comment.comment }}" cols="40" rows="8" style="resize:none;"></textarea>
                     </div>
                     <br><br>
                     <div class = "plan_button">
@@ -161,8 +155,7 @@
                                             <h4>削除完了しました。</h4>
                                             <br><br><br><br><br>
                                             <div class = "plan_button">
-                                                <a class="btn btn-primary" href="{% url 'maplan:plan_detail' %}">OK</a>
-                                                <a class="btn btn-primary">戻る</a>
+                                                <a class="btn btn-primary" href="{% url 'maplan:plan_detail' plan.pk %}">OK</a>
                                             </div>
                                         </div>
                                     </label>
@@ -201,7 +194,7 @@
                                             <br><br>
                                             <h4>編集完了しました。</h4>
                                             <br><br><br><br><br>
-                                            <a class="btn btn-primary" href="{% url 'maplan:plan_detail' %}">戻る</a>
+                                            <a class="btn btn-primary" href="{% url 'maplan:plan_detail' plan.pk %}">戻る</a>
                                         </div>
                                     </label>
                                 </div>
@@ -212,12 +205,14 @@
             </div>
         </div>
         <div>
-            <input class="comment-width" type="text" readonly name="namae" maxlength="50" value="{% for comment in comment_list %}{% if comment.id == 1 %}{{ comment.comment }}{% endif %}{% endfor %}">
+            <input class="comment-width" type="text" readonly name="namae" maxlength="50" value="{{ comment.comment }}">
         </div>
+        {% endif %}
+        {% endif %}
         <!---->
         <!--通報-->
         {% for comment in comment_list %}
-        {% if comment.plan_id_id == 1 %}
+        {% if comment.plan_id_id == plan.id and comment.user_id_id != plan.user_id_id %}
         <div class="rate_form_boder" style="float:left">
             <div class="eva-form1">
                 {% if comment.evalution >= 1 %}
@@ -256,7 +251,7 @@
                     </div>
                     <br><br>
                     <div class = "plan_button">
-                        <a class="btn btn-primary" href="{% url 'maplan:plan_detail' %}">戻る</a>
+                        <a class="btn btn-primary" href="{% url 'maplan:plan_detail' plan.pk %}">戻る</a>
                         <label>
                             <a class="btn btn-primary">通報</a>
                             <input type="checkbox" name="checkbox">
@@ -264,7 +259,7 @@
                                 <br><br>
                                 <h4>ご協力いただきありがとうございました。</h4>
                                 <br><br><br><br><br>
-                                <a class="btn btn-primary" href="{% url 'maplan:plan_detail' %}">戻る</a>
+                                <a class="btn btn-primary" href="{# url 'maplan:plan_detail' plan.pk #}">戻る</a>
                             </div>
                         </label>
                     </div>
@@ -280,7 +275,7 @@
     </div>
     <!--文章-->
     <div>
-        <textarea class = "plan_detail_textarea" name="text" placeholder = "プラン作成の際に入力したプランに関する文章" readonly>{% for plan in plan_list %}{% if plan.id == 1 %}{{ plan.content }}{% endif %}{% endfor %}</textarea>
+        <textarea class = "plan_detail_textarea" name="text" placeholder = "プラン作成の際に入力したプランに関する文章" readonly>{{ plan.content }}</textarea>
     </div>
     <!---->
     <!--写真-->
