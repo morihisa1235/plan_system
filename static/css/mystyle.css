@@ -1378,6 +1378,21 @@ input:checked + .tab_class + .content_class {
     border-radius: 20px;
 }
 
+.searchbox_click {
+    text-align:center;
+    color: #000000;
+    text-decoration: none;
+}
+.searchbox_click:hover {
+    color: #000000;
+}
+.searchbox_plan_name {
+    margin-top: 3%;
+}
+.searchbox_plan_content {
+    margin-top: 4%;
+}
+
 .toggle-button-001 {
     display: inline-block;
     position: relative;
