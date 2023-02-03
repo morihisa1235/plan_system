@@ -75,7 +75,7 @@
     <img class = "searchbox_picture" src="{% static 'assets/img/bg-masthead.jpg' %}">
 </div>
 
-<div class="searchbox_plan_border"><a class="searchbox_click" href = "{% url 'maplan:plan_detail' %}">
+<div class="searchbox_plan_border"><a class="searchbox_click" href = "{% url 'maplan:plan_detail' plan.pk %}">
     <h4 class="searchbox_plan_name">{{ plan.plan_name }}/作成者</h4>
     <h5 class="searchbox_plan_content">{{ plan.content }}</h5>
 </a></div>
