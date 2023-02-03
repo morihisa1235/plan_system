@@ -22,6 +22,7 @@ urlpatterns = [
     path('created1/', views.CreatedOneView.as_view(), name="created_one"),
     path('created2/', views.CreatedTwoView.as_view(), name="created_two"),
     path('error/', views.ErrorView.as_view(), name="error"),
+path('plan/', views.PlanView.as_view(), name="plan"),
     path('plan_detail/<int:pk>/', views.PlandetailView.as_view(), name="plan_detail"),
     path('plan_create_complete/', views.plan_create_completeView.as_view(), name="plan_create_complete"),
     path('mypage_favorite/', views.mypage_favoriteView.as_view(), name="mypage_favorite"),
@@ -31,4 +32,5 @@ urlpatterns = [
     path('mypage_komennto/', views.mypage_komenntoView.as_view(), name="mypage_komennto"),
     path('detail_test/', views.DetailTestView.as_view(), name="detail_test"),
     path('detail_result/<int:pk>/', views.DetailResultView.as_view(), name="detail_result"),
+    path('plan_test/', views.plan_testView.as_view(), name="plan_test"),
 ]

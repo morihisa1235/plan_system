@@ -83,6 +83,7 @@ class SearchboxView(generic.ListView):
     template_name = "searchbox.html"
     model = Plan
     context_object_data = 'category_list'
+    paginate_by = 10
 
     def get_context_data(self, **kwargs):
         context = super(SearchboxView, self).get_context_data(**kwargs)
@@ -92,7 +93,7 @@ class SearchboxView(generic.ListView):
         return context
 
     def get_queryset(self):
-        plans = Plan.objects.filter().order_by('id')
+        plans = Plan.objects.filter().order_by('?')
         return plans
 
 class HistoryView(LoginRequiredMixin, generic.ListView):
@@ -139,8 +140,12 @@ class CreatedTwoView(generic.ListView):
 class ErrorView(generic.TemplateView):
     template_name = "error.html"
 
+class PlanView(generic.TemplateView):
+    template_name = "plan.html"
+    models = Tourism
+
     def get_queryset(self):
-        plans = Plan.objects.get(id=1)
+        plans = Tourism.objects.filter().order_by('?')
         return plans
 
 class PlandetailView(generic.DetailView):
@@ -159,6 +164,9 @@ class PlandetailView(generic.DetailView):
     def get_queryset(self):
         plans = Plan.objects.filter().order_by('id')
         return plans
+
+class Plan_create2View(generic.ListView):
+     template_name = "plan_create2.html"
 
 class plan_create_completeView(generic.TemplateView):
     template_name = "plan_create_complete.html"
@@ -193,3 +201,10 @@ class DetailResultView(generic.DetailView):
     def get_queryset(self):
         Plans = Plan.objects.filter().order_by('?')
         return Plans
+
+class planView(generic.TemplateView):
+    template_name = "plan.html"
+
+class plan_testView(generic.TemplateView):
+    template_name = "plan_test.html"
+

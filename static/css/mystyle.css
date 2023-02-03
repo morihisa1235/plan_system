@@ -168,7 +168,7 @@ footer {
 
 .div-border{
   border: #000000 solid 2px;
-  margin-left:9.3%;
+  margin-left:10%;
 }
 
 .div-border11{
@@ -178,7 +178,7 @@ footer {
 
 .div{
   border: #000000 solid 2px;
-  margin-left:25.5%;
+  margin-left:74.4%;
   width:5.1%;
 }
 
@@ -729,7 +729,7 @@ label span{
     text-align: right;
 }
 
-.serchbox_text {
+.searchbox_text {
     text-align:center;
     margin-top:10%;
 }
@@ -1012,22 +1012,32 @@ label span{
 }
 
 .favo1 {
-    margin-left: 10%;
+    margin-left:-220%;
     border: 3px solid #000000;
-    width:13%;
+    width:10%;
     border-radius: 10px;
-    padding: 5%;
-    margin-top: 3%;
+    padding: 25%;
 }
 
-.favo2 {
+
+.aaa {
+ display: flex;
+     margin-left: 4%;
+     margin-top: 3%;
+}
+
+.ccc {
+ display: flex;
+}
+
+
+
+
+ .favo2 {
     border: 3px solid #000000;
-    width:72%;
-    height: 13%;
+    width: 250%;
     border-radius: 10px;
-    margin-left: 23%;
-    margin-top: -11.8%;
-    padding: 5.7%;
+    padding: 10%;
 }
 
 .favo3 {
@@ -1067,13 +1077,13 @@ label span{
 }
 
 .favo12 {
-    margin-top: -3.2%;
-    margin-left: 70%;
+    margin-top: -3.5%;
+    margin-left: 79%;
 }
 
 .favo13 {
-    margin-top: -3.6%;
-    margin-left: 90%;
+    margin-top: -2.8%;
+    margin-left: 89.5%;
 }
 
 .fafa {
@@ -1082,7 +1092,7 @@ label span{
   padding: 10px;
   text-decoration: none;
   color: white;
-  margin-left: 30%;
+  margin-left: 4%;
 }
 
 .fafa1{
@@ -1097,8 +1107,6 @@ label span{
 }
 
 .rounded-corner {
-  margin-top: 2%;
-  margin-left: 3%;
   background-color: blue;
   width: 200px;
   height: 100px;
@@ -1108,8 +1116,7 @@ label span{
 }
 
 .rounded-corner1 {
-  margin-top: -5.8%;
-  margin-left: 18%;
+  margin-left: 4%;
   background-color: whiteblue;
   width: 200px;
   height: 100px;
@@ -1118,8 +1125,7 @@ label span{
   border-radius: 50%; // ①
 }
 .rounded-corner2 {
-  margin-top: -5.8%;
-  margin-left: 33%;
+  margin-left: 4%;
   background-color: whiteblue;
   width: 200px;
   height: 100px;
@@ -1129,8 +1135,7 @@ label span{
 }
 
 .rounded-corner3 {
-  margin-top: -5.8%;
-  margin-left: 18%;
+  margin-left: 4%;
   background-color: blue;
   width: 200px;
   height: 100px;
@@ -1140,8 +1145,6 @@ label span{
 }
 
 .rounded-corner4 {
-  margin-top: 2%;
-  margin-left: 3%;
   background-color: whiteblue;
   width: 200px;
   height: 100px;
@@ -1150,8 +1153,7 @@ label span{
   border-radius: 50%; // ①
 }
 .rounded-corner5 {
-  margin-top: -5.8%;
-  margin-left: 33%;
+  margin-left: 4%;
   background-color: blue;
   width: 200px;
   height: 100px;
@@ -1161,8 +1163,7 @@ label span{
 }
 
 .rounded-corner6 {
-  margin-top: -5.8%;
-  margin-left: 48%;
+  margin-left: 4%;
   background-color: whiteblue;
   width: 200px;
   height: 100px;
@@ -1172,8 +1173,7 @@ label span{
 }
 
 .rounded-corner7 {
-  margin-top: -5.8%;
-  margin-left: 48%;
+  margin-left: 4%;
   background-color: blue;
   width: 200px;
   height: 100px;
@@ -1225,6 +1225,7 @@ input:checked + .tab_class + .content_class {
 }
 
 .fafa3 {
+    margin-top: 4%;
     margin-right: 50%;
 }
 
@@ -1358,4 +1359,105 @@ input:checked + .tab_class + .content_class {
   z-index: 2;
   background: #eee;
   transition: 0.4s;
+}
+
+.searchbox_picture_border {
+    margin-left: 10%;
+    border: 3px solid #000000;
+    width:13%;
+    height: 100%;
+    border-radius: 20px;
+    margin-top: 3%;
+}
+
+.searchbox_plan_border {
+    margin: auto;
+    border: 3px solid #000000;
+    margin-top: 3%;
+    height: 100%;
+    width: 80%;
+    border-radius: 20px;
+}
+
+.toggle-button-001 {
+    display: inline-block;
+    position: relative;
+    width: 90px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #d8bbbb;
+    cursor: pointer;
+    transition: background-color .4s;
+}
+
+.toggle-button-001:has(:checked) {
+    background-color: #4bd865;
+}
+
+.toggle-button-001::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgb(0 0 0 / 20%);
+    background-color: #fff;
+    content: '';
+    transition: left .4s;
+}
+
+.toggle-button-001:has(:checked)::after {
+    left: 50px;
+}
+
+.toggle-button-001 input {
+    display: none;
+}
+
+.bbb {
+ display: flex;
+     margin-left: 79%;
+     margin-top: -3%;
+}
+
+.ddd {
+     margin-left: 86.5%;
+     margin-top: -2.6%;
+}
+
+.ccc {
+ display: flex;
+     margin-left: 70%;
+     margin-top: 5%;
+}
+
+.aiai {
+    margin-left:5%;
+    margin-top: 3%;
+}
+
+.pagination {
+    margin: auto;
+    margin-top: 10%;
+}
+
+.searchbox_picture {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.searchbox_space{
+    margin-top: 1%;
+}
+
+.searchbox_noplan {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.test_textbox {
+    margin-bottom: 5%;
+    width: 100%;
 }
