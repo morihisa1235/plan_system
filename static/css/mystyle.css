@@ -791,7 +791,7 @@ label span{
 	margin-left: 51%;
     max-width: 100%;
     width: 30%;
-    height: 37.6%;
+    height: 25%;
 }
 
 .plan_detail_comment_boder {
@@ -800,7 +800,7 @@ label span{
 	margin-left: 17%;
     max-width: 100%;
     width: 33%;
-    height: 80%;
+    height: 35%;
 }
 
 .map_border11 {
@@ -843,7 +843,7 @@ label span{
     margin-left: 1%;
     max-width: 100%;
     width: 30%;
-    height: 40%;
+    height: 18%;
     font-size: 10pt;
     line-height: 31px;
     padding-right: 15px;
@@ -1478,4 +1478,8 @@ input:checked + .tab_class + .content_class {
 
 .tag_box{
     margin: 5% 20% 0 5%;
+}
+
+.box-size {
+    height: 350px;
 }
