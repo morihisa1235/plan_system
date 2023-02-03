@@ -12,7 +12,6 @@ class Category(models.Model):
     def __str__(self):
         return self.category_name
 
-
 class Plan(models.Model):
     """プランモデル"""
     #データベースに登録するプランのデータ
@@ -28,6 +27,16 @@ class Plan(models.Model):
 
     def __str__(self):
         return self.plan_name
+
+class Plan_category(models.Model):
+    plan_id = models.ForeignKey(Plan, verbose_name="プランID", on_delete=models.PROTECT)
+    category_code = models.ForeignKey(Category, verbose_name="カテゴリーコード", on_delete=models.PROTECT)
+
+    class Meta:
+        verbose_name_plural = 'Plan_category'
+
+    def __str__(self):
+        return self.id
 
 class Plan_category(models.Model):
     plan_id = models.ForeignKey(Plan, verbose_name="プランID", on_delete=models.PROTECT)
@@ -88,4 +97,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.comment
+
+
+
 

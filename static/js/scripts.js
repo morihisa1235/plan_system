@@ -36,3 +36,11 @@ function f_drop(event){
   event.preventDefault();
 }
 
+ let win
+ const openWindow = () => {
+  win = window.open("https://google.com")
+ }
+
+ const closeWindow = () => {
+  win.close()
+ }
