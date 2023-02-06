@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class = "send">
-            <label class="open4" for="pop-up4"><h5>送信</h5></label>
+            <label class="open4" for="pop-up4" id="sending"><h5>送信</h5></label>
         </div>
         <input type="checkbox" id="pop-up4">
         <div class="overlay4">
@@ -60,7 +60,7 @@
                     <h4>以下の内容で送信してよろしいですか？</h4><br>
                     <p>
                     <div>
-                        <textarea name="comment" placeholder="自分のコメント" cols="40" rows="8" style="resize:none;"></textarea>
+                        <textarea name="comment" placeholder="自分のコメント" cols="40" rows="8" style="resize:none;" id="review"></textarea>
                     </div>
                     <br><br>
                     <div class = "plan_button">
@@ -80,8 +80,19 @@
             </div>
         </div>
         <div>
-            <input class="comment-width" type="text" name="namae" maxlength="50" placeholder="コメントを入力してください">
+            <input class="comment-width" type="text" name="namae" maxlength="50" placeholder="コメントを入力してください" id="reviewTextarea">
         </div>
+    <script>
+    function butotnClick(){
+    review.innerText = reviewTextarea.value;
+    }
+
+    let reviewTextarea = document.getElementById('reviewTextarea');
+    let msg = document.getElementById('review');
+
+    let sending = document.getElementById('sending');
+    sending.addEventListener('click', butotnClick);
+    </script>
         <!---->
         <!--編集-->
         {% if comment.comment != "" and comment.plan_id_id == plan.id %}
