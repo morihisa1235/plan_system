@@ -14,20 +14,46 @@
         <div class="scroll box1" id="tour_list" ondragover="f_dragover(event)">
             <ul class="ul_tags">
                 {% for tour in tourism_list %}
-                <li class="li_tags"><div class="item" draggable="true" id="{{ tour.tourism_code }}" ondragstart="f_dragstart(event)">{{ tour.tourism_name }}</div></li>
+                <li class="li_tags"><div class="item" draggable="true" id="tourism_list_name" ondragstart="f_dragstart(event)">{{ tour.tourism_name }}</div></li>
                 {% empty %}
                 <li class="li_tags"><div class="item" draggable="true" id="NOT_FOUND">検索結果がありませんでした。</div></li>
                 <li class="li_tags"><div class="item" draggable="true" id="NOT_FOUND">もう一度検索してください</div></li>
                 {% endfor %}
             </ul>
         </div>
-        <div class="result drop_box box2" id="tour_list" ondragover="f_dragover(event)" ondrag="f_drop(event)">
+        <p class="result drop_box box2" id="target" ondragover="dragover_handler(event)" ondrop="drop_handler(event)">
             <ul class="ul_tags">
                 <li class="li_tags">
                 </li>
             </ul>
-        </div>
     </div>
+<script>
+  function dragstart_handler(ev) {
+    // Add the target element's id to the data transfer object
+    ev.dataTransfer.setData("text/plain", ev.target.id);
+  }
+
+  window.addEventListener("DOMContentLoaded", () => {
+    // Get the element by id
+    const element = document.getElementById("tourism_list_name");
+    // Add the ondragstart event listener
+    element.addEventListener("dragstart", dragstart_handler);
+  });
+</script>
+
+<script>
+  function dragover_handler(ev) {
+    ev.preventDefault();
+    ev.dataTransfer.dropEffect = "move";
+  }
+  function drop_handler(ev) {
+    ev.preventDefault();
+    // 移動された要素のidを取得して、その要素をtargetのDOMに追加する
+    const data = ev.dataTransfer.getData("text/plain");
+    ev.target.appendChild(document.getElementById(data));
+  }
+</script>
+
     <div class="balance">
         <label for="site-search"></label>
         <form>
