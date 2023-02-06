@@ -15,7 +15,7 @@
             <ul class="ul_tags">
                 {% for tour in tourism_list %}
                 {% if forloop.counter <= 500 %}
-                <li class="li_tags"><div class="item" draggable="true" id="saf">{{ tour.tourism_name }}</div></li>
+                <div class="item" draggable="true" id="saf">{{ tour.tourism_name }}</div>
                 {% endif %}
                 {% empty %}
                 <li class="li_tags"><div class="item" draggable="true" id="NOT_FOUND">検索結果がありませんでした。</div></li>
