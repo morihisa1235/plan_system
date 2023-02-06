@@ -11,10 +11,12 @@
 <div class="side side-space">
     <div>
         <span class="result">検索結果</span>
-        <div class="scroll box1" id="tour_list" ondragover="f_dragover(event)">
+        <div class="scroll box1" id="tour_list">
             <ul class="ul_tags">
                 {% for tour in tourism_list %}
-                <li class="li_tags"><div class="item" draggable="true" id="tourism_list_name" ondragstart="f_dragstart(event)">{{ tour.tourism_name }}</div></li>
+                {% if forloop.counter <= 500 %}
+                <li class="li_tags"><div class="item" draggable="true" id="{{ tour.tourism_code }}">{{ tour.tourism_name }}</div></li>
+                {% endif %}
                 {% empty %}
                 <li class="li_tags"><div class="item" draggable="true" id="NOT_FOUND">検索結果がありませんでした。</div></li>
                 <li class="li_tags"><div class="item" draggable="true" id="NOT_FOUND">もう一度検索してください</div></li>
@@ -27,32 +29,6 @@
                 </li>
             </ul>
     </div>
-<script>
-  function dragstart_handler(ev) {
-    // Add the target element's id to the data transfer object
-    ev.dataTransfer.setData("text/plain", ev.target.id);
-  }
-
-  window.addEventListener("DOMContentLoaded", () => {
-    // Get the element by id
-    const element = document.getElementById("tourism_list_name");
-    // Add the ondragstart event listener
-    element.addEventListener("dragstart", dragstart_handler);
-  });
-</script>
-
-<script>
-  function dragover_handler(ev) {
-    ev.preventDefault();
-    ev.dataTransfer.dropEffect = "move";
-  }
-  function drop_handler(ev) {
-    ev.preventDefault();
-    // 移動された要素のidを取得して、その要素をtargetのDOMに追加する
-    const data = ev.dataTransfer.getData("text/plain");
-    ev.target.appendChild(document.getElementById(data));
-  }
-</script>
 
     <div class="balance">
         <label for="site-search"></label>
