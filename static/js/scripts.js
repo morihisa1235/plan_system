@@ -18,7 +18,7 @@ function Login_alert() {
 
   window.addEventListener("DOMContentLoaded", () => {
     // Get the element by id
-    const element = document.getElementById(/^TR/);
+    const element = document.getElementById("saf");
     // Add the ondragstart event listener
     element.addEventListener("dragstart", dragstart_handler);
   });
@@ -31,5 +31,5 @@ function Login_alert() {
     ev.preventDefault();
     // 移動された要素のidを取得して、その要素をtargetのDOMに追加する
     const data = ev.dataTransfer.getData("text/plain");
-    ev.target.appendChild(document.getElementById(data));
+    ev.target.appendChild(document.getElementById("saf"));
   }
