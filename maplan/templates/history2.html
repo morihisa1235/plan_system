@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}履歴{% endblock %}
+
+{% block contents %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/small_regulation.css' %}"/>
+
+ <div class="center">
+        <h1>マイページ2</h1>
+ </div>
+<nav id="info_nav">
+        <ul>
+            <li>
+                <a href="{% url 'maplan:personal' %}"><img src="{% static 'assets/img/setting.png' %}" alt="個人情報" width="75px" height="90px"/>
+                    <p>個人情報ページ</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+<nav id="mypage_nav">
+        <ul>
+            <li><a href="{% url 'maplan:mypage_history' %}">履歴</a></li>
+            <li><a href="{% url 'maplan:mypage_favorite' %}">お気に入り</a></li>
+        </ul>
+    </nav>
+    <div>
+        <span style="color: red;">※非公開に変更又は削除されたプランは自動的に削除されます</span>
+    </div>
+    {% block header %}{% endblock %}
+
+    {% if messages %}
+    <div class="container my-div-style">
+        <div class="row">
+            <ul class="messages" style="list-style: none;">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                    {{ message }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+<div class="aaa">
+<button class="rounded-corner" style = "float:left">全部</button>
+<button class="rounded-corner1"><a href="{% url 'maplan:mypage_eturan' %}">閲覧した</a></button>
+<button class="rounded-corner2"><a href="{% url 'maplan:mypage_sakusei' %}">作成した</a></button>
+<button class="rounded-corner6"><a href="{% url 'maplan:mypage_komennto' %}">コメントした</a></button>
+</div>
+
+<div class="ccc">
+    <div class="favo1" >画像</div>
+    <div class="favo2">タイトル名、プラン名</div>
+</div>
+<div class="bbb">
+    <label class="toggle-button-001"><input type="checkbox"/></label>
+    <div class="aiai"><h0.8>公開</h0.8></div>
+    <a href="sample.html" class="fafa">削除</a>
+</div>
+
+
+
+<div class="ccc">
+    <div class="favo1" >画像</div>
+    <div class="favo2">タイトル名、プラン名</div>
+</div>
+<div class="bbb">
+    <label class="toggle-button-001"><input type="checkbox"/></label>
+    <div class="aiai"><h0.8>公開</h0.8></div>
+    <a href="sample.html" class="fafa">削除</a>
+</div>
+
+<div class="ccc">
+    <div class="favo1" >画像</div>
+    <div class="favo2">タイトル名、プラン名</div>
+</div>
+<div class="bbb">
+    <label class="toggle-button-001"><input type="checkbox"/></label>
+    <div class="aiai"><h0.8>公開</h0.8></div>
+    <a href="sample.html" class="fafa">削除</a>
+</div>
+
+
+<div class="ccc">
+    <div class="favo1" >画像</div>
+    <div class="favo2">タイトル名、プラン名</div>
+</div>
+<div class="bbb">
+    <label class="toggle-button-001"><input type="checkbox"/></label>
+    <div class="aiai"><h0.8>公開</h0.8></div>
+    <a href="sample.html" class="fafa">削除</a>
+</div>
+
+<div class="ccc">
+    <div class="favo1" >画像</div>
+    <div class="favo2">タイトル名、プラン名</div>
+</div>
+<div class="bbb">
+    <label class="toggle-button-001"><input type="checkbox"/></label>
+    <div class="aiai"><h0.8>公開</h0.8></div>
+    <a href="sample.html" class="fafa">削除</a>
+</div>
+
+<div class="ccc">
+    <div class="favo1" >画像</div>
+    <div class="favo2">タイトル名、プラン名</div>
+</div>
+<div class="bbb">
+    <label class="toggle-button-001"><input type="checkbox"/></label>
+    <div class="aiai"><h0.8>公開</h0.8></div>
+    <a href="sample.html" class="fafa">削除</a>
+</div>
+
+<div class="ccc">
+    <div class="favo1" >画像</div>
+    <div class="favo2">タイトル名、プラン名</div>
+</div>
+<div class="bbb">
+    <label class="toggle-button-001"><input type="checkbox"/></label>
+    <div class="aiai"><h0.8>公開</h0.8></div>
+    <a href="sample.html" class="fafa">削除</a>
+</div>
+
+<div class="ccc">
+    <div class="favo1" >画像</div>
+    <div class="favo2">タイトル名、プラン名</div>
+</div>
+<div class="bbb">
+    <label class="toggle-button-001"><input type="checkbox"/></label>
+    <div class="aiai"><h0.8>公開</h0.8></div>
+    <a href="sample.html" class="fafa">削除</a>
+</div>
+
+<div class="ccc">
+    <div class="favo1" >画像</div>
+    <div class="favo2">タイトル名、プラン名</div>
+</div>
+<div class="bbb">
+    <label class="toggle-button-001"><input type="checkbox"/></label>
+    <div class="aiai"><h0.8>公開</h0.8></div>
+    <a href="sample.html" class="fafa">削除</a>
+</div>
+
+<div class="ccc">
+    <div class="favo1" >画像</div>
+    <div class="favo2">タイトル名、プラン名</div>
+</div>
+<div class="bbb">
+    <label class="toggle-button-001"><input type="checkbox"/></label>
+    <div class="aiai"><h0.8>公開</h0.8></div>
+    <a href="sample.html" class="fafa">削除</a>
+</div>
+
+<div class="fafa3">
+    <div class="tabs">
+          <input type="radio" name="tab_name" id="tab1" checked>
+          <label class="tab_class" for="tab1"><a href="mypage_favorite">1</a></label>
+          <input type="radio" name="tab_name" id="tab2" >
+          <label class="tab_class" for="tab2">2</label>
+          <input type="radio" name="tab_name" id="tab3" >
+          <label class="tab_class" for="tab3">3</label>
+          <input type="radio" name="tab_name" id="tab4" >
+          <label class="tab_class" for="tab4">4</label>
+          <input type="radio" name="tab_name" id="tab5" >
+          <label class="tab_class" for="tab5">5</label>
+    </div>
+    <div class="tabs">
+            <input type="radio" name="tab_name" id="tab6">
+            <label class="tab_class" for="tab6">6</label>
+            <input type="radio" name="tab_name" id="tab7" >
+            <label class="tab_class" for="tab7">7</label>
+             <input type="radio" name="tab_name" id="tab8" >
+            <label class="tab_class" for="tab8">8</label>
+            <input type="radio" name="tab_name" id="tab9" >
+            <label class="tab_class" for="tab9">9</label>
+            <input type="radio" name="tab_name" id="tab10" >
+            <label class="tab_class" for="tab10">10</label>
+    </div>
+</div>
+<div class="fafa2">
+    <h2>※最近の閲覧した100件のみ保存自分が作成したプランは永久保存</h2>
+</div>
+
+{% endblock %}

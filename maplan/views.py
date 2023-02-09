@@ -177,20 +177,50 @@ class Plan_create2View(generic.ListView):
 class plan_create_completeView(generic.TemplateView):
     template_name = "plan_create_complete.html"
 
-class mypage_favoriteView(generic.TemplateView):
+class mypage_favoriteView(generic.ListView):
     template_name = "mypage_favorite.html"
+    model = Plan
+    paginate_by = 10
 
-class mypage_historyView(generic.TemplateView):
+    def get_queryset(self):
+        plans = Plan.objects.filter().order_by('id')
+        return plans
+
+class mypage_historyView(generic.ListView):
     template_name = "mypage_history.html"
+    model = Plan
+    paginate_by = 10
 
-class mypage_eturanView(generic.TemplateView):
+    def get_queryset(self):
+        plans = Plan.objects.filter().order_by('id')
+        return plans
+
+class mypage_eturanView(generic.ListView):
     template_name = "mypage_eturan.html"
+    model = Plan
+    paginate_by = 10
 
-class mypage_sakuseiView(generic.TemplateView):
+    def get_queryset(self):
+        plans = Plan.objects.filter().order_by('id')
+        return plans
+
+class mypage_sakuseiView(generic.ListView):
     template_name = "mypage_sakusei.html"
+    model = Plan
+    paginate_by = 10
 
-class mypage_komenntoView(generic.TemplateView):
+    def get_queryset(self):
+        plans = Plan.objects.filter().order_by('id')
+        return plans
+
+class mypage_komenntoView(generic.ListView):
     template_name = "mypage_komennto.html"
+    model = Plan
+    paginate_by = 10
+
+    def get_queryset(self):
+        plans = Plan.objects.filter().order_by('id')
+        return plans
 
 class DetailTestView(generic.ListView):
     template_name = "detail_test.html"
@@ -213,4 +243,5 @@ class planView(generic.TemplateView):
 
 class plan_testView(generic.TemplateView):
     template_name = "plan_test.html"
+
 

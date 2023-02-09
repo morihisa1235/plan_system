@@ -1118,7 +1118,7 @@ label span{
   padding: 10px;
   text-decoration: none;
   color: white;
-  margin-left: 4%;
+  margin-left: 15%;
 }
 
 .fafa1{
@@ -1429,6 +1429,7 @@ input:checked + .tab_class + .content_class {
     background-color: #d8bbbb;
     cursor: pointer;
     transition: background-color .4s;
+    margin-left:-90%;
 }
 
 .toggle-button-001:has(:checked) {
@@ -1459,7 +1460,13 @@ input:checked + .tab_class + .content_class {
 .bbb {
  display: flex;
      margin-left: 79%;
-     margin-top: -3%;
+     margin-top: 2%;
+}
+
+.eee {
+    display: flex;
+    margin-left: 86.9%;
+    margin-top: 2%;
 }
 
 .ddd {
@@ -1474,8 +1481,8 @@ input:checked + .tab_class + .content_class {
 }
 
 .aiai {
-    margin-left:5%;
-    margin-top: 3%;
+    margin-left:62%;
+    margin-top: -32%;
 }
 
 .pagination {
