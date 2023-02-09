@@ -244,4 +244,7 @@ class planView(generic.TemplateView):
 class plan_testView(generic.TemplateView):
     template_name = "plan_test.html"
 
+class plan_test1View(generic.TemplateView):
+    template_name = "plan_test1.html"
+
 
