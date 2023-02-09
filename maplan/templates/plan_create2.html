@@ -6,103 +6,99 @@
 
 {% block contents %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/large_regulation.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'css/send_file.css' %}"/>
+<script type="text/javascript" src="{% static 'js/jquery-3.6.3.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/send_files_jq.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/preview.js' %}"></script>
 
 <div>
-
-<div class = "pull_down">
-    <select name="option">
-        <option value = "Release">公開</option>
-        <option value = "private">非公開</option>
-    </select>
-</div>
-
-<div class = "plan_create2">
-
-<div class = "plan_name" style = "float:left">
-    <input type = "text">
-</div>
-
-<div class = "favorite_form_border_create">
-
-    <div class = "favorite_form">
-        <input id="favorite" type="checkbox" name="rate">
-        <label for="favorite">♥</label>
+    <div class="attention">
+        プランを公開する場合は文章入力欄と写真を挿入してください
     </div>
-
-</div>
-<div class = "map_border11" style = "float:left">
-    <h1>map</h1>
-</div>
-<div class = "route_border11" >
-    <h1>ルート</h1>
-</div>
-
-<div class="tag_box">
-    <table class="table div-border side1">
-        <tr>
-            <td>
-                <div><span class="result">季節</span><br><br>
-                    {% for season in category_list %}
-                    {% if season.category_code >= 25 and season.category_code != 26 %}
-                    <input type="checkbox">{{ season.category_name }}
-                    {% elif season.category_code == 26 %}
-                    <input type="checkbox">{{ season.category_name }}
-                    </div>
-                    <div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </td>
-            <td>
-                <div><span class="result">ジャンル</span> <br>
-                    {% for check in category_list %}
-                    {% if check.category_code == -1 or check.category_code >= 25 %}
-                    {% elif check.category_code == 11 or check.category_code == 21 %}
-                    <br>
-                    <input type="checkbox">{{ check.category_name }} &nbsp
-                    {% else %}
-                    <input type="checkbox">{{ check.category_name }} &nbsp
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </td>
-        </tr>
-    </table>
-</div>
-<div class = "serchbox_text">
-
-<div class = "plan_create_comment_border" style="float:left" >
-    <div class="pu111">
-        <h1>この欄はプランを公開してから使用されます</h1>
+    <div class = "pull_down">
+        <select name="option">
+            <option value = "Release">公開</option>
+            <option value = "private">非公開</option>
+        </select>
     </div>
-</div>
-<div class="ma111">
-</div>
-<div class="ma111">
-    <div class = "plan_create_comment_boder" style="float:left" >
-        <div class="pu111">
-            <h1>この欄はプランを公開してから使用されます</h1>
+    <div class = "plan_create2">
+        <div class = "plan_name" style = "float:left">
+    </div>
+    <div>
+        <input type="text" class="textbox-size" value="プラン">
+    </div>
+    <div class="favorite_form_border_create">
+        <div class="favorite_form">
+            <input id="favorite" type="checkbox" name="rate">
+            <label id="not" for="favorite">♥</label>
         </div>
     </div>
-    <div class= "bun_border11">
-    <textarea class="plan_create2_textarea" style="width: 100%; height: 100%;" placeholder="文章入力欄"></textarea>
-</div>
-    <div class="picture_border11" style="text-align: center;">
-        <label>
-            <div class="filelabel" title="写真を選択">
-                <img src="{% static 'assets/img/upload.png' %}">
-            </div>
-            <input id="filesend" type="file" accept="image/png" alt="filesend">
-        </label>
+    <div class = "map_border11" style = "float:left">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12655606.084254637!2d140.4790958863645!3d37.14594589120638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1674458027975!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-</div>
-<div class = "plan_create2_button">
-    <a class="btn btn-primary" href="{% url 'maplan:created_one' %}">キャンセル</a>
-    <a class="btn btn-primary" href="{% url 'maplan:plan_create_complete' %}">作成</a>
-</div>
-</div>
+    <div class = "route_border11" >
+        <h1>ルート</h1>
+    </div>
+    <div class="tag_box">
+        <table class="table div-border side1">
+            <tr>
+                <td>
+                    <div>
+                        <span class="result">季節</span><br><br>
+                        {% for season in category_list %}
+                        {% if season.category_code >= 25 and season.category_code != 26 %}
+                        <input type="checkbox">{{ season.category_name }}
+                        {% elif season.category_code == 26 %}
+                        <input type="checkbox">{{ season.category_name }}
+                    </div>
+                    <div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <span class="result">ジャンル</span> <br>
+                        {% for check in category_list %}
+                        {% if check.category_code == -1 or check.category_code >= 25 %}
+                        {% elif check.category_code == 11 or check.category_code == 21 %}
+                        <br>
+                        <input type="checkbox">{{ check.category_name }} &nbsp
+                        {% else %}
+                        <input type="checkbox">{{ check.category_name }} &nbsp
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class = "serchbox_text">
 
-</div>
     </div>
+    <div class="ma111">
+        <div class = "plan_create_comment_border" style="float:left" >
+            <div class="pu111">
+                <h1>この欄はプランを公開してから使用されます</h1>
+            </div>
+        </div>
+        <div class= "bun_border11">
+            <textarea class="plan_create2_textarea" style="width: 100%; height: 100%;" placeholder="文章入力欄"></textarea>
+        </div>
+        <div class="picture_border11" style="text-align: center;">
+            <div>
+                <label for="form-image">ファイルを選択</label>
+                    <input type="file" id="form-image" onchange="previewImage(this);">
+                <span class="select-image">選択されていません</span>
+                <img id="preview" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="max-width:200px; max-height:200px;margin-top:1%;">
+            </div>
+        </div>
+    </div>
+        <div class = "plan_create2_button">
+            <a class="btn btn-primary" href="{% url 'maplan:created_one' %}">キャンセル</a>
+            <a class="btn btn-primary" href="{% url 'maplan:plan_create_complete' %}">作成</a>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

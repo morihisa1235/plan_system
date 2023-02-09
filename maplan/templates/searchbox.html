@@ -1,70 +1,72 @@
 {% extends 'base.html' %}
 
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/small_regulation.css' %}"/>
 
 {% block contents %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/small_regulation.css' %}"/>
 
-<div class="row">
-    <div class="col1">
-        <input class="form-control1 form-control-lg" id="emailAddress" type="email" placeholder="検索ワードを入力" data-sb-validations="required,email" />
-        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">検索ワードを入力してください</div>
-    </div>
-    <div class="col-auto1">
-        <button class="btn btn-primary btn-lg" id="searchButton" type="button">🔍</button>
-    </div>
-    <div>
-        <div class="div-border" style="float:left">絞り込み</div>
-        <div class="div">並び替え</div>
-    </div>
-    <table class="table div-border side1">
-        <tr>
-            <td>
-                <div><span class="result">季節</span><br><br>
-                    {% for season in category_list %}
-                    {% if season.category_code >= 25 and season.category_code != 26 %}
-                    <input type="checkbox">{{ season.category_name }}
-                    {% elif season.category_code == 26 %}
-                    <input type="checkbox">{{ season.category_name }}
+<form method="get" action="{% url 'maplan:searchbox' %}">
+    <div class="row">
+        <div class="col1">
+            <input class="form-control1 form-control-lg" id="search" name="search" type="search" placeholder="検索ワードを入力" />
+            <div class="invalid-feedback text-white">検索ワードを入力してください</div>
+        </div>
+        <div class="col-auto1">
+            <button class="btn btn-primary btn-lg" id="search">🔍</button>
+        </div>
+        <div>
+            <div class="div-border" style="float:left">絞り込み</div>
+            <div class="div">並び替え</div>
+        </div>
+        <table class="table div-border side1">
+            <tr>
+                <td>
+                    <div>
+                        <span class="result">季節</span><br><br>
+                        {% for season in category_list %}
+                        {% if season.category_code >= 25 and season.category_code != 26 %}
+                        <input type="checkbox" id="search" value="{{ season.category_code }}" name="{{ season.category_name }}">{{ season.category_name }}
+                        {% elif season.category_code == 26 %}
+                        <input type="checkbox" id="search" value="{{ season.category_code }}" name="{{ season.category_name }}">{{ season.category_name }}
+                        </div>
+                        <div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </td>
+                <td>
+                    <div><span class="result">ジャンル</span> <br>
+                        {% for check in category_list %}
+                        {% if check.category_code == -1 or check.category_code >= 25 %}
+                        {% elif check.category_code == 10 or check.category_code == 19 %}
+                        <br>
+                        <input type="checkbox" id="search" value="{{ check.category_code }}" name="{{ check.category_name }}">{{ check.category_name }}
+                        {% else %}
+                        <input type="checkbox" id="search" value="{{ check.category_code }}" name="{{ check.category_name }}">{{ check.category_name }}
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    </td>
+                <td>
+                    <div style="border-bottom: 2px;">
+                            <input type="radio" id="search" value="asc" name="sort1">昇順　 　
+                            <input type="radio" id="search" value="desc" name="sort1" required checked>降順
+                        <div class="line">
+                        </div>
+                    </div><br>
+                    <div>
+                        <input type="radio" id="search" value="prefecture" name="sort2">都道府県順　
+                        <input type="radio" id="search" value="evalution" name="sort2">評価順(★基準)
                     </div>
                     <div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </td>
-            <td>
-                <div><span class="result">ジャンル</span> <br>
-                    {% for check in category_list %}
-                    {% if check.category_code == -1 or check.category_code >= 25 %}
-                    {% elif check.category_code == 10 or check.category_code == 19 %}
-                    <br>
-                    <input type="checkbox">{{ check.category_name }}
-                    {% else %}
-                    <input type="checkbox">{{ check.category_name }}
-                    {% endif %}
-                    {% endfor %}
-                </div>
-                </td>
-            <td>
-                <div style="border-bottom: 2px;">
-                        <input type="radio" name="sort1">昇順　 　
-                        <input type="radio" name="sort1" required checked>降順
-                    <div class="line">
+                        <input type="radio" id="search" value="favorite" name="sort2" required checked>お気に入り順
+                        <input type="radio" id="search" value="comment" name="sort2">コメント数順
                     </div>
-                </div><br>
-                <div>
-                    <input type="radio" name="sort2">都道府県順　
-                    <input type="radio" name="sort2">評価順(★基準)
-                </div>
-                <div>
-                    <input type="radio" name="sort2" required checked>お気に入り順
-                    <input type="radio" name="sort2">コメント数順
-                </div>
-            </td>
-        </tr>
-    </table>
-</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
 <div class="searchbox_text">
     <h1>検索結果</h1>
 </div>

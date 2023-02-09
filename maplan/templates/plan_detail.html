@@ -100,10 +100,9 @@ sending.addEventListener('click', butotnClick);
 
         <!---->
         <!--編集-->
-        {% if comment.comment != "" and comment.plan_id_id == plan.id %}
+        {% for comment in comment_list %}
+        {% if comment.plan_id_id == plan.id and comment.user_id_id == user.id %}
         <div class="rate_form_boder" style="float:left">
-            {% for comment in comment_list %}
-            {% if comment.plan_id_id == plan.id and comment.user_id_id == plan.user_id_id %}
             <div class="eva-form1">
                 {% if comment.evalution >= 1 %}
                 <input id="star5" type="radio" name="eva" value="5">
@@ -126,8 +125,6 @@ sending.addEventListener('click', butotnClick);
                 {% endif %}
                 {% endif %}
             </div>
-            {% endif %}
-            {% endfor %}
         </div>
         <div class = "change">
             <label class="open" for="pop-up"><h5>編集</h5></label>
@@ -230,11 +227,23 @@ sending.addEventListener('click', butotnClick);
             <input class="comment-width" type="text" readonly name="namae" maxlength="50" value="{{ comment.comment }}">
         </div>
         {% endif %}
+        {% endfor %}
         {% endif %}
+        <script>
+            function butotnClick(){
+                review.innerText = reviewTextarea.value;
+            }
+
+            let reviewTextarea = document.getElementById('reviewTextarea');
+            let msg = document.getElementById('review');
+
+            let sending = document.getElementById('sending');
+            sending.addEventListener('click', butotnClick);
+        </script>
         <!---->
         <!--通報-->
         {% for comment in comment_list %}
-        {% if comment.plan_id_id == plan.id and comment.user_id_id != plan.user_id_id %}
+        {% if comment.plan_id_id == plan.id and comment.user_id_id != user.id %}
         <div class="rate_form_boder" style="float:left">
             <div class="eva-form1">
                 {% if comment.evalution >= 1 %}
@@ -281,7 +290,7 @@ sending.addEventListener('click', butotnClick);
                                 <br><br>
                                 <h4>ご協力いただきありがとうございました。</h4>
                                 <br><br><br><br><br>
-                                <a class="btn btn-primary" href="{# url 'maplan:plan_detail' plan.pk #}">戻る</a>
+                                <a class="btn btn-primary" href="{% url 'maplan:plan_detail' plan.pk %}">戻る</a>
                             </div>
                         </label>
                     </div>

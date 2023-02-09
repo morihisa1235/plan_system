@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
 {% load django_bootstrap5 %}
 
+{% load static %}
+
 {% block title %}Log In{% endblock %}
 
 {% block active_login %}active{% endblock %}
 
 {% block contents %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/small_regulation.css' %}"/>
+
 <div class="container top-space">
     <form method="post" action="{% url 'account_login' %}">
 
