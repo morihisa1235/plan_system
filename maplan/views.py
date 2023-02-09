@@ -161,6 +161,12 @@ class PlandetailView(generic.DetailView):
         })
         return context
 
+    def form_valid(self, form):
+        comment = form.save(comit=False)
+        comment.user = self.request.user
+        comment.save()
+        return super().form_valid(form)
+
     def get_queryset(self):
         plans = Plan.objects.filter().order_by('id')
         return plans

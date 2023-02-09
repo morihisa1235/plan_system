@@ -1548,3 +1548,8 @@ input:checked + .tab_class + .content_class {
 .over {
   background-color: rgba(255, 255, 0, 0.3);
 }
+
+.box1 {
+    height: 200px;
+}
+

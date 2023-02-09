@@ -99,5 +99,3 @@ class Comment(models.Model):
         return self.comment
 
 
-
-

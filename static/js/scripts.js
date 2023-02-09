@@ -11,4 +11,3 @@ function Login_alert() {
   alert("ログインしてください。")
 }
 
-
