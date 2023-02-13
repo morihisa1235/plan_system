@@ -6,13 +6,10 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/small_regulation.css' %}"/>
 <script type="text/javascript" src="{% static 'js/get_set.js' %}"></script>
 
-  <p>パラメーター q:</p>
-  <div id="param_search_out"></div>
-
-<form method="get" action="{% url 'maplan:searchbox' %}">
+<form method="get" action="{% url 'maplan:searchbox' %}" id="param_search_out">
     <div class="row">
         <div class="col1">
-            <input class="form-control1 form-control-lg" name="search" type="text" value="param_search_out"/>
+            <input class="form-control1 form-control-lg" name="search" type="text" id="searchbox"/>
             <div class="invalid-feedback text-white">検索ワードを入力してください</div>
         </div>
         <div class="col-auto1">

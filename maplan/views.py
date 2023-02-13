@@ -94,6 +94,12 @@ class SearchboxView(generic.ListView):
 
     def get_queryset(self):
         plans = Plan.objects.filter().order_by('id')
+        queryset = super().get_queryset()
+        query = self.request.GET
+        if search := query.get('search'):  # python3.8以降
+            queryset = queryset.filter(plan_name=search)
+
+        return queryset.order_by('-created_at')
         return plans
 
 class HistoryView(LoginRequiredMixin, generic.ListView):
@@ -243,8 +249,3 @@ class planView(generic.TemplateView):
 
 class plan_testView(generic.TemplateView):
     template_name = "plan_test.html"
-
-class plan_test1View(generic.TemplateView):
-    template_name = "plan_test1.html"
-
-
