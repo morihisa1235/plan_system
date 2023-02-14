@@ -14,7 +14,7 @@
         <div class="scroll test_box box1" id="tour_list">
             {% for tour in tourism_list %}
             {% if forloop.counter <= 500 %}
-            <div class="item" draggable="true" id="item{{ forloop.counter }}">{{ tour.tourism_name }}</div><p>
+            <div class="item" draggable="true" id="item{{ forloop.counter }}">{{ tour.tourism_name }}<br>[滞在時間]<input type="time" value="12:00">~<input type="time" value="12:00"></div>
             {% endif %}
             {% empty %}
             <div class="item">検索結果がありませんでした。</div>
@@ -31,7 +31,7 @@
             <input type="search" id="site-search" name="q">
             <button>Search</button>
             <select name="prefecture" required>
-                <option>---</option>
+                <option></option>
                 {% for jp in prefecture_list %}
                 <option>{{ jp.prefecture_name }}</option>
                 {% empty %}

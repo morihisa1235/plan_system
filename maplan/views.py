@@ -8,8 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .forms import InquiryForm
 
-from .models import Plan, Route, Comment
-from .models import Prefecture, Tourism, Category
+from .models import *
 from accounts.models import CustomUser
 
 
@@ -57,6 +56,7 @@ class PersonalView(LoginRequiredMixin,generic.ListView):
 class Change_personalView(LoginRequiredMixin,generic.ListView):
     template_name = "change_personal.html"
     model = CustomUser
+
     def get_queryset(self):
         user = CustomUser.objects.filter().order_by('id')
         return user
@@ -97,7 +97,7 @@ class SearchboxView(generic.ListView):
         queryset = super().get_queryset()
         query = self.request.GET
         if search := query.get('search'):  # python3.8以降
-            queryset = queryset.filter(plan_name=search)
+            queryset = queryset.filter(plan_name__icontains=search)
 
         return queryset.order_by('-created_at')
         return plans
@@ -122,6 +122,9 @@ class CreatedOneView(generic.ListView):
     model = Prefecture
     template_name = 'plan_create1.html'
     context_object_data = 'prefecture_list'
+
+    def post(self, request, *args, **kwargs):
+        return self.get(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context = super(CreatedOneView, self).get_context_data(**kwargs)
@@ -177,11 +180,11 @@ class PlandetailView(generic.DetailView):
         plans = Plan.objects.filter().order_by('id')
         return plans
 
-class Plan_create2View(generic.ListView):
-     template_name = "plan_create2.html"
-
 class plan_create_completeView(generic.TemplateView):
     template_name = "plan_create_complete.html"
+
+    def post(self, request, *args, **kwargs):
+        return self.get(request, *args, **kwargs)
 
 class mypage_favoriteView(generic.ListView):
     template_name = "mypage_favorite.html"
@@ -247,5 +250,3 @@ class DetailResultView(generic.DetailView):
 class planView(generic.TemplateView):
     template_name = "plan.html"
 
-class plan_testView(generic.TemplateView):
-    template_name = "plan_test.html"

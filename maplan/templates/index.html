@@ -20,7 +20,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="top_search">
-                                    <input class="form-control form-control-lg" id="search" name="search" type="search" placeholder="検索ワードを入力"/>
+                                    <input class="form-control form-control-lg" id="search" name="search" type="search" placeholder="検索ワードを入力" required/>
                                     <div class="invalid-feedback text-white">検索ワードを入力してください</div>
                                 </div>
                             </div>
@@ -42,11 +42,11 @@
                 <option value = "season">季節別</option>
             </select>
         </div>
-        <div class="index_plan_picture_border" style="float:left">
-            <img class="sample_picture" src="{% static 'assets/img/bg-masthead.jpg' %}">
-        </div>
         {% for plan in plan_list %}
         {% if forloop.counter == 1 %}
+        <div class="index_plan_picture_border" style="float:left">
+            <img class="sample_picture" src="{{ plan.photo.url }}">
+        </div>
             <a class="index_click" href="{% url 'maplan:plan_detail' plan.pk %}">
                 <div class="index_plan_border">
                 <h4 class="index_plan_name">{{ plan.plan_name }}/作成者名</h4>

@@ -32,5 +32,4 @@ urlpatterns = [
     path('mypage_komennto/', views.mypage_komenntoView.as_view(), name="mypage_komennto"),
     path('detail_test/', views.DetailTestView.as_view(), name="detail_test"),
     path('detail_result/<int:pk>/', views.DetailResultView.as_view(), name="detail_result"),
-    path('plan_test/', views.plan_testView.as_view(), name="plan_test"),
 ]

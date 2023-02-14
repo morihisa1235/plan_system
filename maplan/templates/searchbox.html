@@ -26,9 +26,9 @@
                         <span class="result">季節</span><br><br>
                         {% for season in category_list %}
                         {% if season.category_code >= 25 and season.category_code != 26 %}
-                        <input type="checkbox" id="search" value="{{ season.category_code }}" name="{{ season.category_name }}">{{ season.category_name }}
+                        <input type="checkbox" id="search" value="{{ season.category_code }}" name="season">{{ season.category_name }}
                         {% elif season.category_code == 26 %}
-                        <input type="checkbox" id="search" value="{{ season.category_code }}" name="{{ season.category_name }}">{{ season.category_name }}
+                        <input type="checkbox" id="search" value="{{ season.category_code }}" name="season">{{ season.category_name }}
                         </div>
                         <div>
                         {% endif %}
@@ -41,9 +41,9 @@
                         {% if check.category_code == -1 or check.category_code >= 25 %}
                         {% elif check.category_code == 10 or check.category_code == 19 %}
                         <br>
-                        <input type="checkbox" id="search" value="{{ check.category_code }}" name="{{ check.category_name }}">{{ check.category_name }}
+                        <input type="checkbox" id="search" value="{{ check.category_code }}" name="category">{{ check.category_name }}
                         {% else %}
-                        <input type="checkbox" id="search" value="{{ check.category_code }}" name="{{ check.category_name }}">{{ check.category_name }}
+                        <input type="checkbox" id="search" value="{{ check.category_code }}" name="category">{{ check.category_name }}
                         {% endif %}
                         {% endfor %}
                     </div>
@@ -75,7 +75,7 @@
 
 <div class="searchbox_space">
 <div class="searchbox_picture_border" style="float:left">
-    <img class = "searchbox_picture" src="{% static 'assets/img/bg-masthead.jpg' %}">
+    <img class = "searchbox_picture" src="{{ plan.photo.url }}">
 </div>
 
 <div class="searchbox_plan_border"><a class="searchbox_click" href = "{% url 'maplan:plan_detail' plan.pk %}">
@@ -140,4 +140,3 @@
     <div class="aiai"><h0.8>公開</h0.8></div>
     <a href="sample.html" class="fafa">削除</a>
 </div>
-

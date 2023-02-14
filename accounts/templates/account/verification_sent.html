@@ -13,10 +13,10 @@
                 <p>メールアドレスを確認してください</p>
                 <p>確認のメールを送信しました。</p>
                 <p>メールに記載されたリンクをクリックして、ユーザー登録を完了させてください。数分待っても確認のメールが届かない場合はご連絡ください。</p>
-               <form action="{% url 'account_signup' %}">
+                <form action="{% url 'account_signup' %}">
                     {% csrf_token %}
                     <button class="btn btn-primary" type="submit">戻る</button>
-               </form>
+                </form>
             </div>
         </div>
     </div>

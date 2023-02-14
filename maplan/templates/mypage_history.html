@@ -56,7 +56,7 @@
 
 <div class="searchbox_space">
 <div class="searchbox_picture_border" style="float:left">
-    <img class = "searchbox_picture" src="{% static 'assets/img/bg-masthead.jpg' %}">
+    <img class = "searchbox_picture" src="{{ plan.photo.url }}">
 </div>
 
 <div class="searchbox_plan_border"><a class="searchbox_click" href = "{% url 'maplan:plan_detail' plan.pk %}">
@@ -65,7 +65,7 @@
 <div class="bbb">
     <label class="toggle-button-001"><input type="checkbox"/></label>
     <div class="aiai"><h0.8>公開</h0.8></div>
-    <a href="sample.html" class="fafa">削除</a>
+    <a href="{% url 'maplan:mypage_history' %}" class="fafa">削除</a>
 </div>
 </a></div>
 </div>
